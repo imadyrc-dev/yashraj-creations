@@ -18,6 +18,186 @@
     rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+  <style>
+    /* ===== Certificate Image Gallery ===== */
+    .cert-gallery-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform .25s ease, box-shadow .25s ease;
+      height: 100%;
+      cursor: pointer;
+    }
+
+    .cert-gallery-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .cert-gallery-img-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      background: var(--cream, #f7f4ee);
+      overflow: hidden;
+    }
+
+    .cert-gallery-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .35s ease;
+    }
+
+    .cert-gallery-card:hover .cert-gallery-img-wrap img {
+      transform: scale(1.06);
+    }
+
+    .cert-gallery-zoom {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--green-dark, #1e4a3d);
+      font-size: 1rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      opacity: 0;
+      transform: translateY(-4px);
+      transition: opacity .25s ease, transform .25s ease;
+    }
+
+    .cert-gallery-card:hover .cert-gallery-zoom {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .cert-gallery-caption {
+      padding: 16px 18px;
+      border-top: 1px solid var(--border);
+    }
+
+    .cert-gallery-caption .cname {
+      font-weight: 700;
+      font-size: 0.98rem;
+      color: var(--green-dark, #1e4a3d);
+      margin-bottom: 2px;
+    }
+
+    .cert-gallery-caption .cvalid {
+      font-size: 0.78rem;
+      color: var(--text-muted, #7a7a7a);
+    }
+
+    /* ===== Lightbox ===== */
+    .cert-lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 15, 15, 0.92);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .cert-lightbox.active {
+      display: flex;
+    }
+
+    .cert-lightbox-inner {
+      max-width: 94vw;
+      max-height: 88vh;
+      text-align: center;
+    }
+
+    .cert-lightbox-inner img {
+      max-width: 90vw;
+      max-height: 80vh;
+      width: auto;
+      border-radius: 8px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    .cert-lightbox-caption {
+      color: #fff;
+      margin-top: 16px;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .cert-lightbox-close {
+      position: absolute;
+      top: 22px;
+      right: 28px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #fff;
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .cert-lightbox-close:hover {
+      background: rgba(255, 255, 255, 0.22);
+    }
+
+    .cert-lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #fff;
+      font-size: 1.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .cert-lightbox-nav:hover {
+      background: rgba(255, 255, 255, 0.22);
+    }
+
+    .cert-lightbox-prev {
+      left: 24px;
+    }
+
+    .cert-lightbox-next {
+      right: 24px;
+    }
+
+    @media (max-width: 576px) {
+      .cert-lightbox-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+      }
+
+      .cert-lightbox-close {
+        top: 14px;
+        right: 14px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -146,34 +326,12 @@
             across food safety, religious dietary laws, and organic compliance.
           </p>
         </div>
-        <div class="col-lg-5">
-          <div style="background:var(--cream);border:1px solid var(--border);border-radius:10px;padding:24px;">
-            <div
-              style="font-size:0.8rem;font-weight:700;color:var(--green-dark);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:14px;">
-              Active Certifications</div>
-            <div class="d-flex flex-wrap gap-2">
-              <span
-                style="background:var(--green-dark);color:white;padding:7px 14px;border-radius:4px;font-size:0.8rem;font-weight:600;">ISO
-                22000:2018</span>
-              <span
-                style="background:var(--green-dark);color:white;padding:7px 14px;border-radius:4px;font-size:0.8rem;font-weight:600;">FSSAI</span>
-              <span
-                style="background:var(--orange);color:white;padding:7px 14px;border-radius:4px;font-size:0.8rem;font-weight:600;">HALAL</span>
-              <span
-                style="background:var(--orange);color:white;padding:7px 14px;border-radius:4px;font-size:0.8rem;font-weight:600;">Kosher</span>
-              <span
-                style="background:var(--green-mid);color:white;padding:7px 14px;border-radius:4px;font-size:0.8rem;font-weight:600;">APEDA</span>
-              <span
-                style="background:var(--green-mid);color:white;padding:7px 14px;border-radius:4px;font-size:0.8rem;font-weight:600;">Spices
-                Board</span>
-            </div>
-          </div>
-        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- CERTIFICATION CARDS -->
+  <!-- CERTIFICATION IMAGE GALLERY -->
   <section class="section bg-cream">
     <div class="container">
       <div class="text-center mb-5">
@@ -184,140 +342,73 @@
           <div class="dot"></div>
           <div class="line" style="max-width:80px;"></div>
         </div>
+        <p style="color:var(--text-muted);max-width:560px;margin:14px auto 0;font-size:0.92rem;">
+          Click on any certificate to view the full document.
+        </p>
       </div>
 
-      <div class="row g-4">
+      <div class="row g-4" id="certGallery">
 
-        <!-- ISO 22000 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="cert-card">
-            <div class="cert-card-header">
-              <div class="cert-card-icon"><i class="bi bi-award fs-4"></i></div>
-              <div>
-                <div class="cert-card-name">ISO 22000:2018</div>
-                <div class="cert-card-issuer">International Organization for Standardization</div>
-              </div>
+        <div class="col-md-4">
+          <div class="cert-gallery-card" data-index="0">
+            <div class="cert-gallery-img-wrap">
+              <img src="https://images.template.net/470124/Teacher-Demonstration-Certificate-Template-edit-online.png"
+                alt="ISO 22000:2018 Certificate">
+              <div class="cert-gallery-zoom"><i class="bi bi-zoom-in"></i></div>
             </div>
-            <div class="cert-card-body">
-              <p>Food Safety Management System standard covering the entire supply chain from raw material sourcing to
-                finished product delivery. Ensures systematic control of food safety hazards.</p>
-              <p style="font-size:0.82rem;"><strong style="color:var(--green-dark);">Cert No.:</strong>
-                ISC/FSMS/2024/4521 &nbsp;|&nbsp; <strong style="color:var(--green-dark);">Scope:</strong> Spice
-                Processing &amp; Export</p>
-              <span class="cert-validity">Valid until December 2026</span>
+            <div class="cert-gallery-caption">
+              <div class="cname">ISO 22000:2018</div>
+              <div class="cvalid">Valid until December 2026</div>
             </div>
           </div>
         </div>
 
-        <!-- FSSAI -->
-        <div class="col-md-6 col-lg-4">
-          <div class="cert-card">
-            <div class="cert-card-header">
-              <div class="cert-card-icon"><i class="bi bi-patch-check fs-4"></i></div>
-              <div>
-                <div class="cert-card-name">FSSAI Central License</div>
-                <div class="cert-card-issuer">Food Safety &amp; Standards Authority of India</div>
-              </div>
+        <div class="col-md-4">
+          <div class="cert-gallery-card" data-index="1">
+            <div class="cert-gallery-img-wrap">
+              <img
+                src="https://certifier.io/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fcertifier%2Fimage%2Fupload%2Fv1740271497%2Fsmall_567_Confined_Space_professional_purple_landscape_min_5b6abaf32c.jpg&w=3840&q=100"
+                alt="FSSAI Central License Certificate">
+              <div class="cert-gallery-zoom"><i class="bi bi-zoom-in"></i></div>
             </div>
-            <div class="cert-card-body">
-              <p>Central manufacturing and export license under the Food Safety and Standards Act, 2006. Mandatory for
-                all food processors and exporters operating across India.</p>
-              <p style="font-size:0.82rem;"><strong style="color:var(--green-dark);">License No.:</strong>
-                10024999000315 &nbsp;|&nbsp; <strong style="color:var(--green-dark);">Category:</strong> Spices &amp;
-                Condiments</p>
-              <span class="cert-validity">Valid until March 2027</span>
+            <div class="cert-gallery-caption">
+              <div class="cname">FSSAI Central License</div>
+              <div class="cvalid">Valid until March 2027</div>
             </div>
           </div>
         </div>
 
-        <!-- HALAL -->
-        <div class="col-md-6 col-lg-4">
-          <div class="cert-card">
-            <div class="cert-card-header">
-              <div class="cert-card-icon"><i class="bi bi-moon-stars fs-4"></i></div>
-              <div>
-                <div class="cert-card-name">HA Certification</div>
-                <div class="cert-card-issuer">Jamiat Ulama-I-Hind &amp; Gulf HA</div>
-              </div>
+        <div class="col-md-4">
+          <div class="cert-gallery-card" data-index="2">
+            <div class="cert-gallery-img-wrap">
+              <img
+                src="https://www.wikisciencecompetition.in/_next/image?url=https%3A%2F%2Fblush-fashionable-swift-557.mypinata.cloud%2Fipfs%2Fbafybeihht2ujcnvtm5ye5zk2o6p5ql4mz3vrx5i4apniav66b2hm662niy&w=1920&q=75"
+                alt="Certification">
+              <div class="cert-gallery-zoom"><i class="bi bi-zoom-in"></i></div>
             </div>
-            <div class="cert-card-body">
-              <p>Confirms that all SpiceCraft spice products are processed, manufactured, and packaged in accordance
-                with Islamic dietary laws — free from prohibited substances and contamination.</p>
-              <p style="font-size:0.82rem;"><strong style="color:var(--green-dark);">Cert No.:</strong> JUH/HC/2024/7823
-                &nbsp;|&nbsp; <strong style="color:var(--green-dark);">Markets:</strong> UAE, Saudi, Malaysia, UK</p>
-              <span class="cert-validity">Valid until September 2026</span>
+            <div class="cert-gallery-caption">
+              <div class="cname">Certification</div>
+              <div class="cvalid">Valid until September 2026</div>
             </div>
           </div>
         </div>
 
-        <!-- Kosher -->
-        <div class="col-md-6 col-lg-4">
-          <div class="cert-card">
-            <div class="cert-card-header">
-              <div class="cert-card-icon"><i class="bi bi-star fs-5"></i> </div>
-              <div>
-                <div class="cert-card-name">Kosher Certification</div>
-                <div class="cert-card-issuer">Orthodox Union (OU Kosher)</div>
-              </div>
-            </div>
-            <div class="cert-card-body">
-              <p>OU Kosher certified for selected spice product lines, enabling export to USA, Israel, and European
-                Jewish community markets. Annual inspection by OU rabbinical supervisor.</p>
-              <p style="font-size:0.82rem;"><strong style="color:var(--green-dark);">Cert No.:</strong>
-                OU-K/2024/IN-4521 &nbsp;|&nbsp; <strong style="color:var(--green-dark);">Markets:</strong> USA, Israel,
-                EU</p>
-              <span class="cert-validity">Valid until October 2026</span>
-            </div>
-          </div>
-        </div>
 
-        <!-- Spices Board -->
-        <div class="col-md-6 col-lg-4">
-          <div class="cert-card">
-            <div class="cert-card-header">
-              <div class="cert-card-icon"><i class="bi bi-flower1 fs-4"></i></div>
-              <div>
-                <div class="cert-card-name">Spices Board Registration</div>
-                <div class="cert-card-issuer">Spices Board of India, Ministry of Commerce</div>
-              </div>
-            </div>
-            <div class="cert-card-body">
-              <p>Registered exporter with the Spices Board of India — the apex body for Indian spice export promotion.
-                Required for issuing phytosanitary and health certificates for spice shipments.</p>
-              <p style="font-size:0.82rem;"><strong style="color:var(--green-dark);">Reg. No.:</strong>
-                SBI/GUJ/E/2001/0489 &nbsp;|&nbsp; <strong style="color:var(--green-dark);">Since:</strong> 2001</p>
-              <span class="cert-validity">Permanent Registration</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- APEDA -->
-        <div class="col-md-6 col-lg-4">
-          <div class="cert-card">
-            <div class="cert-card-header">
-              <div class="cert-card-icon"><i class="bi bi-globe2 fs-4"></i></div>
-              <div>
-                <div class="cert-card-name">APEDA Registration</div>
-                <div class="cert-card-issuer">Agricultural &amp; Processed Food Products </div>
-              </div>
-            </div>
-            <div class="cert-card-body">
-              <p>APEDA registered exporter enabling export of processed spice products with government-backed
-                documentation support. Required for accessing export promotion schemes and incentives.</p>
-              <p style="font-size:0.82rem;"><strong style="color:var(--green-dark);">Reg. No.:</strong>
-                APEDA/GUJ/2003/R-1247 &nbsp;|&nbsp; <strong style="color:var(--green-dark);">Category:</strong>
-                Processed Foods</p>
-              <span class="cert-validity">Permanent Registration</span>
-            </div>
-          </div>
-        </div>
 
       </div>
     </div>
   </section>
 
-
-
+  <!-- LIGHTBOX -->
+  <div class="cert-lightbox" id="certLightbox">
+    <div class="cert-lightbox-close" id="certLightboxClose"><i class="bi bi-x-lg"></i></div>
+    <div class="cert-lightbox-nav cert-lightbox-prev" id="certLightboxPrev"><i class="bi bi-chevron-left"></i></div>
+    <div class="cert-lightbox-inner">
+      <img id="certLightboxImg" src="" alt="Certificate">
+      <div class="cert-lightbox-caption" id="certLightboxCaption"></div>
+    </div>
+    <div class="cert-lightbox-nav cert-lightbox-next" id="certLightboxNext"><i class="bi bi-chevron-right"></i></div>
+  </div>
 
   <!-- CTA -->
   <section class="cta-banner">
@@ -325,10 +416,6 @@
       <h2>Download Our Certification Portfolio</h2>
       <p>Request our complete compliance documentation including certificate copies and test report samples.</p>
       <div class="d-flex gap-3 justify-content-center flex-wrap">
-        <!-- <a href="inquire.html"
-          style="background:var(--green-dark);color:white;padding:14px 32px;border-radius:6px;font-weight:600;font-size:0.95rem;display:inline-flex;align-items:center;gap:8px;">
-          <i class="bi bi-file-earmark-arrow-down"></i> Request Documents
-        </a> -->
         <a href="inquire.html"
           style="background:rgba(255,255,255,0.15);color:white;border:1.5px solid rgba(255,255,255,0.4);padding:14px 32px;border-radius:6px;font-weight:500;font-size:0.95rem;display:inline-flex;align-items:center;gap:8px;">
           <i class="bi bi-envelope"></i> Email Our QA Team
@@ -400,6 +487,68 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/main.js"></script>
+
+  <!-- Certificate Lightbox Script -->
+  <script>
+    (function () {
+      var cards = Array.prototype.slice.call(document.querySelectorAll('#certGallery .cert-gallery-card'));
+      var lightbox = document.getElementById('certLightbox');
+      var lightboxImg = document.getElementById('certLightboxImg');
+      var lightboxCaption = document.getElementById('certLightboxCaption');
+      var closeBtn = document.getElementById('certLightboxClose');
+      var prevBtn = document.getElementById('certLightboxPrev');
+      var nextBtn = document.getElementById('certLightboxNext');
+      var currentIndex = 0;
+
+      function openLightbox(index) {
+        currentIndex = index;
+        var card = cards[currentIndex];
+        var img = card.querySelector('img');
+        var name = card.querySelector('.cname').textContent;
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightboxCaption.textContent = name;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      function showNext() {
+        currentIndex = (currentIndex + 1) % cards.length;
+        openLightbox(currentIndex);
+      }
+
+      function showPrev() {
+        currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+        openLightbox(currentIndex);
+      }
+
+      cards.forEach(function (card, i) {
+        card.addEventListener('click', function () {
+          openLightbox(i);
+        });
+      });
+
+      closeBtn.addEventListener('click', closeLightbox);
+      nextBtn.addEventListener('click', showNext);
+      prevBtn.addEventListener('click', showPrev);
+
+      lightbox.addEventListener('click', function (e) {
+        if (e.target === lightbox) closeLightbox();
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') showNext();
+        if (e.key === 'ArrowLeft') showPrev();
+      });
+    })();
+  </script>
 </body>
 
 </html>
