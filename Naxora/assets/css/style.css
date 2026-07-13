@@ -35,6 +35,32 @@
   --shadow-hover: 0 6px 28px rgba(10, 31, 68, 0.16);
 }
 
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--orange);
+  /* Gold color */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--orange-light);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--orange) var(--cream);
+}
+
 * {
   /* margin: 0;
     padding: 0; */
@@ -119,7 +145,7 @@ img {
   width: 1px;
   background: rgba(255, 255, 255, 0.2);
   align-self: stretch;
-  margin: 0 12px;
+  margin: 0 1px;
 }
 
 /* ---- NAVBAR ---- */
