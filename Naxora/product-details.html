@@ -1,197 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="SpiceCraft Exports — Product Details. Premium Indian spice specifications, packaging, and export information." />
+  <meta name="description"
+    content="SpiceCraft Exports — Product Details. Premium Indian spice specifications, packaging, and export information." />
   <title>Product Details — SpiceCraft Exports</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
+    rel="stylesheet" />
 
-  <style>
-    :root {
-      --green-dark:   #1B4332;
-      --green-mid:    #2D6A4F;
-      --orange:       #E07B39;
-      --orange-light: #F4A261;
-      --cream:        #FAF7F2;
-      --cream-dark:   #EDE8DF;
-      --white:        #FFFFFF;
-      --text-dark:    #1A1A1A;
-      --text-muted:   #6B6B6B;
-      --border:       #DDD5C8;
-      --font-display: 'Playfair Display', Georgia, serif;
-      --font-body:    'Inter', system-ui, sans-serif;
-      --radius-sm:    4px;
-      --radius-md:    8px;
-      --radius-lg:    16px;
-      --shadow-card:  0 2px 16px rgba(27,67,50,0.10);
-      --shadow-hover: 0 6px 28px rgba(27,67,50,0.16);
-    }
-    *{
-    /* margin: 0;
-    padding: 0; */
-    box-sizing: border-box;
-}
-
-html, body{
-    overflow-x: hidden;
-}
-
-img{
-    max-width: 100%;
-    height: auto;
-}
-    *, *::before, *::after { box-sizing: border-box; }
-    body { font-family: var(--font-body); background: var(--cream); color: var(--text-dark); font-size: 16px; line-height: 1.7; margin: 0; }
-    h1, h2, h3, h4, h5 { font-family: var(--font-display); line-height: 1.25; margin-bottom: 0.5rem; }
-    a { text-decoration: none; color: inherit; }
-    img { max-width: 100%; height: auto; display: block; }
-
-    /* TOP BAR */
-    .topbar { background: var(--green-dark); color: rgba(255,255,255,0.85); font-size: 0.78rem; padding: 8px 0; }
-    .topbar a { color: rgba(255,255,255,0.85); }
-    .topbar a:hover { color: var(--orange-light); }
-    .tb-item { display: flex; align-items: center; gap: 6px; }
-    .tb-divider { width: 1px; background: rgba(255,255,255,0.2); align-self: stretch; margin: 0 12px; }
-
-    /* NAVBAR */
-    .navbar-main { background: var(--white); border-bottom: 1px solid var(--border); padding: 0; position: sticky; top: 0; z-index: 1030; box-shadow: 0 2px 12px rgba(27,67,50,0.08); }
-    .navbar-main .navbar-brand { display: flex; align-items: center; gap: 12px; padding: 14px 0; }
-    .brand-logo-box { width: 44px; height: 44px; background: var(--green-dark); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .brand-logo-box svg { width: 26px; height: 26px; }
-    .brand-name { font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; color: var(--green-dark); display: block; }
-    .brand-sub { font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--orange); display: block; }
-    .navbar-main .nav-link { font-size: 0.88rem; font-weight: 500; color: var(--text-dark); padding: 22px 16px !important; position: relative; }
-    .navbar-main .nav-link::after { content: ''; position: absolute; bottom: 0; left: 16px; right: 16px; height: 2px; background: var(--orange); transform: scaleX(0); transform-origin: left; transition: transform 0.2s; }
-    .navbar-main .nav-link:hover::after, .navbar-main .nav-link.active::after { transform: scaleX(1); }
-    .navbar-main .nav-link:hover, .navbar-main .nav-link.active { color: var(--green-dark); }
-    .nav-cta { background: var(--orange); color: var(--white) !important; padding: 10px 22px !important; border-radius: var(--radius-sm); font-weight: 600; margin-left: 8px; }
-    .nav-cta::after { display: none !important; }
-    .nav-cta:hover { background: var(--green-dark) !important; }
-
-    /* OFFCANVAS */
-    .offcanvas-sidebar .offcanvas-header { background: var(--green-dark); color: var(--white); padding: 18px 20px; }
-    .offcanvas-sidebar .offcanvas-title { font-family: var(--font-display); font-size: 1.1rem; }
-    .offcanvas-sidebar .btn-close { filter: invert(1) brightness(2); }
-    .offcanvas-sidebar .offcanvas-body { padding: 0; background: var(--cream); }
-    .offcanvas-sidebar .nav-link { padding: 14px 24px; border-bottom: 1px solid var(--border); font-size: 0.92rem; font-weight: 500; color: var(--text-dark); display: flex; align-items: center; gap: 10px; }
-    .offcanvas-sidebar .nav-link:hover { background: var(--cream-dark); color: var(--green-dark); }
-    .offcanvas-sidebar .nav-link.active { color: var(--orange); background: var(--cream-dark); }
-    .sidebar-cta-wrap { padding: 20px 24px; }
-
-    /* BREADCRUMB STRIP */
-    .breadcrumb-strip { background: var(--white); border-bottom: 1px solid var(--border); padding: 12px 0; }
-    .breadcrumb-item { font-size: 0.8rem; color: var(--text-muted); }
-    .breadcrumb-item a { color: var(--green-mid); }
-    .breadcrumb-item a:hover { color: var(--orange); }
-    .breadcrumb-item.active { color: var(--text-dark); }
-    .breadcrumb-item + .breadcrumb-item::before { color: var(--border); }
-
-    /* PRODUCT DETAIL */
-    .product-detail-section { padding: 56px 0 72px; }
-
-    /* GALLERY */
-    .gallery-main { border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); margin-bottom: 12px; height: 400px; background: var(--cream-dark); position: relative; }
-    .gallery-main img { width: 100%; height: 100%; object-fit: cover; transition: opacity 0.3s; }
-    .gallery-thumbs { display: flex; gap: 10px; flex-wrap: wrap; }
-    .gallery-thumb { width: 80px; height: 80px; flex-shrink: 0; border-radius: var(--radius-sm); overflow: hidden; border: 2px solid var(--border); cursor: pointer; background: var(--cream-dark); }
-    .gallery-thumb img { width: 100%; height: 100%; object-fit: cover; }
-    .gallery-thumb.active { border-color: var(--orange); }
-    .gallery-thumb:hover { border-color: var(--green-mid); }
-    .product-gallery { position: sticky; top: 90px; }
-
-    /* PRODUCT INFO */
-    .product-detail-title { font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.4rem); color: var(--green-dark); margin-bottom: 14px; }
-    .product-tags-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
-    .product-tag { background: var(--cream); color: var(--green-mid); font-size: 0.72rem; font-weight: 600; padding: 5px 12px; border-radius: 20px; border: 1px solid var(--border); }
-    .product-tag-orange { background: rgba(224,123,57,0.1); color: var(--orange); border-color: rgba(224,123,57,0.3); }
-    .product-desc { font-size: 0.95rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 24px; }
-
-    /* TABS */
-    .tab-nav { border-bottom: 2px solid var(--border); margin-bottom: 28px; display: flex; gap: 0; overflow-x: auto; }
-    .tab-btn { background: none; border: none; padding: 13px 22px; font-size: 0.88rem; font-weight: 600; color: var(--text-muted); cursor: pointer; position: relative; margin-bottom: -2px; white-space: nowrap; }
-    .tab-btn.active { color: var(--green-dark); border-bottom: 2px solid var(--orange); }
-    .tab-btn:hover { color: var(--green-dark); }
-    .tab-pane { display: none; }
-    .tab-pane.active { display: block; }
-
-    /* SPEC TABLE */
-    .spec-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
-    .spec-table th { background: var(--cream-dark); color: var(--green-dark); font-weight: 700; padding: 11px 16px; text-align: left; width: 38%; font-size: 0.82rem; }
-    .spec-table td { padding: 11px 16px; border-top: 1px solid var(--border); }
-    .spec-table tr:nth-child(even) td { background: var(--cream); }
-
-    /* FEATURE LIST */
-    .feature-list { list-style: none; padding: 0; margin: 0; }
-    .feature-list li { padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 0.88rem; display: flex; align-items: flex-start; gap: 10px; }
-    .feature-list li:last-child { border-bottom: none; }
-    .check-icon { color: var(--green-mid); flex-shrink: 0; margin-top: 2px; }
-
-    /* PACKAGING OPTIONS */
-    .pack-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 12px; }
-    .pack-item { background: var(--cream); border: 1.5px solid var(--border); border-radius: var(--radius-md); padding: 16px 12px; text-align: center; }
-    .pack-item i { font-size: 1.5rem; color: var(--orange); display: block; margin-bottom: 8px; }
-    .pack-item strong { font-size: 0.82rem; color: var(--green-dark); display: block; }
-    .pack-item span { font-size: 0.74rem; color: var(--text-muted); }
-
-    /* INQUIRY SIDEBAR */
-    .inquiry-sidebar { position: sticky; top: 90px; }
-    .inquiry-card { background: var(--white); border-radius: var(--radius-md); border: 1px solid var(--border); padding: 28px; margin-bottom: 20px; box-shadow: var(--shadow-card); }
-    .inquiry-card h5 { color: var(--green-dark); font-size: 1rem; margin-bottom: 18px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
-    .form-label { font-size: 0.82rem; font-weight: 600; color: var(--green-dark); margin-bottom: 5px; display: block; }
-    .form-control, .form-select { border: 1.5px solid var(--border); border-radius: var(--radius-sm); padding: 10px 13px; font-size: 0.88rem; background: var(--cream); width: 100%; outline: none; font-family: var(--font-body); }
-    .form-control:focus, .form-select:focus { border-color: var(--green-mid); box-shadow: 0 0 0 3px rgba(45,106,79,0.1); background: var(--white); }
-    .form-group { margin-bottom: 14px; }
-    .btn-primary-spice { background: var(--orange); color: var(--white); border: none; padding: 13px 24px; border-radius: var(--radius-sm); font-weight: 600; font-size: 0.9rem; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: background 0.18s; }
-    .btn-primary-spice:hover { background: var(--orange-light); color: var(--white); }
-    .btn-green { background: var(--green-dark); color: var(--white); border: none; padding: 13px 24px; border-radius: var(--radius-sm); font-weight: 600; font-size: 0.9rem; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
-    .btn-green:hover { background: var(--green-mid); color: var(--white); }
-    .btn-outline-green { background: transparent; color: var(--green-dark); border: 1.5px solid var(--green-dark); padding: 12px 24px; border-radius: var(--radius-sm); font-weight: 600; font-size: 0.88rem; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
-    .btn-outline-green:hover { background: var(--green-dark); color: var(--white); }
-
-    /* CONTACT MINI CARD */
-    .contact-item { display: flex; gap: 10px; align-items: center; font-size: 0.84rem; color: var(--text-muted); margin-bottom: 10px; }
-    .contact-item i { color: var(--orange); width: 18px; flex-shrink: 0; }
-    .contact-item a { color: var(--green-dark); font-weight: 500; }
-
-    /* RELATED PRODUCTS */
-    .related-section { background: var(--white); padding: 64px 0; border-top: 1px solid var(--border); }
-    .section-eyebrow { font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--orange); font-weight: 600; font-family: var(--font-body); display: block; margin-bottom: 10px; }
-    .section-title { font-size: clamp(1.5rem, 2.5vw, 2rem); color: var(--green-dark); margin-bottom: 12px; }
-    .related-card { background: var(--cream); border-radius: var(--radius-md); border: 1px solid var(--border); overflow: hidden; transition: box-shadow 0.2s, transform 0.2s; }
-    .related-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); }
-    .related-card-img { height: 180px; overflow: hidden; }
-    .related-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.35s; }
-    .related-card:hover .related-card-img img { transform: scale(1.06); }
-    .related-card-body { padding: 18px; }
-    .related-card-title { font-family: var(--font-display); font-size: 1rem; color: var(--green-dark); margin-bottom: 6px; }
-    .related-card-desc { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 14px; line-height: 1.55; }
-
-    /* BADGE */
-    .product-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(45,106,79,0.1); color: var(--green-dark); font-size: 0.72rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; border: 1px solid rgba(45,106,79,0.2); margin-bottom: 16px; }
-
-    /* CERT BADGES ROW */
-    .cert-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
-    .cert-badge { background: var(--cream-dark); border: 1px solid var(--border); color: var(--green-dark); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; padding: 5px 11px; border-radius: 3px; }
-
-    /* SUCCESS MESSAGE */
-    .form-success { display: none; background: rgba(45,106,79,0.1); border: 1px solid var(--green-mid); color: var(--green-dark); padding: 14px 18px; border-radius: var(--radius-sm); font-size: 0.88rem; margin-top: 12px; }
-
-    @media (max-width: 991.98px) {
-      .product-gallery, .inquiry-sidebar { position: static; }
-      .product-detail-section { padding: 36px 0 52px; }
-    }
-    @media (max-width: 767.98px) {
-      .gallery-main { height: 260px; }
-      .gallery-thumb { width: 64px; height: 64px; }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
+
 <body>
 
   <!-- TOP BAR -->
@@ -201,10 +29,12 @@ img{
         <div class="d-flex align-items-center gap-4">
           <div class="tb-item"><i class="bi bi-telephone-fill"></i><a href="tel:+911234567890">+91 12345 67890</a></div>
           <div class="tb-divider"></div>
-          <div class="tb-item"><i class="bi bi-envelope-fill"></i><a href="mailto:export@spicecraftindia.com">export@spicecraftindia.com</a></div>
+          <div class="tb-item"><i class="bi bi-envelope-fill"></i><a
+              href="mailto:export@spicecraftindia.com">export@spicecraftindia.com</a></div>
         </div>
         <div class="d-flex align-items-center gap-4">
-          <div class="tb-item"><i class="bi bi-patch-check-fill"></i><span>FSSAI &bull; ISO 22000 &bull; Spices Board Certified</span></div>
+          <div class="tb-item"><i class="bi bi-patch-check-fill"></i><span>FSSAI &bull; ISO 22000 &bull; Spices Board
+              Certified</span></div>
           <div class="tb-divider"></div>
           <div class="tb-item"><i class="bi bi-globe2"></i><span>Exporting to 30+ Countries</span></div>
         </div>
@@ -218,9 +48,11 @@ img{
       <a class="navbar-brand" href="index.html">
         <div class="brand-logo-box">
           <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M16 4C10.477 4 6 8.477 6 14c0 3.5 1.8 6.6 4.5 8.5L16 28l5.5-5.5C24.2 20.6 26 17.5 26 14c0-5.523-4.477-10-10-10z" fill="#E07B39"/>
-            <path d="M16 10a4 4 0 100 8 4 4 0 000-8z" fill="white"/>
-            <path d="M14 4.2C9 5.5 6 10 6 14h4c0-2.8 1.6-5.2 4-6.5V4.2z" fill="#F4A261" opacity=".6"/>
+            <path
+              d="M16 4C10.477 4 6 8.477 6 14c0 3.5 1.8 6.6 4.5 8.5L16 28l5.5-5.5C24.2 20.6 26 17.5 26 14c0-5.523-4.477-10-10-10z"
+              fill="#E07B39" />
+            <path d="M16 10a4 4 0 100 8 4 4 0 000-8z" fill="white" />
+            <path d="M14 4.2C9 5.5 6 10 6 14h4c0-2.8 1.6-5.2 4-6.5V4.2z" fill="#F4A261" opacity=".6" />
           </svg>
         </div>
         <div class="brand-text">
@@ -229,8 +61,8 @@ img{
         </div>
       </a>
 
-      <button class="navbar-toggler border-0 p-2" type="button"
-        data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-label="Open navigation">
+      <button class="navbar-toggler border-0 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu"
+        aria-controls="sidebarMenu" aria-label="Open navigation">
         <i class="bi bi-list fs-4 text-dark"></i>
       </button>
 
@@ -239,15 +71,18 @@ img{
           <li class="nav-item"><a class="nav-link" data-page="index.html" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" data-page="about.html" href="about.html">About Us</a></li>
           <li class="nav-item"><a class="nav-link" data-page="products.html" href="products.html">Products</a></li>
-          <li class="nav-item"><a class="nav-link" data-page="certification.html" href="certification.html">Certifications</a></li>
-          <li class="nav-item"><a class="nav-link nav-cta" data-page="inquire.html" href="inquire.html">Get Inquiry</a></li>
+          <li class="nav-item"><a class="nav-link" data-page="certification.html"
+              href="certification.html">Certifications</a></li>
+          <li class="nav-item"><a class="nav-link nav-cta" data-page="inquire.html" href="inquire.html">Get Inquiry</a>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
 
   <!-- ===== OFFCANVAS SIDEBAR ===== -->
-  <div class="offcanvas offcanvas-start offcanvas-sidebar" id="sidebarMenu" tabindex="-1" aria-labelledby="sidebarMenuLabel">
+  <div class="offcanvas offcanvas-start offcanvas-sidebar" id="sidebarMenu" tabindex="-1"
+    aria-labelledby="sidebarMenuLabel">
     <div class="offcanvas-header">
       <h5 class="offcanvas-title" id="sidebarMenuLabel">SpiceCraft Exports</h5>
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -271,7 +106,8 @@ img{
         </a>
       </nav>
       <div class="sidebar-cta-wrap">
-        <a href="inquire.html" class="btn-primary-spice w-100 justify-content-center" style="border-radius:6px;padding:14px;">
+        <a href="inquire.html" class="btn-primary-spice w-100 justify-content-center"
+          style="border-radius:6px;padding:14px;">
           <i class="bi bi-send"></i> Send Inquiry
         </a>
         <div class="mt-3 text-center" style="font-size:0.78rem;color:var(--text-muted);">
@@ -338,8 +174,10 @@ img{
           </div>
 
           <div class="d-flex gap-3 mt-4 flex-wrap">
-            <a href="inquire.html" class="btn-primary-spice" style="border-radius:6px;"><i class="bi bi-send"></i> Request Quote</a>
-            <a href="products.html" class="btn-outline-green" style="border-radius:6px;"><i class="bi bi-arrow-left"></i> All Products</a>
+            <a href="inquire.html" class="btn-primary-spice" style="border-radius:6px;"><i class="bi bi-send"></i>
+              Request Quote</a>
+            <a href="products.html" class="btn-outline-green" style="border-radius:6px;"><i
+                class="bi bi-arrow-left"></i> All Products</a>
           </div>
         </div>
 
@@ -366,9 +204,11 @@ img{
               </div>
               <div class="form-group">
                 <label class="form-label">Message (optional)</label>
-                <textarea class="form-control" rows="3" placeholder="Grade, packaging, any specific requirement…" id="qMsg"></textarea>
+                <textarea class="form-control" rows="3" placeholder="Grade, packaging, any specific requirement…"
+                  id="qMsg"></textarea>
               </div>
-              <button class="btn-primary-spice w-100 justify-content-center" style="border-radius:6px;" onclick="submitInquiry()">
+              <button class="btn-primary-spice w-100 justify-content-center" style="border-radius:6px;"
+                onclick="submitInquiry()">
                 <i class="bi bi-send"></i> Send Inquiry
               </button>
               <div class="form-success" id="formSuccess">
@@ -378,19 +218,33 @@ img{
 
             <div class="inquiry-card">
               <h5><i class="bi bi-telephone me-2" style="color:var(--orange);"></i>Talk to Us</h5>
-              <div class="contact-item"><i class="bi bi-telephone-fill"></i><a href="tel:+911234567890">+91 12345 67890</a></div>
-              <div class="contact-item"><i class="bi bi-whatsapp"></i><a href="https://wa.me/911234567890">WhatsApp Business</a></div>
-              <div class="contact-item"><i class="bi bi-envelope-fill"></i><a href="mailto:export@spicecraftindia.com">export@</a></div>
+              <div class="contact-item"><i class="bi bi-telephone-fill"></i><a href="tel:+911234567890">+91 12345
+                  67890</a></div>
+              <div class="contact-item"><i class="bi bi-whatsapp"></i><a href="https://wa.me/911234567890">WhatsApp
+                  Business</a></div>
+              <div class="contact-item"><i class="bi bi-envelope-fill"></i><a
+                  href="mailto:export@spicecraftindia.com">export@</a></div>
               <div class="contact-item"><i class="bi bi-clock"></i><span>Mon–Sat, 9 am – 6 pm IST</span></div>
             </div>
 
             <div style="background:var(--green-dark);border-radius:var(--radius-md);padding:22px;">
-              <div style="font-size:0.72rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--orange-light);font-weight:600;margin-bottom:10px;">Why SpiceCraft</div>
+              <div
+                style="font-size:0.72rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--orange-light);font-weight:600;margin-bottom:10px;">
+                Why SpiceCraft</div>
               <ul style="list-style:none;padding:0;margin:0;">
-                <li style="font-size:0.82rem;color:rgba(255,255,255,0.7);margin-bottom:8px;display:flex;gap:8px;"><i class="bi bi-check-circle-fill" style="color:var(--orange-light);flex-shrink:0;margin-top:2px;"></i>ISO 22000 &amp; FSSAI Certified</li>
-                <li style="font-size:0.82rem;color:rgba(255,255,255,0.7);margin-bottom:8px;display:flex;gap:8px;"><i class="bi bi-check-circle-fill" style="color:var(--orange-light);flex-shrink:0;margin-top:2px;"></i>NABL Lab tested batches</li>
-                <li style="font-size:0.82rem;color:rgba(255,255,255,0.7);margin-bottom:8px;display:flex;gap:8px;"><i class="bi bi-check-circle-fill" style="color:var(--orange-light);flex-shrink:0;margin-top:2px;"></i>FOB / CIF terms available</li>
-                <li style="font-size:0.82rem;color:rgba(255,255,255,0.7);margin-bottom:0;display:flex;gap:8px;"><i class="bi bi-check-circle-fill" style="color:var(--orange-light);flex-shrink:0;margin-top:2px;"></i>Sample dispatch in 5 days</li>
+                <li style="font-size:0.82rem;color:rgba(255,255,255,0.7);margin-bottom:8px;display:flex;gap:8px;"><i
+                    class="bi bi-check-circle-fill"
+                    style="color:var(--orange-light);flex-shrink:0;margin-top:2px;"></i>ISO 22000 &amp; FSSAI Certified
+                </li>
+                <li style="font-size:0.82rem;color:rgba(255,255,255,0.7);margin-bottom:8px;display:flex;gap:8px;"><i
+                    class="bi bi-check-circle-fill"
+                    style="color:var(--orange-light);flex-shrink:0;margin-top:2px;"></i>NABL Lab tested batches</li>
+                <li style="font-size:0.82rem;color:rgba(255,255,255,0.7);margin-bottom:8px;display:flex;gap:8px;"><i
+                    class="bi bi-check-circle-fill"
+                    style="color:var(--orange-light);flex-shrink:0;margin-top:2px;"></i>FOB / CIF terms available</li>
+                <li style="font-size:0.82rem;color:rgba(255,255,255,0.7);margin-bottom:0;display:flex;gap:8px;"><i
+                    class="bi bi-check-circle-fill"
+                    style="color:var(--orange-light);flex-shrink:0;margin-top:2px;"></i>Sample dispatch in 5 days</li>
               </ul>
             </div>
           </div>
@@ -417,45 +271,78 @@ img{
           <a href="index.html" class="navbar-brand" style="padding:0;margin-bottom:16px;display:inline-flex;">
             <div class="brand-logo-box">
               <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16 4C10.477 4 6 8.477 6 14c0 3.5 1.8 6.6 4.5 8.5L16 28l5.5-5.5C24.2 20.6 26 17.5 26 14c0-5.523-4.477-10-10-10z" fill="#E07B39"/>
-                <path d="M16 10a4 4 0 100 8 4 4 0 000-8z" fill="white"/>
+                <path
+                  d="M16 4C10.477 4 6 8.477 6 14c0 3.5 1.8 6.6 4.5 8.5L16 28l5.5-5.5C24.2 20.6 26 17.5 26 14c0-5.523-4.477-10-10-10z"
+                  fill="#E07B39" />
+                <path d="M16 10a4 4 0 100 8 4 4 0 000-8z" fill="white" />
               </svg>
             </div>
             <div class="brand-text ms-3">
-              <span class="brand-name" style="color:white;font-family:var(--font-display);font-size:1.1rem;font-weight:700;display:block;">SpiceCraft Exports</span>
-              <span class="brand-sub" style="color:var(--orange-light);font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;display:block;">Est. 2001 · India</span>
+              <span class="brand-name"
+                style="color:white;font-family:var(--font-display);font-size:1.1rem;font-weight:700;display:block;">SpiceCraft
+                Exports</span>
+              <span class="brand-sub"
+                style="color:var(--orange-light);font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;display:block;">Est.
+                2001 · India</span>
             </div>
           </a>
-          <p style="font-size:0.85rem;color:rgba(255,255,255,0.5);">Premium Indian spice manufacturer and exporter. Rajkot, Gujarat — India's spice capital.</p>
+          <p style="font-size:0.85rem;color:rgba(255,255,255,0.5);">Premium Indian spice manufacturer and exporter.
+            Rajkot, Gujarat — India's spice capital.</p>
         </div>
         <div class="col-6 col-lg-2">
-          <h6 style="font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:rgba(255,255,255,0.35);margin-bottom:16px;">Company</h6>
+          <h6
+            style="font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:rgba(255,255,255,0.35);margin-bottom:16px;">
+            Company</h6>
           <ul style="list-style:none;padding:0;margin:0;">
-            <li style="margin-bottom:10px;"><a href="index.html" style="font-size:0.87rem;color:rgba(255,255,255,0.6);">Home</a></li>
-            <li style="margin-bottom:10px;"><a href="about.html" style="font-size:0.87rem;color:rgba(255,255,255,0.6);">About Us</a></li>
-            <li style="margin-bottom:10px;"><a href="certification.html" style="font-size:0.87rem;color:rgba(255,255,255,0.6);">Certifications</a></li>
-            <li style="margin-bottom:10px;"><a href="inquire.html" style="font-size:0.87rem;color:rgba(255,255,255,0.6);">Contact Us</a></li>
+            <li style="margin-bottom:10px;"><a href="index.html"
+                style="font-size:0.87rem;color:rgba(255,255,255,0.6);">Home</a></li>
+            <li style="margin-bottom:10px;"><a href="about.html"
+                style="font-size:0.87rem;color:rgba(255,255,255,0.6);">About Us</a></li>
+            <li style="margin-bottom:10px;"><a href="certification.html"
+                style="font-size:0.87rem;color:rgba(255,255,255,0.6);">Certifications</a></li>
+            <li style="margin-bottom:10px;"><a href="inquire.html"
+                style="font-size:0.87rem;color:rgba(255,255,255,0.6);">Contact Us</a></li>
           </ul>
         </div>
         <div class="col-6 col-lg-2">
-          <h6 style="font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:rgba(255,255,255,0.35);margin-bottom:16px;">Products</h6>
+          <h6
+            style="font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:rgba(255,255,255,0.35);margin-bottom:16px;">
+            Products</h6>
           <ul style="list-style:none;padding:0;margin:0;">
-            <li style="margin-bottom:10px;"><a href="product-details.html?p=turmeric" style="font-size:0.87rem;color:rgba(255,255,255,0.6);">Turmeric Powder</a></li>
-            <li style="margin-bottom:10px;"><a href="product-details.html?p=chilli" style="font-size:0.87rem;color:rgba(255,255,255,0.6);">Red Chilli Powder</a></li>
-            <li style="margin-bottom:10px;"><a href="product-details.html?p=coriander" style="font-size:0.87rem;color:rgba(255,255,255,0.6);">Coriander Powder</a></li>
-            <li style="margin-bottom:10px;"><a href="product-details.html?p=cumin" style="font-size:0.87rem;color:rgba(255,255,255,0.6);">Cumin</a></li>
+            <li style="margin-bottom:10px;"><a href="product-details.html?p=turmeric"
+                style="font-size:0.87rem;color:rgba(255,255,255,0.6);">Turmeric Powder</a></li>
+            <li style="margin-bottom:10px;"><a href="product-details.html?p=chilli"
+                style="font-size:0.87rem;color:rgba(255,255,255,0.6);">Red Chilli Powder</a></li>
+            <li style="margin-bottom:10px;"><a href="product-details.html?p=coriander"
+                style="font-size:0.87rem;color:rgba(255,255,255,0.6);">Coriander Powder</a></li>
+            <li style="margin-bottom:10px;"><a href="product-details.html?p=cumin"
+                style="font-size:0.87rem;color:rgba(255,255,255,0.6);">Cumin</a></li>
           </ul>
         </div>
         <div class="col-lg-4">
-          <h6 style="font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:rgba(255,255,255,0.35);margin-bottom:16px;">Get in Touch</h6>
-          <div style="display:flex;gap:10px;align-items:flex-start;font-size:0.85rem;color:rgba(255,255,255,0.6);margin-bottom:12px;"><i class="bi bi-geo-alt-fill" style="color:var(--orange);"></i><span>Plot 47, GIDC Phase II, Rajkot — 360021, Gujarat, India</span></div>
-          <div style="display:flex;gap:10px;align-items:center;font-size:0.85rem;color:rgba(255,255,255,0.6);margin-bottom:12px;"><i class="bi bi-telephone-fill" style="color:var(--orange);"></i><a href="tel:+911234567890" style="color:rgba(255,255,255,0.6);">+91 12345 67890</a></div>
-          <div style="display:flex;gap:10px;align-items:center;font-size:0.85rem;color:rgba(255,255,255,0.6);margin-bottom:12px;"><i class="bi bi-envelope-fill" style="color:var(--orange);"></i><a href="mailto:export@spicecraftindia.com" style="color:rgba(255,255,255,0.6);">export@spicecraftindia.com</a></div>
+          <h6
+            style="font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:rgba(255,255,255,0.35);margin-bottom:16px;">
+            Get in Touch</h6>
+          <div
+            style="display:flex;gap:10px;align-items:flex-start;font-size:0.85rem;color:rgba(255,255,255,0.6);margin-bottom:12px;">
+            <i class="bi bi-geo-alt-fill" style="color:var(--orange);"></i><span>Plot 47, GIDC Phase II, Rajkot —
+              360021, Gujarat, India</span></div>
+          <div
+            style="display:flex;gap:10px;align-items:center;font-size:0.85rem;color:rgba(255,255,255,0.6);margin-bottom:12px;">
+            <i class="bi bi-telephone-fill" style="color:var(--orange);"></i><a href="tel:+911234567890"
+              style="color:rgba(255,255,255,0.6);">+91 12345 67890</a></div>
+          <div
+            style="display:flex;gap:10px;align-items:center;font-size:0.85rem;color:rgba(255,255,255,0.6);margin-bottom:12px;">
+            <i class="bi bi-envelope-fill" style="color:var(--orange);"></i><a href="mailto:export@spicecraftindia.com"
+              style="color:rgba(255,255,255,0.6);">export@spicecraftindia.com</a></div>
         </div>
       </div>
-      <div style="margin-top:48px;padding:20px 0;border-top:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
-        <p style="font-size:0.78rem;color:rgba(255,255,255,0.3);margin:0;">&copy; 2025 SpiceCraft Exports. All rights reserved.</p>
-        <span style="font-size:0.76rem;color:rgba(255,255,255,0.3);">Exporting since 2001 &bull; 30+ Countries &bull; 500 MT/month capacity</span>
+      <div
+        style="margin-top:48px;padding:20px 0;border-top:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+        <p style="font-size:0.78rem;color:rgba(255,255,255,0.3);margin:0;">&copy; 2025 SpiceCraft Exports. All rights
+          reserved.</p>
+        <span style="font-size:0.76rem;color:rgba(255,255,255,0.3);">Exporting since 2001 &bull; 30+ Countries &bull;
+          500 MT/month capacity</span>
       </div>
     </div>
   </footer>
@@ -765,7 +652,7 @@ img{
       const thumbsEl = document.getElementById('galleryThumbs');
       thumbsEl.innerHTML = p.images.map((src, i) =>
         `<div class="gallery-thumb ${i === 0 ? 'active' : ''}" onclick="switchImg(this, '${src}')">
-          <img src="${src}" alt="${p.name} view ${i+1}" loading="lazy" />
+          <img src="${src}" alt="${p.name} view ${i + 1}" loading="lazy" />
         </div>`
       ).join('');
 
@@ -804,7 +691,7 @@ img{
               </div>
               <div class="related-card-body">
                 <h4 class="related-card-title">${rp.name}</h4>
-                <p class="related-card-desc">${rp.tags.slice(0,2).join(' · ')}</p>
+                <p class="related-card-desc">${rp.tags.slice(0, 2).join(' · ')}</p>
                 <span style="color:var(--orange);font-size:0.82rem;font-weight:600;">View Details <i class="bi bi-arrow-right"></i></span>
               </div>
             </a>
@@ -841,7 +728,7 @@ img{
         return;
       }
       document.getElementById('formSuccess').style.display = 'block';
-      ['qName','qContact','qQty','qDest','qMsg'].forEach(id => document.getElementById(id).value = '');
+      ['qName', 'qContact', 'qQty', 'qDest', 'qMsg'].forEach(id => document.getElementById(id).value = '');
       setTimeout(() => { document.getElementById('formSuccess').style.display = 'none'; }, 5000);
     }
     window.submitInquiry = submitInquiry;
@@ -850,4 +737,5 @@ img{
     renderProduct();
   </script>
 </body>
+
 </html>
