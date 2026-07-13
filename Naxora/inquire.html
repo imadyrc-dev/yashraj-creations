@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Send a spice export inquiry to SpiceCraft Exports. Get a custom quotation for turmeric, red chilli, coriander, and 40+ spice varieties." />
+  <title>Send Inquiry — SpiceCraft Exports | Request Spice Quotation</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar d-none d-md-block">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center gap-4">
+          <div class="tb-item"><i class="bi bi-telephone-fill"></i><a href="tel:+911234567890">+91 12345 67890</a></div>
+          <div class="tb-divider"></div>
+          <div class="tb-item"><i class="bi bi-envelope-fill"></i><a href="mailto:export@spicecraftindia.com">export@spicecraftindia.com</a></div>
+        </div>
+        <div class="d-flex align-items-center gap-4 tb-right">
+          <div class="tb-item"><i class="bi bi-clock"></i><span>Responses within 24 business hours</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar navbar-expand-lg navbar-main">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <div class="brand-logo-box">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 4C10.477 4 6 8.477 6 14c0 3.5 1.8 6.6 4.5 8.5L16 28l5.5-5.5C24.2 20.6 26 17.5 26 14c0-5.523-4.477-10-10-10z" fill="#E07B39"/>
+            <path d="M16 10a4 4 0 100 8 4 4 0 000-8z" fill="white"/>
+            <path d="M14 4.2C9 5.5 6 10 6 14h4c0-2.8 1.6-5.2 4-6.5V4.2z" fill="#F4A261" opacity=".6"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">SpiceCraft Exports</span>
+          <span class="brand-sub">Est. 2001 · India</span>
+        </div>
+      </a>
+
+      <button class="navbar-toggler border-0 p-2" type="button"
+        data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-label="Open navigation">
+        <i class="bi bi-list fs-4 text-dark"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item"><a class="nav-link" data-page="index.html" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" data-page="about.html" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" data-page="products.html" href="products.html">Products</a></li>
+          <li class="nav-item"><a class="nav-link" data-page="certification.html" href="certification.html">Certifications</a></li>
+          <li class="nav-item"><a class="nav-link nav-cta" data-page="inquire.html" href="inquire.html">Get Inquiry</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== OFFCANVAS SIDEBAR ===== -->
+  <div class="offcanvas offcanvas-start offcanvas-sidebar" id="sidebarMenu" tabindex="-1" aria-labelledby="sidebarMenuLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="sidebarMenuLabel">SpiceCraft Exports</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <nav>
+        <a class="nav-link" data-page="index.html" href="index.html">
+          <i class="bi bi-house"></i> Home
+        </a>
+        <a class="nav-link" data-page="about.html" href="about.html">
+          <i class="bi bi-building"></i> About Us
+        </a>
+        <a class="nav-link" data-page="products.html" href="products.html">
+          <i class="bi bi-grid"></i> Products
+        </a>
+        <a class="nav-link" data-page="certification.html" href="certification.html">
+          <i class="bi bi-patch-check"></i> Certifications
+        </a>
+        <a class="nav-link" data-page="inquire.html" href="inquire.html">
+          <i class="bi bi-envelope"></i> Inquire Now
+        </a>
+      </nav>
+      <div class="sidebar-cta-wrap">
+        <a href="inquire.html" class="btn-primary-spice w-100 justify-content-center" style="border-radius:6px;padding:14px;">
+          <i class="bi bi-send"></i> Send Inquiry
+        </a>
+        <div class="mt-3 text-center" style="font-size:0.78rem;color:var(--text-muted);">
+          <i class="bi bi-telephone me-1"></i> +91 12345 67890
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container" style="position:relative;z-index:2;">
+      <nav aria-label="breadcrumb" class="breadcrumb-wrap">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active">Inquiry</li>
+        </ol>
+      </nav>
+      <h1 class="page-title">Request a Quotation</h1>
+      <p class="page-subtitle">Fill the form below and our export team will respond within 24 business hours.</p>
+    </div>
+  </section>
+
+  <!-- INQUIRY FORM + SIDEBAR -->
+  <section class="section bg-cream">
+    <div class="container">
+      <div class="row g-5">
+
+        <!-- FORM -->
+        <div class="col-lg-8">
+          <div class="inquiry-form-wrap">
+            <div class="step-indicator mb-4">
+              <div class="step-item done"><i class="bi bi-check"></i> Buyer Info</div>
+              <div class="step-item active">Product Details</div>
+              <div class="step-item">Shipping</div>
+              <div class="step-item">Review</div>
+            </div>
+
+            <h4 style="font-family:'Playfair Display',serif;color:var(--green-dark);margin-bottom:6px;">Export Inquiry Form</h4>
+            <p style="font-size:0.86rem;color:var(--text-muted);margin-bottom:28px;">All fields marked with <span style="color:var(--orange);">*</span> are required.</p>
+
+            <form id="inquiryForm" novalidate>
+
+              <!-- Section: Buyer Information -->
+              <div style="background:var(--cream);border-radius:8px;padding:24px;margin-bottom:24px;border:1px solid var(--border);">
+                <h6 style="color:var(--green-dark);font-weight:700;font-size:0.88rem;margin-bottom:18px;text-transform:uppercase;letter-spacing:0.08em;">
+                  <i class="bi bi-person-circle me-2" style="color:var(--orange);"></i>Buyer Information
+                </h6>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label" for="firstName">First Name <span style="color:var(--orange);">*</span></label>
+                    <input type="text" class="form-control" id="firstName" placeholder="John" required />
+                    <div class="invalid-feedback">Please enter your first name.</div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="lastName">Last Name <span style="color:var(--orange);">*</span></label>
+                    <input type="text" class="form-control" id="lastName" placeholder="Smith" required />
+                    <div class="invalid-feedback">Please enter your last name.</div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="email">Business Email <span style="color:var(--orange);">*</span></label>
+                    <input type="email" class="form-control" id="email" placeholder="john@company.com" required />
+                    <div class="invalid-feedback">Please enter a valid email address.</div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="phone">Phone / WhatsApp</label>
+                    <input type="tel" class="form-control" id="phone" placeholder="+1 234 567 8900" />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="company">Company Name <span style="color:var(--orange);">*</span></label>
+                    <input type="text" class="form-control" id="company" placeholder="Your Company Ltd." required />
+                    <div class="invalid-feedback">Please enter your company name.</div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="country">Country <span style="color:var(--orange);">*</span></label>
+                    <select class="form-select" id="country" required>
+                      <option value="">— Select Country —</option>
+                      <option>United States</option>
+                      <option>United Kingdom</option>
+                      <option>United Arab Emirates</option>
+                      <option>Germany</option>
+                      <option>France</option>
+                      <option>Canada</option>
+                      <option>Australia</option>
+                      <option>Japan</option>
+                      <option>Saudi Arabia</option>
+                      <option>Malaysia</option>
+                      <option>Singapore</option>
+                      <option>South Africa</option>
+                      <option>Netherlands</option>
+                      <option>Other</option>
+                    </select>
+                    <div class="invalid-feedback">Please select your country.</div>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label" for="buyerType">Buyer Type <span style="color:var(--orange);">*</span></label>
+                    <select class="form-select" id="buyerType" required>
+                      <option value="">— Select Type —</option>
+                      <option>Importer / Distributor</option>
+                      <option>Food Manufacturer</option>
+                      <option>Retail / Supermarket Chain</option>
+                      <option>Restaurant / Food Service</option>
+                      <option>Private Label Brand</option>
+                      <option>Broker / Trading Company</option>
+                      <option>Other</option>
+                    </select>
+                    <div class="invalid-feedback">Please select your buyer type.</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Section: Product Requirements -->
+              <div style="background:var(--cream);border-radius:8px;padding:24px;margin-bottom:24px;border:1px solid var(--border);">
+                <h6 style="color:var(--green-dark);font-weight:700;font-size:0.88rem;margin-bottom:18px;text-transform:uppercase;letter-spacing:0.08em;">
+                  <i class="bi bi-grid-3x3-gap me-2" style="color:var(--orange);"></i>Product Requirements
+                </h6>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label" for="product">Product Name <span style="color:var(--orange);">*</span></label>
+                    <select class="form-select" id="product" required>
+                      <option value="">— Select Product —</option>
+                      <option>Turmeric Powder</option>
+                      <option>Red Chilli Powder</option>
+                      <option>Coriander Powder</option>
+                      <option>Cumin Powder</option>
+                      <option>Black Pepper Powder</option>
+                      <option>Fenugreek Powder</option>
+                      <option>Garam Masala Blend</option>
+                      <option>Cardamom Powder</option>
+                      <option>Multiple Products</option>
+                      <option>Other / Custom</option>
+                    </select>
+                    <div class="invalid-feedback">Please select a product.</div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="grade">Grade / Quality</label>
+                    <select class="form-select" id="grade">
+                      <option value="">— Select Grade —</option>
+                      <option>Standard Export Grade</option>
+                      <option>Premium / Organic Grade</option>
+                      <option>Steam Sterilised</option>
+                      <option>ETO Free</option>
+                      <option>Custom Specification</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="quantity">Required Quantity <span style="color:var(--orange);">*</span></label>
+                    <input type="text" class="form-control" id="quantity" placeholder="e.g. 5 MT / 100 cartons" required />
+                    <div class="invalid-feedback">Please specify the required quantity.</div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="frequency">Order Frequency</label>
+                    <select class="form-select" id="frequency">
+                      <option value="">— Select —</option>
+                      <option>One-time / Trial Order</option>
+                      <option>Monthly</option>
+                      <option>Quarterly</option>
+                      <option>Bi-annual</option>
+                      <option>Annual Contract</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="packaging">Packaging Preference</label>
+                    <select class="form-select" id="packaging">
+                      <option value="">— Select —</option>
+                      <option>25 kg PP Bag (Bulk)</option>
+                      <option>50 kg PP Woven Bag (Bulk)</option>
+                      <option>1 kg / 5 kg Institutional Pack</option>
+                      <option>50g–500g Retail Pack</option>
+                      <option>Private Label / Custom Pack</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="tradeTerms">Trade Terms</label>
+                    <select class="form-select" id="tradeTerms">
+                      <option value="">— Select —</option>
+                      <option>FOB (Free on Board)</option>
+                      <option>CIF (Cost, Insurance &amp; Freight)</option>
+                      <option>CFR (Cost and Freight)</option>
+                      <option>EXW (Ex Works)</option>
+                      <option>Open to Discuss</option>
+                    </select>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label" for="certRequired">Certifications Required</label>
+                    <div class="d-flex flex-wrap gap-2 mt-1">
+                      <div class="form-check me-2">
+                        <input class="form-check-input" type="checkbox" id="certHalal" />
+                        <label class="form-check-label" for="certHalal" style="font-size:0.85rem;">HALAL</label>
+                      </div>
+                      <div class="form-check me-2">
+                        <input class="form-check-input" type="checkbox" id="certKosher" />
+                        <label class="form-check-label" for="certKosher" style="font-size:0.85rem;">Kosher</label>
+                      </div>
+                      <div class="form-check me-2">
+                        <input class="form-check-input" type="checkbox" id="certOrganic" />
+                        <label class="form-check-label" for="certOrganic" style="font-size:0.85rem;">Organic</label>
+                      </div>
+                      <div class="form-check me-2">
+                        <input class="form-check-input" type="checkbox" id="certISO" />
+                        <label class="form-check-label" for="certISO" style="font-size:0.85rem;">ISO 22000</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="certETO" />
+                        <label class="form-check-label" for="certETO" style="font-size:0.85rem;">ETO Free</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Section: Shipping -->
+              <div style="background:var(--cream);border-radius:8px;padding:24px;margin-bottom:24px;border:1px solid var(--border);">
+                <h6 style="color:var(--green-dark);font-weight:700;font-size:0.88rem;margin-bottom:18px;text-transform:uppercase;letter-spacing:0.08em;">
+                  <i class="bi bi-ship me-2" style="color:var(--orange);"></i>Shipping &amp; Timeline
+                </h6>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label" for="destPort">Destination Port / City</label>
+                    <input type="text" class="form-control" id="destPort" placeholder="e.g. Port of Rotterdam, UK" />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="deliveryDate">Expected Delivery Date</label>
+                    <input type="date" class="form-control" id="deliveryDate" />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Section: Additional Message -->
+              <div style="background:var(--cream);border-radius:8px;padding:24px;margin-bottom:28px;border:1px solid var(--border);">
+                <h6 style="color:var(--green-dark);font-weight:700;font-size:0.88rem;margin-bottom:18px;text-transform:uppercase;letter-spacing:0.08em;">
+                  <i class="bi bi-chat-text me-2" style="color:var(--orange);"></i>Additional Message
+                </h6>
+                <div>
+                  <label class="form-label" for="message">Describe your requirement, specifications, or any special requests</label>
+                  <textarea class="form-control" id="message" rows="4" placeholder="E.g. We need Turmeric Powder with minimum 3.5% curcumin, moisture below 8%, steam sterilised, in 25 kg bags. Quarterly orders of 20 MT each. Please also send COA samples."></textarea>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+                <p style="font-size:0.78rem;color:var(--text-muted);margin:0;max-width:380px;">
+                  <i class="bi bi-lock-fill me-1"></i> Your information is secure and will only be used to respond to your inquiry.
+                </p>
+                <button type="submit" class="btn-primary-spice" style="border-radius:6px;padding:14px 36px;font-size:0.95rem;">
+                  <i class="bi bi-send"></i> Submit Inquiry
+                </button>
+              </div>
+
+            </form>
+          </div>
+        </div>
+
+        <!-- SIDEBAR -->
+        <div class="col-lg-4">
+
+          <!-- Contact Card -->
+          <div class="inquiry-sidebar-card">
+            <h6><i class="bi bi-headset me-2" style="color:var(--orange);"></i>Speak to Our Export Desk</h6>
+            <div class="contact-item">
+              <div class="contact-item-icon"><i class="bi bi-telephone-fill"></i></div>
+              <div class="contact-item-text">
+                <strong>Direct Line</strong>
+                <a href="tel:+911234567890">+91 12345 67890</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon"><i class="bi bi-whatsapp"></i></div>
+              <div class="contact-item-text">
+                <strong>WhatsApp Business</strong>
+                <a href="https://wa.me/911234567890">+91 12345 67890</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon"><i class="bi bi-envelope-fill"></i></div>
+              <div class="contact-item-text">
+                <strong>Email</strong>
+                <a href="mailto:export@spicecraftindia.com">export@spicecraftindia.com</a>
+              </div>
+            </div>
+            <div class="contact-item" style="margin-bottom:0;">
+              <div class="contact-item-icon"><i class="bi bi-clock-fill"></i></div>
+              <div class="contact-item-text">
+                <strong>Business Hours (IST)</strong>
+                <span>Mon–Sat: 9:00 AM – 6:00 PM</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Why Us Card -->
+          <div class="inquiry-sidebar-card">
+            <h6><i class="bi bi-star-fill me-2" style="color:var(--orange);"></i>Why Buyers Choose Us</h6>
+            <ul style="list-style:none;padding:0;margin:0;">
+              <li style="font-size:0.83rem;color:var(--text-muted);padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:10px;align-items:center;">
+                <i class="bi bi-check-circle-fill" style="color:var(--green-mid);flex-shrink:0;"></i>
+                Response within 24 business hours
+              </li>
+              <li style="font-size:0.83rem;color:var(--text-muted);padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:10px;align-items:center;">
+                <i class="bi bi-check-circle-fill" style="color:var(--green-mid);flex-shrink:0;"></i>
+                Free sample available on request
+              </li>
+              <li style="font-size:0.83rem;color:var(--text-muted);padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:10px;align-items:center;">
+                <i class="bi bi-check-circle-fill" style="color:var(--green-mid);flex-shrink:0;"></i>
+                Detailed COA &amp; test reports provided
+              </li>
+              <li style="font-size:0.83rem;color:var(--text-muted);padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:10px;align-items:center;">
+                <i class="bi bi-check-circle-fill" style="color:var(--green-mid);flex-shrink:0;"></i>
+                Custom packaging &amp; private labelling
+              </li>
+              <li style="font-size:0.83rem;color:var(--text-muted);padding:8px 0;display:flex;gap:10px;align-items:center;">
+                <i class="bi bi-check-circle-fill" style="color:var(--green-mid);flex-shrink:0;"></i>
+                Competitive FOB pricing, no hidden charges
+              </li>
+            </ul>
+          </div>
+
+          <!-- Certifications Badge Card -->
+          <div class="inquiry-sidebar-card">
+            <h6><i class="bi bi-patch-check-fill me-2" style="color:var(--orange);"></i>Our Certifications</h6>
+            <div class="d-flex flex-wrap gap-2">
+              <span style="background:var(--green-dark);color:white;padding:5px 12px;border-radius:3px;font-size:0.75rem;font-weight:600;">ISO 22000</span>
+              <span style="background:var(--green-dark);color:white;padding:5px 12px;border-radius:3px;font-size:0.75rem;font-weight:600;">FSSAI</span>
+              <span style="background:var(--orange);color:white;padding:5px 12px;border-radius:3px;font-size:0.75rem;font-weight:600;">HALAL</span>
+              <span style="background:var(--orange);color:white;padding:5px 12px;border-radius:3px;font-size:0.75rem;font-weight:600;">Kosher</span>
+              <span style="background:var(--green-mid);color:white;padding:5px 12px;border-radius:3px;font-size:0.75rem;font-weight:600;">APEDA</span>
+              <span style="background:var(--green-mid);color:white;padding:5px 12px;border-radius:3px;font-size:0.75rem;font-weight:600;">Spices Board</span>
+            </div>
+            <a href="certification.html" style="font-size:0.8rem;color:var(--orange);display:block;margin-top:14px;">View all certifications →</a>
+          </div>
+
+          <!-- Office Address -->
+          <div class="inquiry-sidebar-card">
+            <h6><i class="bi bi-geo-alt-fill me-2" style="color:var(--orange);"></i>Factory &amp; Office Address</h6>
+            <p style="font-size:0.84rem;color:var(--text-muted);margin:0;line-height:1.7;">
+              SpiceCraft Exports Pvt. Ltd.<br />
+              Plot No. 47, GIDC Phase II,<br />
+              Rajkot — 360021, Gujarat, India.<br /><br />
+              <strong style="color:var(--green-dark);">GSTIN:</strong> 24XXXXX1234Z1X2<br />
+              <strong style="color:var(--green-dark);">IEC:</strong> AAASC1234B
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4 footer-brand">
+          <a href="index.html" class="navbar-brand" style="padding:0;margin-bottom:16px;display:inline-flex;">
+            <div class="brand-logo-box">
+              <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 4C10.477 4 6 8.477 6 14c0 3.5 1.8 6.6 4.5 8.5L16 28l5.5-5.5C24.2 20.6 26 17.5 26 14c0-5.523-4.477-10-10-10z" fill="#E07B39"/>
+                <path d="M16 10a4 4 0 100 8 4 4 0 000-8z" fill="white"/>
+              </svg>
+            </div>
+            <div class="brand-text ms-3">
+              <span class="brand-name">SpiceCraft Exports</span>
+              <span class="brand-sub">Est. 2001 · India</span>
+            </div>
+          </a>
+          <p>Premium Indian spice manufacturer and exporter serving global food businesses since 2001.</p>
+          <div class="footer-certs mt-3">
+            <span class="footer-cert-badge">FSSAI</span>
+            <span class="footer-cert-badge">ISO 22000</span>
+            <span class="footer-cert-badge">HALAL</span>
+            <span class="footer-cert-badge">APEDA</span>
+          </div>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6 class="footer-heading">Company</h6>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="certification.html">Certifications</a></li>
+            <li><a href="inquire.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6 class="footer-heading">Products</h6>
+          <ul class="footer-links">
+            <li><a href="product-details.html?p=turmeric">Turmeric Powder</a></li>
+            <li><a href="product-details.html?p=chilli">Red Chilli Powder</a></li>
+            <li><a href="product-details.html?p=coriander">Coriander Powder</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h6 class="footer-heading">Get in Touch</h6>
+          <div class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i><span>Plot 47, GIDC Phase II, Rajkot — 360021, Gujarat, India</span></div>
+          <div class="footer-contact-item"><i class="bi bi-telephone-fill"></i><a href="tel:+911234567890">+91 12345 67890</a></div>
+          <div class="footer-contact-item"><i class="bi bi-envelope-fill"></i><a href="mailto:export@spicecraftindia.com">export@spicecraftindia.com</a></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 SpiceCraft Exports. All rights reserved.</p>
+        <span style="font-size:0.76rem;color:rgba(255,255,255,0.3);">Exporting since 2001 &bull; 30+ Countries</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

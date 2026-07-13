@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SpiceCraft Exports — Full product catalogue. Turmeric, Red Chilli, Coriander, Cumin, Black Pepper, Cardamom and 40+ premium Indian spice exports." />
+  <title>Products — SpiceCraft Exports</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+  <style>
+    :root {
+      --green-dark:   #1B4332;
+      --green-mid:    #2D6A4F;
+      --orange:       #E07B39;
+      --orange-light: #F4A261;
+      --cream:        #FAF7F2;
+      --cream-dark:   #EDE8DF;
+      --white:        #FFFFFF;
+      --text-dark:    #1A1A1A;
+      --text-muted:   #6B6B6B;
+      --border:       #DDD5C8;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body:    'Inter', system-ui, sans-serif;
+      --radius-sm:    4px;
+      --radius-md:    8px;
+      --radius-lg:    16px;
+      --shadow-card:  0 2px 16px rgba(27,67,50,0.10);
+      --shadow-hover: 0 6px 28px rgba(27,67,50,0.16);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: var(--font-body); background: var(--cream); color: var(--text-dark); font-size: 16px; line-height: 1.7; margin: 0; }
+    h1, h2, h3, h4, h5 { font-family: var(--font-display); line-height: 1.25; margin-bottom: 0.5rem; }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; height: auto; display: block; }
+*{
+    /* margin: 0;
+    padding: 0; */
+    box-sizing: border-box;
+}
+
+html, body{
+    overflow-x: hidden;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+    /* TOP BAR */
+    .topbar { background: var(--green-dark); color: rgba(255,255,255,0.85); font-size: 0.78rem; padding: 8px 0; }
+    .topbar a { color: rgba(255,255,255,0.85); }
+    .topbar a:hover { color: var(--orange-light); }
+    .tb-item { display: flex; align-items: center; gap: 6px; }
+    .tb-divider { width: 1px; background: rgba(255,255,255,0.2); align-self: stretch; margin: 0 12px; }
+
+    /* NAVBAR */
+    .navbar-main { background: var(--white); border-bottom: 1px solid var(--border); padding: 0; position: sticky; top: 0; z-index: 1030; box-shadow: 0 2px 12px rgba(27,67,50,0.08); }
+    .navbar-main .navbar-brand { display: flex; align-items: center; gap: 12px; padding: 14px 0; }
+    .brand-logo-box { width: 44px; height: 44px; background: var(--green-dark); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .brand-logo-box svg { width: 26px; height: 26px; }
+    .brand-name { font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; color: var(--green-dark); display: block; }
+    .brand-sub { font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--orange); display: block; }
+    .navbar-main .nav-link { font-size: 0.88rem; font-weight: 500; color: var(--text-dark); padding: 22px 16px !important; position: relative; }
+    .navbar-main .nav-link::after { content: ''; position: absolute; bottom: 0; left: 16px; right: 16px; height: 2px; background: var(--orange); transform: scaleX(0); transform-origin: left; transition: transform 0.2s ease; }
+    .navbar-main .nav-link:hover::after, .navbar-main .nav-link.active::after { transform: scaleX(1); }
+    .navbar-main .nav-link:hover, .navbar-main .nav-link.active { color: var(--green-dark); }
+    .nav-cta { background: var(--orange); color: var(--white) !important; padding: 10px 22px !important; border-radius: var(--radius-sm); font-weight: 600; margin-left: 8px; }
+    .nav-cta::after { display: none !important; }
+    .nav-cta:hover { background: var(--green-dark) !important; }
+
+    /* OFFCANVAS */
+    .offcanvas-sidebar .offcanvas-header { background: var(--green-dark); color: var(--white); padding: 18px 20px; }
+    .offcanvas-sidebar .offcanvas-title { font-family: var(--font-display); font-size: 1.1rem; }
+    .offcanvas-sidebar .btn-close { filter: invert(1) brightness(2); }
+    .offcanvas-sidebar .offcanvas-body { padding: 0; background: var(--cream); }
+    .offcanvas-sidebar .nav-link { padding: 14px 24px; border-bottom: 1px solid var(--border); font-size: 0.92rem; font-weight: 500; color: var(--text-dark); display: flex; align-items: center; gap: 10px; }
+    .offcanvas-sidebar .nav-link:hover { background: var(--cream-dark); color: var(--green-dark); }
+    .offcanvas-sidebar .nav-link.active { color: var(--orange); background: var(--cream-dark); }
+    .sidebar-cta-wrap { padding: 20px 24px; }
+
+    /* PAGE HERO */
+    .page-hero { background: var(--green-dark); padding: 64px 0 52px; position: relative; overflow: hidden; }
+    .page-hero::before { content: ''; position: absolute; inset: 0; opacity: 0.04; background-image: repeating-linear-gradient(45deg, var(--white) 0, var(--white) 1px, transparent 0, transparent 50%); background-size: 24px 24px; }
+    .page-hero .page-title { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); color: var(--white); margin-bottom: 14px; }
+    .page-hero .page-subtitle { color: rgba(255,255,255,0.65); font-size: 1rem; margin: 0; }
+    .breadcrumb-item { font-size: 0.8rem; color: rgba(255,255,255,0.45); }
+    .breadcrumb-item a { color: rgba(255,255,255,0.6); }
+    .breadcrumb-item a:hover { color: var(--orange-light); }
+    .breadcrumb-item.active { color: var(--orange-light); }
+    .breadcrumb-item + .breadcrumb-item::before { color: rgba(255,255,255,0.3); }
+
+    /* FILTER BAR */
+    .filter-bar { background: var(--white); border-bottom: 1px solid var(--border); padding: 16px 0; position: sticky; top: 73px; z-index: 100; }
+    .filter-btn { background: var(--cream); border: 1.5px solid var(--border); color: var(--text-dark); font-size: 0.82rem; font-weight: 600; padding: 8px 18px; border-radius: 20px; cursor: pointer; transition: all 0.18s; white-space: nowrap; }
+    .filter-btn:hover, .filter-btn.active { background: var(--green-dark); color: var(--white); border-color: var(--green-dark); }
+    .filter-btn.active-orange { background: var(--orange); color: var(--white); border-color: var(--orange); }
+
+    /* PRODUCT GRID */
+    .products-section { padding: 64px 0; }
+    .section-eyebrow { font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--orange); font-weight: 600; font-family: var(--font-body); display: block; margin-bottom: 10px; }
+    .section-title { font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--green-dark); margin-bottom: 12px; }
+    .divider-leaf { display: flex; align-items: center; gap: 14px; margin: 18px 0 32px; }
+    .divider-leaf .line { flex: 1; height: 1px; background: var(--border); }
+    .divider-leaf .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--orange); }
+
+    .product-card { background: var(--white); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-card); border: 1px solid var(--border); display: flex; flex-direction: column; height: 100%; transition: box-shadow 0.2s, transform 0.2s; }
+    .product-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-3px); }
+    .product-card-img { position: relative; height: 220px; overflow: hidden; background: var(--cream-dark); }
+    .product-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.35s; }
+    .product-card:hover .product-card-img img { transform: scale(1.05); }
+    .product-card-badge { position: absolute; top: 14px; left: 14px; background: var(--green-dark); color: var(--white); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 10px; border-radius: 20px; }
+    .badge-orange { background: var(--orange) !important; }
+    .product-card-body { padding: 22px; flex: 1; display: flex; flex-direction: column; }
+    .product-card-title { font-family: var(--font-display); font-size: 1.18rem; color: var(--green-dark); margin-bottom: 8px; }
+    .product-card-desc { font-size: 0.84rem; color: var(--text-muted); flex: 1; margin-bottom: 14px; line-height: 1.65; }
+    .product-meta { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 14px; }
+    .product-tag { background: var(--cream); color: var(--green-mid); font-size: 0.72rem; font-weight: 600; padding: 4px 10px; border-radius: 20px; border: 1px solid var(--border); }
+    .product-card-footer { padding: 14px 22px; border-top: 1px solid var(--border); background: var(--cream); display: flex; align-items: center; justify-content: space-between; }
+    .product-hs-code { font-size: 0.75rem; color: var(--text-muted); }
+    .product-hs-code strong { color: var(--green-dark); }
+
+    /* BUTTONS */
+    .btn-primary-spice { background: var(--orange); color: var(--white); border: none; padding: 9px 18px; border-radius: var(--radius-sm); font-weight: 600; font-size: 0.82rem; cursor: pointer; display: inline-flex; align-items: center; gap: 7px; }
+    .btn-primary-spice:hover { background: var(--orange-light); color: var(--white); }
+    .btn-outline-green { background: transparent; color: var(--green-dark); border: 1.5px solid var(--green-dark); padding: 12px 26px; border-radius: var(--radius-sm); font-weight: 600; font-size: 0.88rem; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
+    .btn-outline-green:hover { background: var(--green-dark); color: var(--white); }
+
+    /* CATEGORY SECTION LABEL */
+    .category-label { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; margin-top: 12px; }
+    .category-label h3 { font-family: var(--font-display); font-size: 1.35rem; color: var(--green-dark); margin: 0; }
+    .category-label .cat-line { flex: 1; height: 1px; background: var(--border); }
+    .category-label .cat-count { font-size: 0.75rem; color: var(--text-muted); background: var(--cream-dark); padding: 3px 10px; border-radius: 20px; border: 1px solid var(--border); white-space: nowrap; }
+
+    /* CTA BANNER */
+    .cta-banner { background: var(--orange); color: var(--white); padding: 64px 0; text-align: center; }
+    .cta-banner h2 { font-family: var(--font-display); font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--white); margin-bottom: 12px; }
+    .cta-banner p { color: rgba(255,255,255,0.82); font-size: 1rem; margin-bottom: 32px; }
+
+    /* FOOTER */
+    .footer { background: #111D18; color: rgba(255,255,255,0.72); padding: 64px 0 0; }
+    .footer-brand .brand-name { color: var(--white); }
+    .footer-brand .brand-sub { color: var(--orange-light); }
+    .footer p { font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-top: 14px; }
+    .footer-heading { font-family: var(--font-body); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: rgba(255,255,255,0.35); margin-bottom: 16px; }
+    .footer-links { list-style: none; padding: 0; margin: 0; }
+    .footer-links li { margin-bottom: 10px; }
+    .footer-links a { font-size: 0.87rem; color: rgba(255,255,255,0.6); }
+    .footer-links a:hover { color: var(--orange-light); }
+    .footer-contact-item { display: flex; gap: 10px; align-items: flex-start; font-size: 0.85rem; color: rgba(255,255,255,0.6); margin-bottom: 12px; }
+    .footer-bottom { margin-top: 48px; padding: 20px 0; border-top: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .footer-bottom p { font-size: 0.78rem; color: rgba(255,255,255,0.3); margin: 0; }
+    .footer-certs { display: flex; gap: 8px; flex-wrap: wrap; }
+    .footer-cert-badge { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.5); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.08em; padding: 4px 10px; border-radius: 3px; }
+
+    /* SEARCH BAR */
+    .search-wrap { position: relative; max-width: 320px; }
+    .search-wrap input { border: 1.5px solid var(--border); border-radius: 20px; padding: 9px 16px 9px 38px; font-size: 0.85rem; background: var(--cream); width: 100%; outline: none; }
+    .search-wrap input:focus { border-color: var(--green-mid); background: var(--white); }
+    .search-wrap .bi-search { position: absolute; left: 13px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 0.85rem; }
+
+    /* PRODUCT COUNT BADGE */
+    .result-info { font-size: 0.82rem; color: var(--text-muted); }
+
+    /* NO RESULTS */
+    .no-results { display: none; text-align: center; padding: 60px 20px; }
+    .no-results i { font-size: 3rem; color: var(--border); margin-bottom: 16px; display: block; }
+    .no-results p { color: var(--text-muted); }
+
+    @media (max-width: 991.98px) {
+      .filter-bar { top: 0; position: relative; }
+      .products-section { padding: 44px 0; }
+    }
+    @media (max-width: 767.98px) {
+      .filter-scroll { overflow-x: auto; padding-bottom: 4px; }
+      .filter-scroll::-webkit-scrollbar { height: 3px; }
+      .filter-scroll::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar d-none d-md-block">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center gap-4">
+          <div class="tb-item"><i class="bi bi-telephone-fill"></i><a href="tel:+911234567890">+91 12345 67890</a></div>
+          <div class="tb-divider"></div>
+          <div class="tb-item"><i class="bi bi-envelope-fill"></i><a href="mailto:export@spicecraftindia.com">export@spicecraftindia.com</a></div>
+        </div>
+        <div class="d-flex align-items-center gap-4">
+          <div class="tb-item"><i class="bi bi-patch-check-fill"></i><span>FSSAI &bull; ISO 22000 &bull; Spices Board Certified</span></div>
+          <div class="tb-divider"></div>
+          <div class="tb-item"><i class="bi bi-globe2"></i><span>Exporting to 30+ Countries</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar navbar-expand-lg navbar-main">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <div class="brand-logo-box">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 4C10.477 4 6 8.477 6 14c0 3.5 1.8 6.6 4.5 8.5L16 28l5.5-5.5C24.2 20.6 26 17.5 26 14c0-5.523-4.477-10-10-10z" fill="#E07B39"/>
+            <path d="M16 10a4 4 0 100 8 4 4 0 000-8z" fill="white"/>
+            <path d="M14 4.2C9 5.5 6 10 6 14h4c0-2.8 1.6-5.2 4-6.5V4.2z" fill="#F4A261" opacity=".6"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">SpiceCraft Exports</span>
+          <span class="brand-sub">Est. 2001 · India</span>
+        </div>
+      </a>
+
+      <button class="navbar-toggler border-0 p-2" type="button"
+        data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-label="Open navigation">
+        <i class="bi bi-list fs-4 text-dark"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item"><a class="nav-link" data-page="index.html" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" data-page="about.html" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" data-page="products.html" href="products.html">Products</a></li>
+          <li class="nav-item"><a class="nav-link" data-page="certification.html" href="certification.html">Certifications</a></li>
+          <li class="nav-item"><a class="nav-link nav-cta" data-page="inquire.html" href="inquire.html">Get Inquiry</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== OFFCANVAS SIDEBAR ===== -->
+  <div class="offcanvas offcanvas-start offcanvas-sidebar" id="sidebarMenu" tabindex="-1" aria-labelledby="sidebarMenuLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="sidebarMenuLabel">SpiceCraft Exports</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <nav>
+        <a class="nav-link" data-page="index.html" href="index.html">
+          <i class="bi bi-house"></i> Home
+        </a>
+        <a class="nav-link" data-page="about.html" href="about.html">
+          <i class="bi bi-building"></i> About Us
+        </a>
+        <a class="nav-link" data-page="products.html" href="products.html">
+          <i class="bi bi-grid"></i> Products
+        </a>
+        <a class="nav-link" data-page="certification.html" href="certification.html">
+          <i class="bi bi-patch-check"></i> Certifications
+        </a>
+        <a class="nav-link" data-page="inquire.html" href="inquire.html">
+          <i class="bi bi-envelope"></i> Inquire Now
+        </a>
+      </nav>
+      <div class="sidebar-cta-wrap">
+        <a href="inquire.html" class="btn-primary-spice w-100 justify-content-center" style="border-radius:6px;padding:14px;">
+          <i class="bi bi-send"></i> Send Inquiry
+        </a>
+        <div class="mt-3 text-center" style="font-size:0.78rem;color:var(--text-muted);">
+          <i class="bi bi-telephone me-1"></i> +91 12345 67890
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container" style="position:relative;z-index:2;">
+      <nav aria-label="breadcrumb" class="mb-3">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active">Products</li>
+        </ol>
+      </nav>
+      <div class="row align-items-end">
+        <div class="col-lg-7">
+          <span class="section-eyebrow" style="color:var(--orange-light);">Our Product Range</span>
+          <h1 class="page-title">Premium Export Spices</h1>
+          <p class="page-subtitle">40+ spice varieties sourced from India's prime growing belts — hygienically processed and export-certified.</p>
+        </div>
+        <div class="col-lg-5 d-none d-lg-flex justify-content-end align-items-center gap-4 mt-3 mt-lg-0">
+          <div style="text-align:center;">
+            <div style="font-family:var(--font-display);font-size:2rem;font-weight:700;color:var(--orange-light);line-height:1;">40+</div>
+            <div style="font-size:0.72rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.1em;">Spice Varieties</div>
+          </div>
+          <div style="width:1px;height:40px;background:rgba(255,255,255,0.15);"></div>
+          <div style="text-align:center;">
+            <div style="font-family:var(--font-display);font-size:2rem;font-weight:700;color:var(--orange-light);line-height:1;">30+</div>
+            <div style="font-size:0.72rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.1em;">Export Countries</div>
+          </div>
+          <div style="width:1px;height:40px;background:rgba(255,255,255,0.15);"></div>
+          <div style="text-align:center;">
+            <div style="font-family:var(--font-display);font-size:2rem;font-weight:700;color:var(--orange-light);line-height:1;">500+</div>
+            <div style="font-size:0.72rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.1em;">MT / Month</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILTER BAR -->
+  <div class="filter-bar">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between gap-3 flex-wrap">
+        <div class="filter-scroll d-flex align-items-center gap-2">
+          <button class="filter-btn active" data-filter="all">All Products</button>
+          <button class="filter-btn" data-filter="roots">Roots & Rhizomes</button>
+          <button class="filter-btn" data-filter="chillies">Chillies</button>
+          <button class="filter-btn" data-filter="seeds">Seeds & Grains</button>
+          <button class="filter-btn" data-filter="aromatics">Aromatics</button>
+          <button class="filter-btn" data-filter="blends">Spice Blends</button>
+        </div>
+        <div class="d-flex align-items-center gap-3">
+          <div class="search-wrap d-none d-md-block">
+            <i class="bi bi-search"></i>
+            <input type="text" id="searchInput" placeholder="Search spice…" />
+          </div>
+          <span class="result-info" id="resultCount">Showing 12 products</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRODUCTS -->
+  <section class="products-section">
+    <div class="container">
+
+      <!-- Roots & Rhizomes -->
+      <div class="category-label" data-category-label="roots">
+        <h3>Roots &amp; Rhizomes</h3>
+        <div class="cat-line"></div>
+        <span class="cat-count">3 products</span>
+      </div>
+      <div class="row g-4 mb-5" id="productGrid">
+
+        <!-- Turmeric -->
+        <div class="col-md-6 col-lg-4 product-item" data-category="roots" data-name="turmeric powder">
+          <article class="product-card">
+            <div class="product-card-img">
+              <img src="https://images.unsplash.com/photo-1615485500704-8e3b5905e70e?w=500&q=80" alt="Turmeric Powder" width="500" height="220" loading="lazy" />
+              <span class="product-card-badge">Best Seller</span>
+            </div>
+            <div class="product-card-body">
+              <h3 class="product-card-title">Turmeric Powder</h3>
+              <p class="product-card-desc">Pure Rajapore &amp; Lakadong variety with minimum 3.5% curcumin. Deep golden colour, earthy aroma, and superior colouring power for food, pharma and nutraceutical use.</p>
+              <div class="product-meta">
+                <span class="product-tag"><i class="bi bi-droplet-fill me-1" style="color:var(--orange)"></i>3.5% Curcumin</span>
+                <span class="product-tag">Moisture ≤ 10%</span>
+                <span class="product-tag">Steam Sterilised</span>
+              </div>
+            </div>
+            <div class="product-card-footer">
+              <div class="product-hs-code">HS Code: <strong>0910.30</strong></div>
+              <a href="product-details.html?p=turmeric" class="btn-primary-spice">View Details <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Ginger -->
+        <div class="col-md-6 col-lg-4 product-item" data-category="roots" data-name="ginger powder">
+          <article class="product-card">
+            <div class="product-card-img">
+              <img src="https://images.unsplash.com/photo-1615485291006-0a3d01e39e4e?w=500&q=80" alt="Ginger Powder" width="500" height="220" loading="lazy" />
+              <span class="product-card-badge">Export Ready</span>
+            </div>
+            <div class="product-card-body">
+              <h3 class="product-card-title">Ginger Powder</h3>
+              <p class="product-card-desc">Sourced from Wayanad and Himachal Pradesh farms. Pungent aroma, high gingerol content. Used in beverages, confectionery, and functional foods worldwide.</p>
+              <div class="product-meta">
+                <span class="product-tag">Gingerol ≥ 1.2%</span>
+                <span class="product-tag">Moisture ≤ 12%</span>
+                <span class="product-tag">Non-ETO</span>
+              </div>
+            </div>
+            <div class="product-card-footer">
+              <div class="product-hs-code">HS Code: <strong>0910.11</strong></div>
+              <a href="product-details.html?p=ginger" class="btn-primary-spice">View Details <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Dry Ginger -->
+        <div class="col-md-6 col-lg-4 product-item" data-category="roots" data-name="dry ginger whole">
+          <article class="product-card">
+            <div class="product-card-img">
+              <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=500&q=80" alt="Dry Ginger Whole" width="500" height="220" loading="lazy" />
+              <span class="product-card-badge badge-orange">New</span>
+            </div>
+            <div class="product-card-body">
+              <h3 class="product-card-title">Dry Ginger (Whole)</h3>
+              <p class="product-card-desc">Sun-dried whole ginger from Kerala. Ideal for grinding at destination for maximum freshness. Supplied in bold, uniform pieces with low fibre content.</p>
+              <div class="product-meta">
+                <span class="product-tag">Bold Grade</span>
+                <span class="product-tag">Low Fibre</span>
+                <span class="product-tag">Aflatoxin Free</span>
+              </div>
+            </div>
+            <div class="product-card-footer">
+              <div class="product-hs-code">HS Code: <strong>0910.11</strong></div>
+              <a href="product-details.html?p=dry-ginger" class="btn-primary-spice">View Details <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Chillies -->
+      <div class="category-label" data-category-label="chillies">
+        <h3>Chillies</h3>
+        <div class="cat-line"></div>
+        <span class="cat-count">3 products</span>
+      </div>
+      <div class="row g-4 mb-5">
+
+        <!-- Red Chilli Powder -->
+        <div class="col-md-6 col-lg-4 product-item" data-category="chillies" data-name="red chilli powder">
+          <article class="product-card">
+            <div class="product-card-img">
+              <img src="https://images.unsplash.com/photo-1583737174775-2e7b43e63b5f?w=500&q=80" alt="Red Chilli Powder" width="500" height="220" loading="lazy" />
+              <span class="product-card-badge">Export Ready</span>
+            </div>
+            <div class="product-card-body">
+              <h3 class="product-card-title">Red Chilli Powder</h3>
+              <p class="product-card-desc">Premium S4, Teja, and Byadgi varieties. Available in mild, medium, and extra-hot grades. ASTA colour values up to 200+ for consistent colour in sauces and marinades.</p>
+              <div class="product-meta">
+                <span class="product-tag"><i class="bi bi-fire me-1" style="color:var(--orange)"></i>ASTA 160–200</span>
+                <span class="product-tag">SHU 25k–75k</span>
+                <span class="product-tag">Aflatoxin Tested</span>
+              </div>
+            </div>
+            <div class="product-card-footer">
+              <div class="product-hs-code">HS Code: <strong>0904.22</strong></div>
+              <a href="product-details.html?p=chilli" class="btn-primary-spice">View Details <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Whole Red Chilli -->
+        <div class="col-md-6 col-lg-4 product-item" data-category="chillies" data-name="whole red chilli">
+          <article class="product-card">
+            <div class="product-card-img">
+              <img src="https://images.unsplash.com/photo-1670426315893-6c4b1d7a7a5b?w=500&q=80" alt="Whole Red Chilli" width="500" height="220" loading="lazy" />
+              <span class="product-card-badge">Premium Grade</span>
+            </div>
+            <div class="product-card-body">
+              <h3 class="product-card-title">Whole Red Chilli</h3>
+              <p class="product-card-desc">Guntur Teja and Byadgi whole dried chillies. Stem-on or stemless available. Bright red colour, pungent aroma — widely used in Asian and Latin cuisines.</p>
+              <div class="product-meta">
+                <span class="product-tag">Stem-on / Stemless</span>
+                <span class="product-tag">Low Moisture</span>
+                <span class="product-tag">Machine Cleaned</span>
+              </div>
+            </div>
+            <div class="product-card-footer">
+              <div class="product-hs-code">HS Code: <strong>0904.21</strong></div>
+              <a href="product-details.html?p=whole-chilli" class="btn-primary-spice">View Details <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Paprika -->
+        <div class="col-md-6 col-lg-4 product-item" data-category="chillies" data-name="paprika powder">
+          <article class="product-card">
+            <div class="product-card-img">
+              <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=500&q=80" alt="Paprika Powder" width="500" height="220" loading="lazy" />
+              <span class="product-card-badge badge-orange">High Demand</span>
+            </div>
+            <div class="product-card-body">
+              <h3 class="product-card-title">Paprika Powder</h3>
+              <p class="product-card-desc">Made from Byadgi and Kashmiri chillies — naturally sweet, low heat, brilliant red colour. Ideal for sauces, seasoning blends, and meat processing.</p>
+              <div class="product-meta">
+                <span class="product-tag">ASTA 120–160</span>
+                <span class="product-tag">SHU &lt; 500</span>
+                <span class="product-tag">ETO Free</span>
+              </div>
+            </div>
+            <div class="product-card-footer">
+              <div class="product-hs-code">HS Code: <strong>0904.22</strong></div>
+              <a href="product-details.html?p=paprika" class="btn-primary-spice">View Details <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Seeds & Grains -->
+      <div class="category-label" data-category-label="seeds">
+        <h3>Seeds &amp; Grains</h3>
+        <div class="cat-line"></div>
+        <span class="cat-count">3 products</span>
+      </div>
+      <div class="row g-4 mb-5">
+
+        <!-- Coriander -->
+        <div class="col-md-6 col-lg-4 product-item" data-category="seeds" data-name="coriander powder">
+          <article class="product-card">
+            <div class="product-card-img">
+              <img src="https://images.unsplash.com/photo-1638255975088-b81f0291d3c7?w=500&q=80" alt="Coriander Powder" width="500" height="220" loading="lazy" />
+              <span class="product-card-badge">Premium Grade</span>
+            </div>
+            <div class="product-card-body">
+              <h3 class="product-card-title">Coriander Powder</h3>
+              <p class="product-card-desc">Ground from hand-sorted Eagle &amp; Scooter variety seeds from Rajasthan. Warm citrusy flavour with excellent shelf stability. Available in fine and coarse mesh.</p>
+              <div class="product-meta">
+                <span class="product-tag"><i class="bi bi-shield-check me-1" style="color:var(--green-mid)"></i>ETO Free</span>
+                <span class="product-tag">Volatile Oil 0.4%</span>
+                <span class="product-tag">Fine Mesh</span>
+              </div>
+            </div>
+            <div class="product-card-footer">
+              <div class="product-hs-code">HS Code: <strong>0909.21</strong></div>
+              <a href="product-details.html?p=coriander" class="btn-primary-spice">View Details <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Cumin -->
+        <div class="col-md-6 col-lg-4 product-item" data-category="seeds" data-name="cumin powder seeds">
+          <article class="product-card">
+            <div class="product-card-img">
+              <img src="https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=500&q=80" alt="Cumin Seeds and Powder" width="500" height="220" loading="lazy" />
+              <span class="product-card-badge">Best Seller</span>
+            </div>
+            <div class="product-card-body">
+              <h3 class="product-card-title">Cumin (Seeds &amp; Powder)</h3>
+              <p class="product-card-desc">Unjha and Gujarat origin cumin — bold seeds with high volatile oil. Available as whole seeds, lightly roasted, or fine-milled powder for spice blends and ethnic cuisine.</p>
+              <div class="product-meta">
+                <span class="product-tag">Volatile Oil ≥ 2.5%</span>
+                <span class="product-tag">Unjha Origin</span>
+                <span class="product-tag">Sortex Clean</span>
+              </div>
+            </div>
+            <div class="product-card-footer">
+              <div class="product-hs-code">HS Code: <strong>0909.31</strong></div>
+              <a href="product-details.html?p=cumin" class="btn-primary-spice">View Details <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Fenugreek -->
+        <div class="col-md-6 col-lg-4 product-item" data-category="seeds" data-name="fenugreek methi seeds powder">
+          <article class="product-card">
+            <div class="product-card-img">
+              <img src="https://images.unsplash.com/photo-1599909631190-21f7f24ead8e?w=500&q=80" alt="Fenugreek Seeds" width="500" height="220" loading="lazy" />
+              <span class="product-card-badge">Export Ready</span>
+            </div>
+            <div class="product-card-body">
+              <h3 class="product-card-title">Fenugreek Seeds &amp; Powder</h3>
+              <p class="product-card-desc">Rajasthan and Madhya Pradesh origin fenugreek (methi). Supplied as bold whole seeds or fine powder. High saponin content — preferred by nutraceutical and food processing industries.</p>
+              <div class="product-meta">
+                <span class="product-tag">Saponin ≥ 30%</span>
+                <span class="product-tag">Moisture ≤ 10%</span>
+                <span class="product-tag">Sortex Cleaned</span>
+              </div>
+            </div>
+            <div class="product-card-footer">
+              <div class="product-hs-code">HS Code: <strong>1212.99</strong></div>
+              <a href="product-details.html?p=fenugreek" class="btn-primary-spice">View Details <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Aromatics -->
+      <div class="category-label" data-category-label="aromatics">
+        <h3>Aromatics</h3>
+        <div class="cat-line"></div>
+        <span class="cat-count">2 products</span>
+      </div>
+      <div class="row g-4 mb-5">
+
+        <!-- Black Pepper -->
+        <div class="col-md-6 col-lg-4 product-item" data-category="aromatics" data-name="black pepper">
+          <article class="product-card">
+            <div class="product-card-img">
+              <img src="https://images.unsplash.com/photo-1593489040849-9b98a4c8dca3?w=500&q=80" alt="Black Pepper" width="500" height="220" loading="lazy" />
+              <span class="product-card-badge">Premium Grade</span>
+            </div>
+            <div class="product-card-body">
+              <h3 class="product-card-title">Black Pepper</h3>
+              <p class="product-card-desc">Kerala and Vietnam origin black pepper in 500 GL, 550 GL, and 600 GL grades. Supplied as bold whole peppercorns or cracked/milled powder with high piperine content.</p>
+              <div class="product-meta">
+                <span class="product-tag">Piperine ≥ 5%</span>
+                <span class="product-tag">500–600 GL</span>
+                <span class="product-tag">Steam Sterilised</span>
+              </div>
+            </div>
+            <div class="product-card-footer">
+              <div class="product-hs-code">HS Code: <strong>0904.11</strong></div>
+              <a href="product-details.html?p=black-pepper" class="btn-primary-spice">View Details <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Cardamom -->
+        <div class="col-md-6 col-lg-4 product-item" data-category="aromatics" data-name="cardamom green elaichi">
+          <article class="product-card">
+            <div class="product-card-img">
+              <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=500&q=80" alt="Green Cardamom" width="500" height="220" loading="lazy" />
+              <span class="product-card-badge badge-orange">Premium</span>
+            </div>
+            <div class="product-card-body">
+              <h3 class="product-card-title">Green Cardamom (Elaichi)</h3>
+              <p class="product-card-desc">Kerala origin Green Cardamom, 7 mm and 8 mm bold variety. Fresh aroma, green colour retained through careful drying. Available as pods, decorticated seeds, or powder.</p>
+              <div class="product-meta">
+                <span class="product-tag">7–8 mm Bold</span>
+                <span class="product-tag">Volatile Oil ≥ 6%</span>
+                <span class="product-tag">Hand Sorted</span>
+              </div>
+            </div>
+            <div class="product-card-footer">
+              <div class="product-hs-code">HS Code: <strong>0908.31</strong></div>
+              <a href="product-details.html?p=cardamom" class="btn-primary-spice">View Details <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Spice Blends -->
+      <div class="category-label" data-category-label="blends">
+        <h3>Spice Blends</h3>
+        <div class="cat-line"></div>
+        <span class="cat-count">1 product</span>
+      </div>
+      <div class="row g-4 mb-5">
+
+        <!-- Garam Masala -->
+        <div class="col-md-6 col-lg-4 product-item" data-category="blends" data-name="garam masala blend custom spice mix">
+          <article class="product-card">
+            <div class="product-card-img">
+              <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=500&q=80" alt="Garam Masala and Custom Blends" width="500" height="220" loading="lazy" />
+              <span class="product-card-badge">Custom OEM</span>
+            </div>
+            <div class="product-card-body">
+              <h3 class="product-card-title">Custom Spice Blends &amp; Masala</h3>
+              <p class="product-card-desc">Garam Masala, Chaat Masala, Curry Powder, and fully custom blends formulated to your specification. Private-label packaging available in retail and bulk formats.</p>
+              <div class="product-meta">
+                <span class="product-tag">Custom Formula</span>
+                <span class="product-tag">Private Label</span>
+                <span class="product-tag">MOQ 500 kg</span>
+              </div>
+            </div>
+            <div class="product-card-footer">
+              <div class="product-hs-code">HS Code: <strong>0910.91</strong></div>
+              <a href="product-details.html?p=blends" class="btn-primary-spice">View Details <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </article>
+        </div>
+
+        <!-- CTA placeholder card -->
+        <div class="col-md-6 col-lg-4 d-none d-md-block">
+          <div style="background:var(--green-dark);border-radius:var(--radius-lg);padding:36px 32px;height:100%;display:flex;flex-direction:column;justify-content:center;">
+            <i class="bi bi-box-seam" style="font-size:2.2rem;color:var(--orange-light);margin-bottom:18px;"></i>
+            <h4 style="color:var(--white);font-size:1.2rem;margin-bottom:10px;">Need a Custom Spice?</h4>
+            <p style="color:rgba(255,255,255,0.6);font-size:0.88rem;margin-bottom:24px;">We develop custom blends and private-label products. Tell us your spec and we'll formulate and sample within 7 days.</p>
+            <a href="inquire.html" class="btn-primary-spice" style="border-radius:6px;align-self:flex-start;">
+              <i class="bi bi-send"></i> Send Requirement
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- No results message -->
+      <div class="no-results" id="noResults">
+        <i class="bi bi-search"></i>
+        <h5>No products found</h5>
+        <p>Try a different search term or browse all products.</p>
+        <button class="filter-btn active" onclick="resetFilters()">View All Products</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <span class="section-eyebrow" style="color:rgba(255,255,255,0.7);justify-content:center;display:flex;margin-bottom:14px;">Ready to Source?</span>
+          <h2>Get a Custom Quote for Your Spice Requirement</h2>
+          <p>Tell us your product, grade, quantity, destination, and packaging preference — we'll respond within 24 hours.</p>
+          <div class="d-flex gap-3 justify-content-center flex-wrap">
+            <a href="inquire.html" style="background:var(--green-dark);color:white;padding:14px 32px;border-radius:6px;font-weight:600;font-size:0.95rem;display:inline-flex;align-items:center;gap:8px;">
+              <i class="bi bi-send"></i> Send an Inquiry
+            </a>
+            <a href="tel:+911234567890" style="background:rgba(255,255,255,0.15);color:white;border:1.5px solid rgba(255,255,255,0.4);padding:14px 32px;border-radius:6px;font-weight:500;font-size:0.95rem;display:inline-flex;align-items:center;gap:8px;">
+              <i class="bi bi-telephone"></i> +91 12345 67890
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4 footer-brand">
+          <a href="index.html" class="navbar-brand" style="padding:0;margin-bottom:16px;display:inline-flex;">
+            <div class="brand-logo-box">
+              <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 4C10.477 4 6 8.477 6 14c0 3.5 1.8 6.6 4.5 8.5L16 28l5.5-5.5C24.2 20.6 26 17.5 26 14c0-5.523-4.477-10-10-10z" fill="#E07B39"/>
+                <path d="M16 10a4 4 0 100 8 4 4 0 000-8z" fill="white"/>
+              </svg>
+            </div>
+            <div class="brand-text ms-3">
+              <span class="brand-name">SpiceCraft Exports</span>
+              <span class="brand-sub">Est. 2001 · India</span>
+            </div>
+          </a>
+          <p>Premium Indian spice manufacturer and exporter serving global food businesses since 2001. Rajkot, Gujarat — India's spice capital.</p>
+          <div class="footer-certs mt-3">
+            <span class="footer-cert-badge">FSSAI</span>
+            <span class="footer-cert-badge">ISO 22000</span>
+            <span class="footer-cert-badge">HALAL</span>
+            <span class="footer-cert-badge">APEDA</span>
+            <span class="footer-cert-badge">Kosher</span>
+          </div>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6 class="footer-heading">Company</h6>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="certification.html">Certifications</a></li>
+            <li><a href="inquire.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6 class="footer-heading">Products</h6>
+          <ul class="footer-links">
+            <li><a href="product-details.html?p=turmeric">Turmeric Powder</a></li>
+            <li><a href="product-details.html?p=chilli">Red Chilli Powder</a></li>
+            <li><a href="product-details.html?p=coriander">Coriander Powder</a></li>
+            <li><a href="product-details.html?p=cumin">Cumin</a></li>
+            <li><a href="product-details.html?p=blends">Spice Blends</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h6 class="footer-heading">Get in Touch</h6>
+          <div class="footer-contact-item"><i class="bi bi-geo-alt-fill" style="color:var(--orange);"></i><span>Plot 47, GIDC Phase II, Rajkot — 360021, Gujarat, India</span></div>
+          <div class="footer-contact-item"><i class="bi bi-telephone-fill" style="color:var(--orange);"></i><a href="tel:+911234567890">+91 12345 67890</a></div>
+          <div class="footer-contact-item"><i class="bi bi-whatsapp" style="color:var(--orange);"></i><a href="https://wa.me/911234567890">WhatsApp Business</a></div>
+          <div class="footer-contact-item"><i class="bi bi-envelope-fill" style="color:var(--orange);"></i><a href="mailto:export@spicecraftindia.com">export@spicecraftindia.com</a></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 SpiceCraft Exports. All rights reserved. | GSTIN: 24XXXXX1234Z1X2</p>
+        <span style="font-size:0.76rem;color:rgba(255,255,255,0.3);">Exporting since 2001 &bull; 30+ Countries &bull; 500 MT/month capacity</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Filter logic
+    const filterBtns = document.querySelectorAll('.filter-btn[data-filter]');
+    const productItems = document.querySelectorAll('.product-item');
+    const categoryLabels = document.querySelectorAll('[data-category-label]');
+    const noResults = document.getElementById('noResults');
+    const resultCount = document.getElementById('resultCount');
+    const searchInput = document.getElementById('searchInput');
+
+    let activeFilter = 'all';
+    let searchTerm = '';
+
+    function updateDisplay() {
+      let visible = 0;
+      productItems.forEach(item => {
+        const cat = item.dataset.category;
+        const name = item.dataset.name;
+        const matchFilter = activeFilter === 'all' || cat === activeFilter;
+        const matchSearch = !searchTerm || name.includes(searchTerm.toLowerCase());
+        if (matchFilter && matchSearch) {
+          item.style.display = '';
+          visible++;
+        } else {
+          item.style.display = 'none';
+        }
+      });
+
+      // Show/hide category labels
+      categoryLabels.forEach(label => {
+        const cat = label.dataset.categoryLabel;
+        if (activeFilter === 'all' || activeFilter === cat) {
+          // Check if any visible product exists in this category
+          const hasVisible = [...productItems].some(i =>
+            i.dataset.category === cat &&
+            (activeFilter === 'all' || activeFilter === cat) &&
+            (!searchTerm || i.dataset.name.includes(searchTerm.toLowerCase()))
+          );
+          label.style.display = hasVisible ? '' : 'none';
+          // Also hide sibling row
+          label.nextElementSibling.style.display = hasVisible ? '' : 'none';
+        } else {
+          label.style.display = 'none';
+          label.nextElementSibling.style.display = 'none';
+        }
+      });
+
+      noResults.style.display = visible === 0 ? 'block' : 'none';
+      resultCount.textContent = `Showing ${visible} product${visible !== 1 ? 's' : ''}`;
+    }
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeFilter = btn.dataset.filter;
+        updateDisplay();
+      });
+    });
+
+    searchInput && searchInput.addEventListener('input', e => {
+      searchTerm = e.target.value.trim();
+      updateDisplay();
+    });
+
+    function resetFilters() {
+      activeFilter = 'all';
+      searchTerm = '';
+      if (searchInput) searchInput.value = '';
+      filterBtns.forEach(b => b.classList.remove('active'));
+      filterBtns[0].classList.add('active');
+      updateDisplay();
+    }
+
+    // Init count
+    updateDisplay();
+  </script>
+</body>
+</html>

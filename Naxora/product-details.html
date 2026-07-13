@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SpiceCraft Exports — Product Details. Premium Indian spice specifications, packaging, and export information." />
+  <title>Product Details — SpiceCraft Exports</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+  <style>
+    :root {
+      --green-dark:   #1B4332;
+      --green-mid:    #2D6A4F;
+      --orange:       #E07B39;
+      --orange-light: #F4A261;
+      --cream:        #FAF7F2;
+      --cream-dark:   #EDE8DF;
+      --white:        #FFFFFF;
+      --text-dark:    #1A1A1A;
+      --text-muted:   #6B6B6B;
+      --border:       #DDD5C8;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body:    'Inter', system-ui, sans-serif;
+      --radius-sm:    4px;
+      --radius-md:    8px;
+      --radius-lg:    16px;
+      --shadow-card:  0 2px 16px rgba(27,67,50,0.10);
+      --shadow-hover: 0 6px 28px rgba(27,67,50,0.16);
+    }
+    *{
+    /* margin: 0;
+    padding: 0; */
+    box-sizing: border-box;
+}
+
+html, body{
+    overflow-x: hidden;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: var(--font-body); background: var(--cream); color: var(--text-dark); font-size: 16px; line-height: 1.7; margin: 0; }
+    h1, h2, h3, h4, h5 { font-family: var(--font-display); line-height: 1.25; margin-bottom: 0.5rem; }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* TOP BAR */
+    .topbar { background: var(--green-dark); color: rgba(255,255,255,0.85); font-size: 0.78rem; padding: 8px 0; }
+    .topbar a { color: rgba(255,255,255,0.85); }
+    .topbar a:hover { color: var(--orange-light); }
+    .tb-item { display: flex; align-items: center; gap: 6px; }
+    .tb-divider { width: 1px; background: rgba(255,255,255,0.2); align-self: stretch; margin: 0 12px; }
+
+    /* NAVBAR */
+    .navbar-main { background: var(--white); border-bottom: 1px solid var(--border); padding: 0; position: sticky; top: 0; z-index: 1030; box-shadow: 0 2px 12px rgba(27,67,50,0.08); }
+    .navbar-main .navbar-brand { display: flex; align-items: center; gap: 12px; padding: 14px 0; }
+    .brand-logo-box { width: 44px; height: 44px; background: var(--green-dark); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .brand-logo-box svg { width: 26px; height: 26px; }
+    .brand-name { font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; color: var(--green-dark); display: block; }
+    .brand-sub { font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--orange); display: block; }
+    .navbar-main .nav-link { font-size: 0.88rem; font-weight: 500; color: var(--text-dark); padding: 22px 16px !important; position: relative; }
+    .navbar-main .nav-link::after { content: ''; position: absolute; bottom: 0; left: 16px; right: 16px; height: 2px; background: var(--orange); transform: scaleX(0); transform-origin: left; transition: transform 0.2s; }
+    .navbar-main .nav-link:hover::after, .navbar-main .nav-link.active::after { transform: scaleX(1); }
+    .navbar-main .nav-link:hover, .navbar-main .nav-link.active { color: var(--green-dark); }
+    .nav-cta { background: var(--orange); color: var(--white) !important; padding: 10px 22px !important; border-radius: var(--radius-sm); font-weight: 600; margin-left: 8px; }
+    .nav-cta::after { display: none !important; }
+    .nav-cta:hover { background: var(--green-dark) !important; }
+
+    /* OFFCANVAS */
+    .offcanvas-sidebar .offcanvas-header { background: var(--green-dark); color: var(--white); padding: 18px 20px; }
+    .offcanvas-sidebar .offcanvas-title { font-family: var(--font-display); font-size: 1.1rem; }
+    .offcanvas-sidebar .btn-close { filter: invert(1) brightness(2); }
+    .offcanvas-sidebar .offcanvas-body { padding: 0; background: var(--cream); }
+    .offcanvas-sidebar .nav-link { padding: 14px 24px; border-bottom: 1px solid var(--border); font-size: 0.92rem; font-weight: 500; color: var(--text-dark); display: flex; align-items: center; gap: 10px; }
+    .offcanvas-sidebar .nav-link:hover { background: var(--cream-dark); color: var(--green-dark); }
+    .offcanvas-sidebar .nav-link.active { color: var(--orange); background: var(--cream-dark); }
+    .sidebar-cta-wrap { padding: 20px 24px; }
+
+    /* BREADCRUMB STRIP */
+    .breadcrumb-strip { background: var(--white); border-bottom: 1px solid var(--border); padding: 12px 0; }
+    .breadcrumb-item { font-size: 0.8rem; color: var(--text-muted); }
+    .breadcrumb-item a { color: var(--green-mid); }
+    .breadcrumb-item a:hover { color: var(--orange); }
+    .breadcrumb-item.active { color: var(--text-dark); }
+    .breadcrumb-item + .breadcrumb-item::before { color: var(--border); }
+
+    /* PRODUCT DETAIL */
+    .product-detail-section { padding: 56px 0 72px; }
+
+    /* GALLERY */
+    .gallery-main { border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); margin-bottom: 12px; height: 400px; background: var(--cream-dark); position: relative; }
+    .gallery-main img { width: 100%; height: 100%; object-fit: cover; transition: opacity 0.3s; }
+    .gallery-thumbs { display: flex; gap: 10px; flex-wrap: wrap; }
+    .gallery-thumb { width: 80px; height: 80px; flex-shrink: 0; border-radius: var(--radius-sm); overflow: hidden; border: 2px solid var(--border); cursor: pointer; background: var(--cream-dark); }
+    .gallery-thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .gallery-thumb.active { border-color: var(--orange); }
+    .gallery-thumb:hover { border-color: var(--green-mid); }
+    .product-gallery { position: sticky; top: 90px; }
+
+    /* PRODUCT INFO */
+    .product-detail-title { font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.4rem); color: var(--green-dark); margin-bottom: 14px; }
+    .product-tags-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+    .product-tag { background: var(--cream); color: var(--green-mid); font-size: 0.72rem; font-weight: 600; padding: 5px 12px; border-radius: 20px; border: 1px solid var(--border); }
+    .product-tag-orange { background: rgba(224,123,57,0.1); color: var(--orange); border-color: rgba(224,123,57,0.3); }
+    .product-desc { font-size: 0.95rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 24px; }
+
+    /* TABS */
+    .tab-nav { border-bottom: 2px solid var(--border); margin-bottom: 28px; display: flex; gap: 0; overflow-x: auto; }
+    .tab-btn { background: none; border: none; padding: 13px 22px; font-size: 0.88rem; font-weight: 600; color: var(--text-muted); cursor: pointer; position: relative; margin-bottom: -2px; white-space: nowrap; }
+    .tab-btn.active { color: var(--green-dark); border-bottom: 2px solid var(--orange); }
+    .tab-btn:hover { color: var(--green-dark); }
+    .tab-pane { display: none; }
+    .tab-pane.active { display: block; }
+
+    /* SPEC TABLE */
+    .spec-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+    .spec-table th { background: var(--cream-dark); color: var(--green-dark); font-weight: 700; padding: 11px 16px; text-align: left; width: 38%; font-size: 0.82rem; }
+    .spec-table td { padding: 11px 16px; border-top: 1px solid var(--border); }
+    .spec-table tr:nth-child(even) td { background: var(--cream); }
+
+    /* FEATURE LIST */
+    .feature-list { list-style: none; padding: 0; margin: 0; }
+    .feature-list li { padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 0.88rem; display: flex; align-items: flex-start; gap: 10px; }
+    .feature-list li:last-child { border-bottom: none; }
+    .check-icon { color: var(--green-mid); flex-shrink: 0; margin-top: 2px; }
+
+    /* PACKAGING OPTIONS */
+    .pack-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 12px; }
+    .pack-item { background: var(--cream); border: 1.5px solid var(--border); border-radius: var(--radius-md); padding: 16px 12px; text-align: center; }
+    .pack-item i { font-size: 1.5rem; color: var(--orange); display: block; margin-bottom: 8px; }
+    .pack-item strong { font-size: 0.82rem; color: var(--green-dark); display: block; }
+    .pack-item span { font-size: 0.74rem; color: var(--text-muted); }
+
+    /* INQUIRY SIDEBAR */
+    .inquiry-sidebar { position: sticky; top: 90px; }
+    .inquiry-card { background: var(--white); border-radius: var(--radius-md); border: 1px solid var(--border); padding: 28px; margin-bottom: 20px; box-shadow: var(--shadow-card); }
+    .inquiry-card h5 { color: var(--green-dark); font-size: 1rem; margin-bottom: 18px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+    .form-label { font-size: 0.82rem; font-weight: 600; color: var(--green-dark); margin-bottom: 5px; display: block; }
+    .form-control, .form-select { border: 1.5px solid var(--border); border-radius: var(--radius-sm); padding: 10px 13px; font-size: 0.88rem; background: var(--cream); width: 100%; outline: none; font-family: var(--font-body); }
+    .form-control:focus, .form-select:focus { border-color: var(--green-mid); box-shadow: 0 0 0 3px rgba(45,106,79,0.1); background: var(--white); }
+    .form-group { margin-bottom: 14px; }
+    .btn-primary-spice { background: var(--orange); color: var(--white); border: none; padding: 13px 24px; border-radius: var(--radius-sm); font-weight: 600; font-size: 0.9rem; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: background 0.18s; }
+    .btn-primary-spice:hover { background: var(--orange-light); color: var(--white); }
+    .btn-green { background: var(--green-dark); color: var(--white); border: none; padding: 13px 24px; border-radius: var(--radius-sm); font-weight: 600; font-size: 0.9rem; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
+    .btn-green:hover { background: var(--green-mid); color: var(--white); }
+    .btn-outline-green { background: transparent; color: var(--green-dark); border: 1.5px solid var(--green-dark); padding: 12px 24px; border-radius: var(--radius-sm); font-weight: 600; font-size: 0.88rem; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
+    .btn-outline-green:hover { background: var(--green-dark); color: var(--white); }
+
+    /* CONTACT MINI CARD */
+    .contact-item { display: flex; gap: 10px; align-items: center; font-size: 0.84rem; color: var(--text-muted); margin-bottom: 10px; }
+    .contact-item i { color: var(--orange); width: 18px; flex-shrink: 0; }
+    .contact-item a { color: var(--green-dark); font-weight: 500; }
+
+    /* RELATED PRODUCTS */
+    .related-section { background: var(--white); padding: 64px 0; border-top: 1px solid var(--border); }
+    .section-eyebrow { font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--orange); font-weight: 600; font-family: var(--font-body); display: block; margin-bottom: 10px; }
+    .section-title { font-size: clamp(1.5rem, 2.5vw, 2rem); color: var(--green-dark); margin-bottom: 12px; }
+    .related-card { background: var(--cream); border-radius: var(--radius-md); border: 1px solid var(--border); overflow: hidden; transition: box-shadow 0.2s, transform 0.2s; }
+    .related-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); }
+    .related-card-img { height: 180px; overflow: hidden; }
+    .related-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.35s; }
+    .related-card:hover .related-card-img img { transform: scale(1.06); }
+    .related-card-body { padding: 18px; }
+    .related-card-title { font-family: var(--font-display); font-size: 1rem; color: var(--green-dark); margin-bottom: 6px; }
+    .related-card-desc { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 14px; line-height: 1.55; }
+
+    /* BADGE */
+    .product-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(45,106,79,0.1); color: var(--green-dark); font-size: 0.72rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; border: 1px solid rgba(45,106,79,0.2); margin-bottom: 16px; }
+
+    /* CERT BADGES ROW */
+    .cert-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+    .cert-badge { background: var(--cream-dark); border: 1px solid var(--border); color: var(--green-dark); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; padding: 5px 11px; border-radius: 3px; }
+
+    /* SUCCESS MESSAGE */
+    .form-success { display: none; background: rgba(45,106,79,0.1); border: 1px solid var(--green-mid); color: var(--green-dark); padding: 14px 18px; border-radius: var(--radius-sm); font-size: 0.88rem; margin-top: 12px; }
+
+    @media (max-width: 991.98px) {
+      .product-gallery, .inquiry-sidebar { position: static; }
+      .product-detail-section { padding: 36px 0 52px; }
+    }
+    @media (max-width: 767.98px) {
+      .gallery-main { height: 260px; }
+      .gallery-thumb { width: 64px; height: 64px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar d-none d-md-block">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center gap-4">
+          <div class="tb-item"><i class="bi bi-telephone-fill"></i><a href="tel:+911234567890">+91 12345 67890</a></div>
+          <div class="tb-divider"></div>
+          <div class="tb-item"><i class="bi bi-envelope-fill"></i><a href="mailto:export@spicecraftindia.com">export@spicecraftindia.com</a></div>
+        </div>
+        <div class="d-flex align-items-center gap-4">
+          <div class="tb-item"><i class="bi bi-patch-check-fill"></i><span>FSSAI &bull; ISO 22000 &bull; Spices Board Certified</span></div>
+          <div class="tb-divider"></div>
+          <div class="tb-item"><i class="bi bi-globe2"></i><span>Exporting to 30+ Countries</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar navbar-expand-lg navbar-main">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <div class="brand-logo-box">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 4C10.477 4 6 8.477 6 14c0 3.5 1.8 6.6 4.5 8.5L16 28l5.5-5.5C24.2 20.6 26 17.5 26 14c0-5.523-4.477-10-10-10z" fill="#E07B39"/>
+            <path d="M16 10a4 4 0 100 8 4 4 0 000-8z" fill="white"/>
+            <path d="M14 4.2C9 5.5 6 10 6 14h4c0-2.8 1.6-5.2 4-6.5V4.2z" fill="#F4A261" opacity=".6"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">SpiceCraft Exports</span>
+          <span class="brand-sub">Est. 2001 · India</span>
+        </div>
+      </a>
+
+      <button class="navbar-toggler border-0 p-2" type="button"
+        data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-label="Open navigation">
+        <i class="bi bi-list fs-4 text-dark"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item"><a class="nav-link" data-page="index.html" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" data-page="about.html" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" data-page="products.html" href="products.html">Products</a></li>
+          <li class="nav-item"><a class="nav-link" data-page="certification.html" href="certification.html">Certifications</a></li>
+          <li class="nav-item"><a class="nav-link nav-cta" data-page="inquire.html" href="inquire.html">Get Inquiry</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== OFFCANVAS SIDEBAR ===== -->
+  <div class="offcanvas offcanvas-start offcanvas-sidebar" id="sidebarMenu" tabindex="-1" aria-labelledby="sidebarMenuLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="sidebarMenuLabel">SpiceCraft Exports</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <nav>
+        <a class="nav-link" data-page="index.html" href="index.html">
+          <i class="bi bi-house"></i> Home
+        </a>
+        <a class="nav-link" data-page="about.html" href="about.html">
+          <i class="bi bi-building"></i> About Us
+        </a>
+        <a class="nav-link" data-page="products.html" href="products.html">
+          <i class="bi bi-grid"></i> Products
+        </a>
+        <a class="nav-link" data-page="certification.html" href="certification.html">
+          <i class="bi bi-patch-check"></i> Certifications
+        </a>
+        <a class="nav-link" data-page="inquire.html" href="inquire.html">
+          <i class="bi bi-envelope"></i> Inquire Now
+        </a>
+      </nav>
+      <div class="sidebar-cta-wrap">
+        <a href="inquire.html" class="btn-primary-spice w-100 justify-content-center" style="border-radius:6px;padding:14px;">
+          <i class="bi bi-send"></i> Send Inquiry
+        </a>
+        <div class="mt-3 text-center" style="font-size:0.78rem;color:var(--text-muted);">
+          <i class="bi bi-telephone me-1"></i> +91 12345 67890
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb-strip">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="products.html">Products</a></li>
+          <li class="breadcrumb-item active" id="breadcrumbProduct">Product Details</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <!-- PRODUCT DETAIL -->
+  <section class="product-detail-section">
+    <div class="container">
+      <div class="row g-5">
+
+        <!-- LEFT: Gallery -->
+        <div class="col-lg-5">
+          <div class="product-gallery">
+            <div class="gallery-main">
+              <img id="galleryMainImg" src="" alt="Product" />
+            </div>
+            <div class="gallery-thumbs" id="galleryThumbs"></div>
+          </div>
+        </div>
+
+        <!-- MIDDLE: Info -->
+        <div class="col-lg-4">
+          <div id="productBadge" class="product-badge"></div>
+          <h1 class="product-detail-title" id="productTitle">Loading…</h1>
+          <div class="product-tags-row" id="productTags"></div>
+          <p class="product-desc" id="productDesc"></p>
+
+          <!-- TABS -->
+          <div class="tab-nav" id="tabNav">
+            <button class="tab-btn active" data-tab="specs">Specifications</button>
+            <button class="tab-btn" data-tab="packaging">Packaging</button>
+            <button class="tab-btn" data-tab="quality">Quality</button>
+          </div>
+
+          <div class="tab-pane active" id="tab-specs">
+            <table class="spec-table" id="specTable"></table>
+          </div>
+
+          <div class="tab-pane" id="tab-packaging">
+            <div class="pack-grid" id="packGrid"></div>
+            <p style="font-size:0.82rem;color:var(--text-muted);margin-top:16px;" id="packNote"></p>
+          </div>
+
+          <div class="tab-pane" id="tab-quality">
+            <ul class="feature-list" id="qualityList"></ul>
+            <div class="cert-row" id="certRow"></div>
+          </div>
+
+          <div class="d-flex gap-3 mt-4 flex-wrap">
+            <a href="inquire.html" class="btn-primary-spice" style="border-radius:6px;"><i class="bi bi-send"></i> Request Quote</a>
+            <a href="products.html" class="btn-outline-green" style="border-radius:6px;"><i class="bi bi-arrow-left"></i> All Products</a>
+          </div>
+        </div>
+
+        <!-- RIGHT: Quick Inquiry Sidebar -->
+        <div class="col-lg-3">
+          <div class="inquiry-sidebar">
+            <div class="inquiry-card">
+              <h5><i class="bi bi-envelope me-2" style="color:var(--orange);"></i>Quick Inquiry</h5>
+              <div class="form-group">
+                <label class="form-label">Your Name</label>
+                <input type="text" class="form-control" placeholder="Full name" id="qName" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Email / WhatsApp</label>
+                <input type="text" class="form-control" placeholder="Email or phone" id="qContact" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Quantity Required</label>
+                <input type="text" class="form-control" placeholder="e.g. 5 MT / month" id="qQty" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Destination Country</label>
+                <input type="text" class="form-control" placeholder="e.g. USA, UAE, UK" id="qDest" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Message (optional)</label>
+                <textarea class="form-control" rows="3" placeholder="Grade, packaging, any specific requirement…" id="qMsg"></textarea>
+              </div>
+              <button class="btn-primary-spice w-100 justify-content-center" style="border-radius:6px;" onclick="submitInquiry()">
+                <i class="bi bi-send"></i> Send Inquiry
+              </button>
+              <div class="form-success" id="formSuccess">
+                <i class="bi bi-check-circle-fill me-2"></i> Inquiry sent! We'll respond within 24 hours.
+              </div>
+            </div>
+
+            <div class="inquiry-card">
+              <h5><i class="bi bi-telephone me-2" style="color:var(--orange);"></i>Talk to Us</h5>
+              <div class="contact-item"><i class="bi bi-telephone-fill"></i><a href="tel:+911234567890">+91 12345 67890</a></div>
+              <div class="contact-item"><i class="bi bi-whatsapp"></i><a href="https://wa.me/911234567890">WhatsApp Business</a></div>
+              <div class="contact-item"><i class="bi bi-envelope-fill"></i><a href="mailto:export@spicecraftindia.com">export@</a></div>
+              <div class="contact-item"><i class="bi bi-clock"></i><span>Mon–Sat, 9 am – 6 pm IST</span></div>
+            </div>
+
+            <div style="background:var(--green-dark);border-radius:var(--radius-md);padding:22px;">
+              <div style="font-size:0.72rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--orange-light);font-weight:600;margin-bottom:10px;">Why SpiceCraft</div>
+              <ul style="list-style:none;padding:0;margin:0;">
+                <li style="font-size:0.82rem;color:rgba(255,255,255,0.7);margin-bottom:8px;display:flex;gap:8px;"><i class="bi bi-check-circle-fill" style="color:var(--orange-light);flex-shrink:0;margin-top:2px;"></i>ISO 22000 &amp; FSSAI Certified</li>
+                <li style="font-size:0.82rem;color:rgba(255,255,255,0.7);margin-bottom:8px;display:flex;gap:8px;"><i class="bi bi-check-circle-fill" style="color:var(--orange-light);flex-shrink:0;margin-top:2px;"></i>NABL Lab tested batches</li>
+                <li style="font-size:0.82rem;color:rgba(255,255,255,0.7);margin-bottom:8px;display:flex;gap:8px;"><i class="bi bi-check-circle-fill" style="color:var(--orange-light);flex-shrink:0;margin-top:2px;"></i>FOB / CIF terms available</li>
+                <li style="font-size:0.82rem;color:rgba(255,255,255,0.7);margin-bottom:0;display:flex;gap:8px;"><i class="bi bi-check-circle-fill" style="color:var(--orange-light);flex-shrink:0;margin-top:2px;"></i>Sample dispatch in 5 days</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED PRODUCTS -->
+  <section class="related-section">
+    <div class="container">
+      <span class="section-eyebrow">You May Also Like</span>
+      <h2 class="section-title">Related Products</h2>
+      <div class="row g-4 mt-3" id="relatedGrid"></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:#111D18;color:rgba(255,255,255,0.72);padding:64px 0 0;">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4">
+          <a href="index.html" class="navbar-brand" style="padding:0;margin-bottom:16px;display:inline-flex;">
+            <div class="brand-logo-box">
+              <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 4C10.477 4 6 8.477 6 14c0 3.5 1.8 6.6 4.5 8.5L16 28l5.5-5.5C24.2 20.6 26 17.5 26 14c0-5.523-4.477-10-10-10z" fill="#E07B39"/>
+                <path d="M16 10a4 4 0 100 8 4 4 0 000-8z" fill="white"/>
+              </svg>
+            </div>
+            <div class="brand-text ms-3">
+              <span class="brand-name" style="color:white;font-family:var(--font-display);font-size:1.1rem;font-weight:700;display:block;">SpiceCraft Exports</span>
+              <span class="brand-sub" style="color:var(--orange-light);font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;display:block;">Est. 2001 · India</span>
+            </div>
+          </a>
+          <p style="font-size:0.85rem;color:rgba(255,255,255,0.5);">Premium Indian spice manufacturer and exporter. Rajkot, Gujarat — India's spice capital.</p>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6 style="font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:rgba(255,255,255,0.35);margin-bottom:16px;">Company</h6>
+          <ul style="list-style:none;padding:0;margin:0;">
+            <li style="margin-bottom:10px;"><a href="index.html" style="font-size:0.87rem;color:rgba(255,255,255,0.6);">Home</a></li>
+            <li style="margin-bottom:10px;"><a href="about.html" style="font-size:0.87rem;color:rgba(255,255,255,0.6);">About Us</a></li>
+            <li style="margin-bottom:10px;"><a href="certification.html" style="font-size:0.87rem;color:rgba(255,255,255,0.6);">Certifications</a></li>
+            <li style="margin-bottom:10px;"><a href="inquire.html" style="font-size:0.87rem;color:rgba(255,255,255,0.6);">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6 style="font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:rgba(255,255,255,0.35);margin-bottom:16px;">Products</h6>
+          <ul style="list-style:none;padding:0;margin:0;">
+            <li style="margin-bottom:10px;"><a href="product-details.html?p=turmeric" style="font-size:0.87rem;color:rgba(255,255,255,0.6);">Turmeric Powder</a></li>
+            <li style="margin-bottom:10px;"><a href="product-details.html?p=chilli" style="font-size:0.87rem;color:rgba(255,255,255,0.6);">Red Chilli Powder</a></li>
+            <li style="margin-bottom:10px;"><a href="product-details.html?p=coriander" style="font-size:0.87rem;color:rgba(255,255,255,0.6);">Coriander Powder</a></li>
+            <li style="margin-bottom:10px;"><a href="product-details.html?p=cumin" style="font-size:0.87rem;color:rgba(255,255,255,0.6);">Cumin</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h6 style="font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:rgba(255,255,255,0.35);margin-bottom:16px;">Get in Touch</h6>
+          <div style="display:flex;gap:10px;align-items:flex-start;font-size:0.85rem;color:rgba(255,255,255,0.6);margin-bottom:12px;"><i class="bi bi-geo-alt-fill" style="color:var(--orange);"></i><span>Plot 47, GIDC Phase II, Rajkot — 360021, Gujarat, India</span></div>
+          <div style="display:flex;gap:10px;align-items:center;font-size:0.85rem;color:rgba(255,255,255,0.6);margin-bottom:12px;"><i class="bi bi-telephone-fill" style="color:var(--orange);"></i><a href="tel:+911234567890" style="color:rgba(255,255,255,0.6);">+91 12345 67890</a></div>
+          <div style="display:flex;gap:10px;align-items:center;font-size:0.85rem;color:rgba(255,255,255,0.6);margin-bottom:12px;"><i class="bi bi-envelope-fill" style="color:var(--orange);"></i><a href="mailto:export@spicecraftindia.com" style="color:rgba(255,255,255,0.6);">export@spicecraftindia.com</a></div>
+        </div>
+      </div>
+      <div style="margin-top:48px;padding:20px 0;border-top:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+        <p style="font-size:0.78rem;color:rgba(255,255,255,0.3);margin:0;">&copy; 2025 SpiceCraft Exports. All rights reserved.</p>
+        <span style="font-size:0.76rem;color:rgba(255,255,255,0.3);">Exporting since 2001 &bull; 30+ Countries &bull; 500 MT/month capacity</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // ========================
+    // PRODUCT DATA
+    // ========================
+    const products = {
+      turmeric: {
+        name: 'Turmeric Powder',
+        badge: '⭐ Best Seller',
+        hsCode: '0910.30',
+        category: 'Roots & Rhizomes',
+        images: [
+          'https://images.unsplash.com/photo-1615485500704-8e3b5905e70e?w=700&q=80',
+          'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=700&q=80',
+          'https://images.unsplash.com/photo-1617096200347-cb04ae810b1d?w=700&q=80',
+        ],
+        tags: ['3.5% Curcumin', 'Steam Sterilised', 'Moisture ≤ 10%', 'APEDA Registered'],
+        desc: 'Our Turmeric Powder is sourced from Rajapore and Lakadong varieties grown in Erode (Tamil Nadu) and Andhra Pradesh. With a minimum curcumin content of 3.5%, it delivers exceptional colour intensity, earthy aroma, and superior colouring power. Each batch is steam sterilised to meet international microbial standards and tested for pesticide residue and aflatoxin. Suitable for food processing, pharmaceuticals, nutraceuticals, and cosmetics.',
+        specs: [
+          ['Variety', 'Rajapore / Lakadong'],
+          ['Curcumin Content', '≥ 3.5%'],
+          ['Moisture', '≤ 10%'],
+          ['Total Ash', '≤ 7%'],
+          ['Acid Insoluble Ash', '≤ 1%'],
+          ['Volatile Oil', '≥ 3.5 ml/100g'],
+          ['Mesh Size', '60–100 mesh'],
+          ['Colour Value (ASTA)', '25–35'],
+          ['Pesticide Residue', 'As per EU MRL'],
+          ['Aflatoxin', 'B1 ≤ 2 ppb (EU Spec)'],
+          ['Microbial Load', '< 10,000 CFU/g'],
+          ['Origin', 'Erode / Nizamabad, India'],
+        ],
+        packaging: [
+          { icon: 'bi-box-seam', label: '25 kg PP Bag', note: 'Standard bulk' },
+          { icon: 'bi-box', label: '50 kg Jute Bag', note: 'With liner' },
+          { icon: 'bi-archive', label: '5 kg Retail Pack', note: 'Branded / private label' },
+          { icon: 'bi-truck', label: 'FCL / LCL', note: 'Container loads' },
+        ],
+        packNote: 'Custom private-label packaging available. MOQ for private label: 1 MT. All packs include silica gel desiccant and moisture-proof inner liner.',
+        quality: [
+          'NABL accredited in-house lab — every batch tested before dispatch',
+          'Steam sterilised to achieve E. coli & Salmonella free status',
+          'Aflatoxin tested — B1 ≤ 2 ppb (EU specification)',
+          'Pesticide residues within EU MRL limits',
+          'COA, Phytosanitary Certificate, and Health Certificate provided',
+          'HACCP compliant processing with traceability to farm level',
+        ],
+        certs: ['FSSAI', 'ISO 22000', 'HALAL', 'Kosher', 'APEDA', 'Spices Board'],
+        related: ['chilli', 'coriander', 'cumin'],
+      },
+
+      chilli: {
+        name: 'Red Chilli Powder',
+        badge: '🌶 Export Ready',
+        hsCode: '0904.22',
+        category: 'Chillies',
+        images: [
+          'https://images.unsplash.com/photo-1583737174775-2e7b43e63b5f?w=700&q=80',
+          'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=700&q=80',
+          'https://images.unsplash.com/photo-1638255975088-b81f0291d3c7?w=700&q=80',
+        ],
+        tags: ['ASTA 160–200', 'SHU 25k–75k', 'Aflatoxin Tested', 'ETO Free'],
+        desc: 'Manufactured from premium S4 (Teja), Byadgi, and Guntur varieties — the benchmark chillies for export quality. Available in Mild (ASTA 100–120), Medium (ASTA 130–160), and Extra-Hot (ASTA 160–200+) grades. Each grade is tested for aflatoxin, Sudan dye, and pesticide residues. Widely supplied to sauce manufacturers, meat processors, seasoning companies, and spice traders in the USA, EU, Middle East, and Southeast Asia.',
+        specs: [
+          ['Varieties', 'S4 (Teja) / Byadgi / Guntur'],
+          ['ASTA Colour Value', '100–200 (grade dependent)'],
+          ['Scoville Heat Units', '25,000–75,000 SHU'],
+          ['Moisture', '≤ 10%'],
+          ['Total Ash', '≤ 8%'],
+          ['Volatile Oil', '≥ 0.3 ml/100g'],
+          ['Mesh Size', '60 mesh (fine)'],
+          ['Sudan Dye', 'Negative'],
+          ['Aflatoxin B1', '≤ 5 ppb'],
+          ['Pesticide Residue', 'EU / USFDA compliant'],
+          ['ETO Sterilisation', 'Not used (steam only)'],
+          ['Origin', 'Guntur / Khammam, Andhra Pradesh'],
+        ],
+        packaging: [
+          { icon: 'bi-box-seam', label: '25 kg PP Bag', note: 'Vacuum sealed' },
+          { icon: 'bi-box', label: '10 kg Carton', note: 'For retail dist.' },
+          { icon: 'bi-archive', label: '1–5 kg Retail', note: 'Private label' },
+          { icon: 'bi-truck', label: 'FCL / LCL', note: 'FCL: 18 MT in 20ft' },
+        ],
+        packNote: 'Vacuum-sealed inner bags for ASTA-sensitive grades. Private label available with your brand, design, and barcode printing.',
+        quality: [
+          'Tested for Sudan Red I–IV dyes (EU Regulation EC/208/2005)',
+          'Aflatoxin B1 ≤ 5 ppb — ELISA tested every batch',
+          'No ETO (ethylene oxide) treatment used',
+          'Steam sterilisation for pathogen reduction',
+          'Heavy metals within EU/USFDA permissible limits',
+          'Colour stability guaranteed for 18 months from manufacturing',
+        ],
+        certs: ['FSSAI', 'ISO 22000', 'HALAL', 'APEDA', 'Spices Board'],
+        related: ['turmeric', 'coriander', 'paprika'],
+      },
+
+      coriander: {
+        name: 'Coriander Powder',
+        badge: '✦ Premium Grade',
+        hsCode: '0909.21',
+        category: 'Seeds & Grains',
+        images: [
+          'https://images.unsplash.com/photo-1638255975088-b81f0291d3c7?w=700&q=80',
+          'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=700&q=80',
+          'https://images.unsplash.com/photo-1615485500704-8e3b5905e70e?w=700&q=80',
+        ],
+        tags: ['ETO Free', 'Volatile Oil 0.4%', 'Fine Mesh', 'Rajasthan Origin'],
+        desc: 'Our Coriander Powder is ground from hand-sorted Eagle and Scooter variety seeds sourced from Kota and Baran districts in Rajasthan — India\'s largest coriander-growing region. The warm, citrusy flavour profile with subtle nuttiness makes it ideal for spice blends, curry mixes, and seasoning applications. Ground to 60-mesh fineness and tested for volatile oil, moisture, and microbial parameters. Absolutely no ETO treatment used.',
+        specs: [
+          ['Variety', 'Eagle / Scooter'],
+          ['Volatile Oil', '≥ 0.3 ml/100g'],
+          ['Moisture', '≤ 10%'],
+          ['Total Ash', '≤ 7%'],
+          ['Acid Insoluble Ash', '≤ 1.5%'],
+          ['Mesh Size', '40–60 mesh'],
+          ['Extraneous Matter', '≤ 0.5%'],
+          ['ETO Treatment', 'Not used'],
+          ['Aflatoxin B1', '≤ 2 ppb'],
+          ['Pesticide Residue', 'EU MRL compliant'],
+          ['Bulk Density', '0.45–0.55 g/ml'],
+          ['Origin', 'Kota / Baran, Rajasthan'],
+        ],
+        packaging: [
+          { icon: 'bi-box-seam', label: '25 kg PP Bag', note: 'Standard bulk' },
+          { icon: 'bi-box', label: '50 kg Jute', note: 'With poly liner' },
+          { icon: 'bi-archive', label: '1–5 kg Retail', note: 'Private label' },
+          { icon: 'bi-truck', label: 'FCL / LCL', note: 'Container loads' },
+        ],
+        packNote: 'Packed with nitrogen flushing option for extended shelf life. Ideal for customers requiring 24-month shelf life.',
+        quality: [
+          'ETO (ethylene oxide) free — steam sterilised only',
+          'Volatile oil ≥ 0.3% — tested by hydro-distillation',
+          'Pesticide residues within EU MRL limits',
+          'Aflatoxin ≤ 2 ppb — ELISA method',
+          'Optical sorting and gravity separation for uniform powder',
+          'Shelf life: 24 months from manufacturing in intact packaging',
+        ],
+        certs: ['FSSAI', 'ISO 22000', 'HALAL', 'Kosher', 'APEDA', 'Spices Board'],
+        related: ['turmeric', 'cumin', 'fenugreek'],
+      },
+
+      cumin: {
+        name: 'Cumin (Seeds & Powder)',
+        badge: '⭐ Best Seller',
+        hsCode: '0909.31',
+        category: 'Seeds & Grains',
+        images: [
+          'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=700&q=80',
+          'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=700&q=80',
+          'https://images.unsplash.com/photo-1638255975088-b81f0291d3c7?w=700&q=80',
+        ],
+        tags: ['Volatile Oil ≥ 2.5%', 'Unjha Origin', 'Sortex Clean', 'Bold Grade'],
+        desc: 'Unjha-origin cumin — the global benchmark for quality jeera. Available as whole seeds (bold 99/1 and 99/1.5 grade), lightly roasted seeds, or fine-milled powder. Deep warm aroma, high volatile oil content, and superior flavour make SpiceCraft cumin the preferred choice for ethnic food brands, sauce manufacturers, and spice importers across 25 countries.',
+        specs: [
+          ['Origin', 'Unjha, Gujarat / Jodhpur, Rajasthan'],
+          ['Grade', '99/1, 99/1.5 (whole seeds)'],
+          ['Volatile Oil', '≥ 2.5 ml/100g'],
+          ['Moisture', '≤ 9%'],
+          ['Total Ash', '≤ 9.5%'],
+          ['Extraneous Matter', '≤ 0.5%'],
+          ['Mesh Size (powder)', '60 mesh fine'],
+          ['Aflatoxin B1', '≤ 2 ppb'],
+          ['Pesticide Residue', 'EU MRL compliant'],
+          ['Available Forms', 'Whole / Roasted / Powder'],
+        ],
+        packaging: [
+          { icon: 'bi-box-seam', label: '25 kg PP Bag', note: 'Bulk seeds' },
+          { icon: 'bi-box', label: '50 kg Jute', note: 'Traditional bulk' },
+          { icon: 'bi-archive', label: '1–5 kg Retail', note: 'Private label' },
+          { icon: 'bi-truck', label: 'FCL / LCL', note: '18 MT per 20ft FCL' },
+        ],
+        packNote: 'Whole seeds packed in breathable jute bags with poly liner. Powder packed in moisture-proof laminated bags.',
+        quality: [
+          'Optical sortex and colour sorting for uniform bold seeds',
+          'Volatile oil ≥ 2.5% — tested by hydrodistillation',
+          'Pesticide residue EU MRL compliant',
+          'Aflatoxin B1 ≤ 2 ppb',
+          'Microbial load within food-safe limits',
+          'COA, Phytosanitary Certificate, and country-specific health certs available',
+        ],
+        certs: ['FSSAI', 'ISO 22000', 'HALAL', 'APEDA', 'Spices Board'],
+        related: ['coriander', 'fenugreek', 'turmeric'],
+      },
+
+      ginger: {
+        name: 'Ginger Powder',
+        badge: '🌿 Export Ready',
+        hsCode: '0910.11',
+        category: 'Roots & Rhizomes',
+        images: [
+          'https://images.unsplash.com/photo-1615485291006-0a3d01e39e4e?w=700&q=80',
+          'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=700&q=80',
+          'https://images.unsplash.com/photo-1638255975088-b81f0291d3c7?w=700&q=80',
+        ],
+        tags: ['Gingerol ≥ 1.2%', 'Moisture ≤ 12%', 'Non-ETO', 'Wayanad Origin'],
+        desc: 'Processed from fresh ginger rhizomes sourced from Wayanad (Kerala) and Himachal Pradesh farms — two of India\'s premier ginger-growing regions. Pungent aroma with warm, spicy heat. High gingerol content makes it the preferred ingredient for functional beverages, bakery, confectionery, and Ayurvedic formulations. Available as coarse, fine, or ultra-fine powder.',
+        specs: [
+          ['Origin', 'Wayanad, Kerala / Himachal Pradesh'],
+          ['Gingerol Content', '≥ 1.2%'],
+          ['Moisture', '≤ 12%'],
+          ['Total Ash', '≤ 7%'],
+          ['Volatile Oil', '≥ 1.5 ml/100g'],
+          ['Mesh Size', '40–80 mesh'],
+          ['ETO Treatment', 'Not used'],
+          ['Aflatoxin B1', '≤ 2 ppb'],
+          ['Pesticide Residue', 'EU MRL compliant'],
+        ],
+        packaging: [
+          { icon: 'bi-box-seam', label: '25 kg Bag', note: 'Standard bulk' },
+          { icon: 'bi-archive', label: '1–5 kg Retail', note: 'Private label' },
+          { icon: 'bi-truck', label: 'FCL / LCL', note: 'Container loads' },
+        ],
+        packNote: 'Available in coarse (40 mesh), fine (60 mesh), and ultra-fine (80 mesh). Custom mesh sizes on request.',
+        quality: [
+          'ETO free — steam sterilisation only',
+          'Gingerol content ≥ 1.2% — HPLC method',
+          'Aflatoxin B1 ≤ 2 ppb',
+          'EU pesticide MRL compliant',
+          'Volatile oil tested per ISO 6571',
+        ],
+        certs: ['FSSAI', 'ISO 22000', 'HALAL', 'APEDA'],
+        related: ['turmeric', 'coriander', 'cumin'],
+      },
+
+      blends: {
+        name: 'Custom Spice Blends & Masala',
+        badge: '🏷 Custom OEM',
+        hsCode: '0910.91',
+        category: 'Spice Blends',
+        images: [
+          'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=700&q=80',
+          'https://images.unsplash.com/photo-1638255975088-b81f0291d3c7?w=700&q=80',
+          'https://images.unsplash.com/photo-1617096200347-cb04ae810b1d?w=700&q=80',
+        ],
+        tags: ['Custom Formula', 'Private Label', 'MOQ 500 kg', 'R&D Support'],
+        desc: 'SpiceCraft\'s blending division formulates Garam Masala, Chaat Masala, Curry Powder, Biryani Masala, and fully custom blends to your specification. Our in-house food technologist team develops and refines recipes for target flavour profiles, heat levels, and colour parameters. Private-label packaging with your branding is available from 100g retail packs to 25 kg institutional bags.',
+        specs: [
+          ['Standard Blends', 'Garam Masala, Curry Powder, Chaat Masala, Biryani Masala'],
+          ['Custom Blends', 'Formulated per client brief'],
+          ['MOQ (Standard)', '500 kg per blend'],
+          ['MOQ (Custom)', '1 MT (includes R&D sample)'],
+          ['Sample Lead Time', '5–7 working days'],
+          ['Packaging', '100g to 25 kg (all formats)'],
+          ['Private Label', 'Yes — design + print available'],
+          ['Shelf Life', '18–24 months'],
+          ['Certifications', 'FSSAI, HALAL, Kosher available'],
+        ],
+        packaging: [
+          { icon: 'bi-bag', label: '100g–500g Retail', note: 'Stand-up pouch' },
+          { icon: 'bi-box-seam', label: '1–5 kg Pack', note: 'Institutional' },
+          { icon: 'bi-box', label: '10–25 kg Bag', note: 'Bulk processing' },
+          { icon: 'bi-pencil-square', label: 'Private Label', note: 'Your brand' },
+        ],
+        packNote: 'We handle the complete OEM cycle: formulation → approval → packaging design → production → export documentation. Ideal for brands entering the Indian spice market.',
+        quality: [
+          'In-house food technologist for blend formulation and scale-up',
+          'Batch consistency ensured through standardised mixing protocols',
+          'Each blend tested for colour, aroma, moisture, and microbial parameters',
+          'HALAL and Kosher certification available for blends',
+          'Colour matching to Pantone specification for packaging',
+        ],
+        certs: ['FSSAI', 'ISO 22000', 'HALAL', 'Kosher', 'APEDA'],
+        related: ['turmeric', 'chilli', 'coriander'],
+      },
+    };
+
+    // Fallback for unknown products
+    const defaultProduct = products.turmeric;
+
+    // ========================
+    // RENDER PRODUCT
+    // ========================
+    function getParam(key) {
+      return new URLSearchParams(window.location.search).get(key) || 'turmeric';
+    }
+
+    function renderProduct() {
+      const key = getParam('p');
+      const p = products[key] || defaultProduct;
+
+      // Page title
+      document.title = p.name + ' — SpiceCraft Exports';
+      document.getElementById('breadcrumbProduct').textContent = p.name;
+
+      // Badge
+      document.getElementById('productBadge').textContent = p.badge;
+
+      // Title
+      document.getElementById('productTitle').textContent = p.name;
+
+      // Tags
+      const tagsEl = document.getElementById('productTags');
+      tagsEl.innerHTML = p.tags.map(t => `<span class="product-tag">${t}</span>`).join('') +
+        `<span class="product-tag product-tag-orange">HS: ${p.hsCode}</span>`;
+
+      // Desc
+      document.getElementById('productDesc').textContent = p.desc;
+
+      // Gallery
+      const mainImg = document.getElementById('galleryMainImg');
+      mainImg.src = p.images[0];
+      mainImg.alt = p.name;
+      const thumbsEl = document.getElementById('galleryThumbs');
+      thumbsEl.innerHTML = p.images.map((src, i) =>
+        `<div class="gallery-thumb ${i === 0 ? 'active' : ''}" onclick="switchImg(this, '${src}')">
+          <img src="${src}" alt="${p.name} view ${i+1}" loading="lazy" />
+        </div>`
+      ).join('');
+
+      // Spec table
+      const specEl = document.getElementById('specTable');
+      specEl.innerHTML = p.specs.map(([k, v]) =>
+        `<tr><th>${k}</th><td>${v}</td></tr>`
+      ).join('');
+
+      // Packaging
+      const packEl = document.getElementById('packGrid');
+      packEl.innerHTML = p.packaging.map(pk =>
+        `<div class="pack-item"><i class="bi ${pk.icon}"></i><strong>${pk.label}</strong><span>${pk.note}</span></div>`
+      ).join('');
+      document.getElementById('packNote').textContent = p.packNote;
+
+      // Quality
+      const qualEl = document.getElementById('qualityList');
+      qualEl.innerHTML = p.quality.map(q =>
+        `<li><i class="bi bi-check2-circle check-icon"></i><span>${q}</span></li>`
+      ).join('');
+      const certEl = document.getElementById('certRow');
+      certEl.innerHTML = p.certs.map(c => `<span class="cert-badge">${c}</span>`).join('');
+
+      // Related products
+      const relEl = document.getElementById('relatedGrid');
+      const relKeys = (p.related || []).slice(0, 3);
+      relEl.innerHTML = relKeys.map(rk => {
+        const rp = products[rk];
+        if (!rp) return '';
+        return `
+          <div class="col-md-6 col-lg-4">
+            <a href="product-details.html?p=${rk}" class="related-card d-block">
+              <div class="related-card-img">
+                <img src="${rp.images[0]}" alt="${rp.name}" loading="lazy" />
+              </div>
+              <div class="related-card-body">
+                <h4 class="related-card-title">${rp.name}</h4>
+                <p class="related-card-desc">${rp.tags.slice(0,2).join(' · ')}</p>
+                <span style="color:var(--orange);font-size:0.82rem;font-weight:600;">View Details <i class="bi bi-arrow-right"></i></span>
+              </div>
+            </a>
+          </div>`;
+      }).join('');
+    }
+
+    function switchImg(thumb, src) {
+      document.getElementById('galleryMainImg').style.opacity = '0.6';
+      setTimeout(() => {
+        document.getElementById('galleryMainImg').src = src;
+        document.getElementById('galleryMainImg').style.opacity = '1';
+      }, 150);
+      document.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('active'));
+      thumb.classList.add('active');
+    }
+
+    // Tab switching
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+      });
+    });
+
+    // Quick inquiry submit
+    function submitInquiry() {
+      const name = document.getElementById('qName').value.trim();
+      const contact = document.getElementById('qContact').value.trim();
+      if (!name || !contact) {
+        alert('Please enter your name and contact details.');
+        return;
+      }
+      document.getElementById('formSuccess').style.display = 'block';
+      ['qName','qContact','qQty','qDest','qMsg'].forEach(id => document.getElementById(id).value = '');
+      setTimeout(() => { document.getElementById('formSuccess').style.display = 'none'; }, 5000);
+    }
+    window.submitInquiry = submitInquiry;
+
+    // Init
+    renderProduct();
+  </script>
+</body>
+</html>
