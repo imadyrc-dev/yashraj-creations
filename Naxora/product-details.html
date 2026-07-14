@@ -183,25 +183,26 @@
             <div class="inquiry-card">
               <h5><i class="bi bi-envelope me-2" style="color:var(--orange);"></i>Quick Inquiry</h5>
               <div class="form-group">
-                <label class="form-label">Your Name</label>
-                <input type="text" class="form-control" placeholder="Full name" id="qName" />
+                <label class="form-label">First Name <span style="color:var(--orange);">*</span></label>
+                <input type="text" class="form-control" placeholder="Name" id="qFirstName" required />
               </div>
               <div class="form-group">
-                <label class="form-label">Email / WhatsApp</label>
-                <input type="text" class="form-control" placeholder="Email or phone" id="qContact" />
+                <label class="form-label">Last Name <span style="color:var(--orange);">*</span></label>
+                <input type="text" class="form-control" placeholder="Last Name" id="qLastName" required />
               </div>
               <div class="form-group">
-                <label class="form-label">Quantity Required</label>
-                <input type="text" class="form-control" placeholder="e.g. 5 MT / month" id="qQty" />
+                <label class="form-label">Business Email <span style="color:var(--orange);">*</span></label>
+                <input type="email" class="form-control" placeholder="john@company.com" id="qEmail" required />
               </div>
               <div class="form-group">
-                <label class="form-label">Destination Country</label>
-                <input type="text" class="form-control" placeholder="e.g. USA, UAE, UK" id="qDest" />
+                <label class="form-label">Phone / WhatsApp</label>
+                <input type="tel" class="form-control" placeholder="+1 234 567 8900" id="qPhone" />
               </div>
               <div class="form-group">
                 <label class="form-label">Message (optional)</label>
-                <textarea class="form-control" rows="3" placeholder="Grade, packaging, any specific requirement…"
-                  id="qMsg"></textarea>
+                <textarea class="form-control" rows="3"
+                  placeholder="Describe your requirement, specifications, or any special requests…"
+                  id="qMessage"></textarea>
               </div>
               <button class="btn-primary-spice w-100 justify-content-center" style="border-radius:6px;"
                 onclick="submitInquiry()">
@@ -456,14 +457,22 @@
 
     // Quick inquiry submit
     function submitInquiry() {
-      const name = document.getElementById('qName').value.trim();
-      const contact = document.getElementById('qContact').value.trim();
-      if (!name || !contact) {
-        alert('Please enter your name and contact details.');
+      const firstName = document.getElementById('qFirstName').value.trim();
+      const lastName = document.getElementById('qLastName').value.trim();
+      const email = document.getElementById('qEmail').value.trim();
+
+      if (!firstName || !lastName || !email) {
+        alert('Please enter your first name, last name, and email.');
         return;
       }
+
       document.getElementById('formSuccess').style.display = 'block';
-      ['qName', 'qContact', 'qQty', 'qDest', 'qMsg'].forEach(id => document.getElementById(id).value = '');
+      document.getElementById('qFirstName').value = '';
+      document.getElementById('qLastName').value = '';
+      document.getElementById('qEmail').value = '';
+      document.getElementById('qPhone').value = '';
+      document.getElementById('qMessage').value = '';
+
       setTimeout(() => { document.getElementById('formSuccess').style.display = 'none'; }, 5000);
     }
     window.submitInquiry = submitInquiry;
