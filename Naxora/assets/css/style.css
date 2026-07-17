@@ -169,7 +169,6 @@ img {
 .navbar-main .brand-logo-box {
   width: 240px;
   height: fit-content;
-  background: var(--green-dark);
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
