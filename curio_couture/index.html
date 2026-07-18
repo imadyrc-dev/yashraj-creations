@@ -67,21 +67,10 @@
     </div>
 
     <!-- ============================================================
-     TIER 2 — BRAND BAR: logo · search icon (desktop) · menu toggle (mobile)
+     TIER 2 — BRAND BAR: logo · menu toggle (mobile)
 ============================================================ -->
     <div class="brand-bar">
-        <div class="container-xl">
-
-            <a href="#" class="nav-logo">
-                <img src="images/Asset 2@2x.png" alt="Curio Couture">
-            </a>
-
-            <div class="brand-search">
-                <input type="text" placeholder="Search for products…" aria-label="Search" id="siteSearchInput">
-                <button type="button" aria-label="Search" id="siteSearchBtn">
-                    <i class="bi bi-search"></i>
-                </button>
-            </div>
+        <div class="container-xl brand-bar-grid">
 
             <button class="mobile-menu-btn d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu"
                 aria-label="Open menu" id="mobileMenuBtn">
@@ -89,14 +78,40 @@
                 <span class="mobile-menu-btn-line"></span>
                 <span class="mobile-menu-btn-line"></span>
             </button>
+
+            <a href="#" class="nav-logo">
+                <img src="images/Asset 2@2x.png" alt="Curio Couture">
+            </a>
+
+            <button class="nav-icon-btn brand-search-toggle d-lg-none" id="mobileSearchToggle" aria-label="Search"
+                aria-expanded="false" aria-controls="mobileSearchPanel">
+                <i class="bi bi-search"></i>
+            </button>
+        </div>
+
+        <!-- Mobile-only expanding search panel -->
+        <div class="mobile-search-panel d-lg-none" id="mobileSearchPanel">
+            <div class="container-xl">
+                <div class="brand-search">
+                    <input type="text" placeholder="Search for products…" aria-label="Search" id="mobileSearchInput">
+                    <button type="button" aria-label="Search" id="mobileSearchBtn">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 
     <!-- ============================================================
-     TIER 3 — MAIN NAV: links + phone, on white
+     TIER 3 — MAIN NAV: search icon · centered links · phone, on white
 ============================================================ -->
     <header class="navbar-curio" id="mainNav">
         <div class="container-xl nav-inner">
+
+            <button class="nav-icon-btn nav-search-toggle" id="navSearchToggle" aria-label="Search"
+                aria-expanded="false" aria-controls="navSearchPanel">
+                <i class="bi bi-search"></i>
+            </button>
 
             <nav>
                 <ul class="nav-links">
@@ -106,7 +121,7 @@
                         <a href="#">Category <i class="bi bi-chevron-down" style="font-size:.6rem;"></i></a>
                         <div class="mega-menu">
                             <div class="container-xl">
-                                <div class="row g-5">
+                                <div class="row g-5 justify-content-center">
                                     <div class="col-lg-3 col-6">
                                         <span class="mega-col-title">Occasion Wear</span>
                                         <ul class="mega-links">
@@ -125,29 +140,14 @@
                                             <li><a href="#">Pure Linen</a></li>
                                         </ul>
                                     </div>
-                                    <div class="col-lg-6 col-12">
-                                        <div class="row g-3">
-                                            <div class="col-md-6">
-                                                <div class="mega-feature">
-                                                    <img src="https://picsum.photos/seed/curiomega1/560/420"
-                                                        alt="The Fitoor wedding edit" loading="lazy">
-                                                    <div class="mega-feature-caption">
-                                                        <span class="eyebrow">New Edit</span>
-                                                        <h5>The Fitoor Collection</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="mega-feature">
-                                                    <img src="https://picsum.photos/seed/curiomega2/560/420"
-                                                        alt="Bandhgala craftsmanship" loading="lazy">
-                                                    <div class="mega-feature-caption">
-                                                        <span class="eyebrow">Signature</span>
-                                                        <h5>Hand-Embroidered Bandhgala</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div class="col-lg-3 col-6">
+                                        <span class="mega-col-title">Trending Now</span>
+                                        <ul class="mega-links">
+                                            <li><a href="#">The Fitoor Collection</a></li>
+                                            <li><a href="#">Hand-Embroidered Bandhgala</a></li>
+                                            <li><a href="#">Wedding Edit</a></li>
+                                            <li><a href="#">Festive Best Sellers</a></li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -158,7 +158,7 @@
                         <a href="#">Occasions <i class="bi bi-chevron-down" style="font-size:.6rem;"></i></a>
                         <div class="mega-menu">
                             <div class="container-xl">
-                                <div class="row g-5">
+                                <div class="row g-5 justify-content-center">
                                     <div class="col-lg-3 col-6">
                                         <span class="mega-col-title">Edit By</span>
                                         <ul class="mega-links">
@@ -168,29 +168,14 @@
                                             <li><a href="#">Sangeet</a></li>
                                         </ul>
                                     </div>
-                                    <div class="col-lg-9 col-12">
-                                        <div class="row g-3">
-                                            <div class="col-md-6">
-                                                <div class="mega-feature">
-                                                    <img src="https://picsum.photos/seed/curiomega1/560/420"
-                                                        alt="The Fitoor wedding edit" loading="lazy">
-                                                    <div class="mega-feature-caption">
-                                                        <span class="eyebrow">New Edit</span>
-                                                        <h5>The Fitoor Collection</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="mega-feature">
-                                                    <img src="https://picsum.photos/seed/curiomega2/560/420"
-                                                        alt="Bandhgala craftsmanship" loading="lazy">
-                                                    <div class="mega-feature-caption">
-                                                        <span class="eyebrow">Signature</span>
-                                                        <h5>Hand-Embroidered Bandhgala</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div class="col-lg-3 col-6">
+                                        <span class="mega-col-title">Featured Edits</span>
+                                        <ul class="mega-links">
+                                            <li><a href="#">The Fitoor Collection</a></li>
+                                            <li><a href="#">Hand-Embroidered Bandhgala</a></li>
+                                            <li><a href="#">The Zamindar Edit</a></li>
+                                            <li><a href="#">Pure Linen, SS26</a></li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -204,6 +189,19 @@
                 <i class="bi bi-telephone-fill"></i>
                 <span>+91 98765 43210</span>
             </div>
+        </div>
+
+        <!-- Expanding search panel, toggled by the search icon above -->
+        <div class="nav-search-panel" id="navSearchPanel">
+            <div class="container-xl">
+                <div class="brand-search">
+                    <input type="text" placeholder="Search for products…" aria-label="Search" id="siteSearchInput">
+                    <button type="button" aria-label="Search" id="siteSearchBtn">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
     </header>
 
     <!-- Mobile Offcanvas -->
@@ -832,20 +830,46 @@
         document.getElementById('shopAllGrid').innerHTML =
             PRODUCTS.map(p => productCard(p, 'col-lg-3 col-md-6 col-12')).join('');
 
-        /* Render New Arrivals track (horizontal scroller) */
+        /* Render New Arrivals track (horizontal scroller) — use all products so it always overflows */
         const newArrTrack = document.getElementById('newArrTrack');
-        newArrTrack.innerHTML = PRODUCTS.slice(4, 8).map(p => `<div style="flex:0 0 270px;">${productCard(p, '')}</div>`).join('');
+        newArrTrack.innerHTML = PRODUCTS.map(p => `<div class="new-arr-slide">${productCard(p, '')}</div>`).join('');
 
-        /* New arrivals prev/next */
+        /* New arrivals prev/next — measures real card width, clamps to real overflow */
+        const newArrViewport = newArrTrack.parentElement;
+        const newArrPrevBtn = document.getElementById('newArrPrev');
+        const newArrNextBtn = document.getElementById('newArrNext');
         let newArrOffset = 0;
-        document.getElementById('newArrNext').addEventListener('click', () => {
-            newArrOffset = Math.max(newArrOffset - 290, -(newArrTrack.scrollWidth - newArrTrack.parentElement.offsetWidth));
+
+        function newArrStep() {
+            const first = newArrTrack.querySelector('.new-arr-slide');
+            const gap = parseFloat(getComputedStyle(newArrTrack).columnGap) || 24;
+            return first ? first.getBoundingClientRect().width + gap : 294;
+        }
+        function newArrMaxOffset() {
+            const overflow = newArrTrack.scrollWidth - newArrViewport.offsetWidth;
+            return overflow > 0 ? -overflow : 0;
+        }
+        function newArrRefreshButtons() {
+            const maxOffset = newArrMaxOffset();
+            newArrPrevBtn.classList.toggle('disabled', newArrOffset >= 0);
+            newArrNextBtn.classList.toggle('disabled', newArrOffset <= maxOffset);
+        }
+        newArrNextBtn.addEventListener('click', () => {
+            newArrOffset = Math.max(newArrOffset - newArrStep(), newArrMaxOffset());
             newArrTrack.style.transform = `translateX(${newArrOffset}px)`;
+            newArrRefreshButtons();
         });
-        document.getElementById('newArrPrev').addEventListener('click', () => {
-            newArrOffset = Math.min(newArrOffset + 290, 0);
+        newArrPrevBtn.addEventListener('click', () => {
+            newArrOffset = Math.min(newArrOffset + newArrStep(), 0);
             newArrTrack.style.transform = `translateX(${newArrOffset}px)`;
+            newArrRefreshButtons();
         });
+        window.addEventListener('resize', () => {
+            newArrOffset = Math.max(Math.min(newArrOffset, 0), newArrMaxOffset());
+            newArrTrack.style.transform = `translateX(${newArrOffset}px)`;
+            newArrRefreshButtons();
+        });
+        newArrRefreshButtons();
 
         /* ---------------------------------------------------------
            PRELOADER
@@ -857,19 +881,53 @@
         });
 
         /* ---------------------------------------------------------
+           NAV SEARCH TOGGLE — expands the search panel under the navbar
+        --------------------------------------------------------- */
+        const navSearchToggle = document.getElementById('navSearchToggle');
+        const navSearchPanel = document.getElementById('navSearchPanel');
+        const siteSearchInputEl = document.getElementById('siteSearchInput');
+
+        function closeNavSearch() {
+            navSearchPanel.classList.remove('open');
+            navSearchToggle.setAttribute('aria-expanded', 'false');
+            navSearchToggle.classList.remove('active');
+        }
+        function toggleNavSearch() {
+            const isOpen = navSearchPanel.classList.toggle('open');
+            navSearchToggle.setAttribute('aria-expanded', String(isOpen));
+            navSearchToggle.classList.toggle('active', isOpen);
+            if (isOpen) setTimeout(() => siteSearchInputEl.focus(), 250);
+        }
+        navSearchToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleNavSearch();
+        });
+        document.addEventListener('click', (e) => {
+            if (navSearchPanel.classList.contains('open') &&
+                !navSearchPanel.contains(e.target) &&
+                !navSearchToggle.contains(e.target)) {
+                closeNavSearch();
+            }
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeNavSearch();
+        });
+
+        /* ---------------------------------------------------------
            SITE SEARCH — filters Shop All grid, no popup
         --------------------------------------------------------- */
         function runSiteSearch() {
-            const q = document.getElementById('siteSearchInput').value.trim().toLowerCase();
+            const q = siteSearchInputEl.value.trim().toLowerCase();
             const matches = q
                 ? PRODUCTS.filter(p => p.title.toLowerCase().includes(q) || p.cat.toLowerCase().includes(q))
                 : PRODUCTS;
             document.getElementById('shopAllGrid').innerHTML =
                 (matches.length ? matches : PRODUCTS).map(p => productCard(p, 'col-lg-3 col-md-6 col-12')).join('');
+            closeNavSearch();
             document.getElementById('shop-all').scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
         document.getElementById('siteSearchBtn').addEventListener('click', runSiteSearch);
-        document.getElementById('siteSearchInput').addEventListener('keydown', e => {
+        siteSearchInputEl.addEventListener('keydown', e => {
             if (e.key === 'Enter') { e.preventDefault(); runSiteSearch(); }
         });
 
