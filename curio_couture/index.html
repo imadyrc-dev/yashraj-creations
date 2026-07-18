@@ -36,107 +36,173 @@
 <body>
 
     <!-- ============================================================
-     ANNOUNCEMENT BAR
+     TIER 1 — TOP BAR: social links · shipping note · phone
 ============================================================ -->
-    <div class="announce-bar" id="announceBar">
-        <button class="announce-nav prev" aria-label="Previous announcement"><i class="bi bi-chevron-left"></i></button>
-        <div class="announce-track" id="announceTrack">
-            <span class="active">Complimentary hand-finishing on every order</span>
-            <span>The Fitoor Wedding Edit — now live</span>
-            <span>Worldwide shipping, duties included</span>
-            <span>Bespoke tailoring by appointment only</span>
+    <div class="top-bar">
+        <div class="container-xl">
+            <div class="top-bar-group top-bar-follow">
+                <span>Follow Us :</span>
+                <div class="top-bar-social">
+                    <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="bi bi-pinterest"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                    <a href="#" aria-label="Email"><i class="bi bi-envelope"></i></a>
+                </div>
+            </div>
+
+            <div class="top-bar-group">
+                <span class="top-bar-divider"></span>
+                <div class="top-bar-ship">
+                    <i class="bi bi-truck"></i>
+                    <span>Worldwide Shipping, Duties Included</span>
+                </div>
+                <span class="top-bar-divider"></span>
+                <div class="top-bar-phone">
+                    <i class="bi bi-telephone-fill"></i>
+                    <span>+91 98765 43210</span>
+                </div>
+            </div>
         </div>
-        <button class="announce-nav next" aria-label="Next announcement"><i class="bi bi-chevron-right"></i></button>
     </div>
 
     <!-- ============================================================
-     NAVBAR — solid, always opaque
+     TIER 2 — BRAND BAR: logo · search icon (desktop) · menu toggle (mobile)
+============================================================ -->
+    <div class="brand-bar">
+        <div class="container-xl">
+
+            <a href="#" class="nav-logo">
+                <img src="images/Asset 2@2x.png" alt="Curio Couture">
+            </a>
+
+            <div class="brand-search">
+                <input type="text" placeholder="Search for products…" aria-label="Search" id="siteSearchInput">
+                <button type="button" aria-label="Search" id="siteSearchBtn">
+                    <i class="bi bi-search"></i>
+                </button>
+            </div>
+
+            <button class="mobile-menu-btn d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu"
+                aria-label="Open menu" id="mobileMenuBtn">
+                <span class="mobile-menu-btn-line"></span>
+                <span class="mobile-menu-btn-line"></span>
+                <span class="mobile-menu-btn-line"></span>
+            </button>
+        </div>
+    </div>
+
+    <!-- ============================================================
+     TIER 3 — MAIN NAV: links + phone, on white
 ============================================================ -->
     <header class="navbar-curio" id="mainNav">
         <div class="container-xl nav-inner">
 
-            <button class="nav-icon-btn d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu"
-                aria-label="Open menu">
-                <i class="bi bi-list" style="font-size:1.6rem;"></i>
-            </button>
-
-            <a href="#" class="nav-logo">
-                <img src="images/Asset 2@2x.png" alt="Curio Couture Logo">
-            </a>
-
             <nav>
                 <ul class="nav-links">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#new-arrivals">New Arrivals</a></li>
-                    <li class="mega-wrap"><a href="#">Collections <i class="bi bi-chevron-down"
-                                style="font-size:.6rem;"></i></a></li>
-                    <li><a href="#best-sellers">Bestsellers</a></li>
-                    <li><a href="#lookbook">Lookbook</a></li>
-                    <li><a href="#footer">Contact</a></li>
-                </ul>
-            </nav>
-
-            <div class="nav-icons">
-
-            </div>
-
-            <!-- Mega Menu -->
-            <div class="mega-menu">
-                <div class="container-xl">
-                    <div class="row g-5">
-                        <div class="col-lg-2 col-6">
-                            <span class="mega-col-title">Occasion Wear</span>
-                            <ul class="mega-links">
-                                <li><a href="#">Sherwani</a></li>
-                                <li><a href="#">Bandhgala</a></li>
-                                <li><a href="#">Jodhpuri Suits</a></li>
-                                <li><a href="#">Nehru Jackets</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-lg-2 col-6">
-                            <span class="mega-col-title">Everyday Curio</span>
-                            <ul class="mega-links">
-                                <li><a href="#">Kurta Sets</a></li>
-                                <li><a href="#">Short Kurtas</a></li>
-                                <li><a href="#">Indowestern</a></li>
-                                <li><a href="#">Pure Linen</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-lg-2 col-6">
-                            <span class="mega-col-title">Edit By</span>
-                            <ul class="mega-links">
-                                <li><a href="#">Wedding</a></li>
-                                <li><a href="#">Festive</a></li>
-                                <li><a href="#">Reception</a></li>
-                                <li><a href="#">Sangeet</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-lg-6 col-12">
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <div class="mega-feature">
-                                        <img src="https://picsum.photos/seed/curiomega1/560/420"
-                                            alt="The Fitoor wedding edit" loading="lazy">
-                                        <div class="mega-feature-caption">
-                                            <span class="eyebrow">New Edit</span>
-                                            <h5>The Fitoor Collection</h5>
-                                        </div>
+                    <li><a href="#best-sellers">Best Seller</a></li>
+                    <li><a href="#shop-all">Shop All</a></li>
+                    <li class="mega-wrap">
+                        <a href="#">Category <i class="bi bi-chevron-down" style="font-size:.6rem;"></i></a>
+                        <div class="mega-menu">
+                            <div class="container-xl">
+                                <div class="row g-5">
+                                    <div class="col-lg-3 col-6">
+                                        <span class="mega-col-title">Occasion Wear</span>
+                                        <ul class="mega-links">
+                                            <li><a href="#">Sherwani</a></li>
+                                            <li><a href="#">Bandhgala</a></li>
+                                            <li><a href="#">Jodhpuri Suits</a></li>
+                                            <li><a href="#">Nehru Jackets</a></li>
+                                        </ul>
                                     </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="mega-feature">
-                                        <img src="https://picsum.photos/seed/curiomega2/560/420"
-                                            alt="Bandhgala craftsmanship" loading="lazy">
-                                        <div class="mega-feature-caption">
-                                            <span class="eyebrow">Signature</span>
-                                            <h5>Hand-Embroidered Bandhgala</h5>
+                                    <div class="col-lg-3 col-6">
+                                        <span class="mega-col-title">Everyday Curio</span>
+                                        <ul class="mega-links">
+                                            <li><a href="#">Kurta Sets</a></li>
+                                            <li><a href="#">Short Kurtas</a></li>
+                                            <li><a href="#">Indowestern</a></li>
+                                            <li><a href="#">Pure Linen</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-6 col-12">
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <div class="mega-feature">
+                                                    <img src="https://picsum.photos/seed/curiomega1/560/420"
+                                                        alt="The Fitoor wedding edit" loading="lazy">
+                                                    <div class="mega-feature-caption">
+                                                        <span class="eyebrow">New Edit</span>
+                                                        <h5>The Fitoor Collection</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="mega-feature">
+                                                    <img src="https://picsum.photos/seed/curiomega2/560/420"
+                                                        alt="Bandhgala craftsmanship" loading="lazy">
+                                                    <div class="mega-feature-caption">
+                                                        <span class="eyebrow">Signature</span>
+                                                        <h5>Hand-Embroidered Bandhgala</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </li>
+                    <li><a href="#shop-all" class="sale-link" id="saleNavLink">Sale</a></li>
+                    <li class="mega-wrap">
+                        <a href="#">Occasions <i class="bi bi-chevron-down" style="font-size:.6rem;"></i></a>
+                        <div class="mega-menu">
+                            <div class="container-xl">
+                                <div class="row g-5">
+                                    <div class="col-lg-3 col-6">
+                                        <span class="mega-col-title">Edit By</span>
+                                        <ul class="mega-links">
+                                            <li><a href="#">Wedding</a></li>
+                                            <li><a href="#">Festive</a></li>
+                                            <li><a href="#">Reception</a></li>
+                                            <li><a href="#">Sangeet</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-9 col-12">
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <div class="mega-feature">
+                                                    <img src="https://picsum.photos/seed/curiomega1/560/420"
+                                                        alt="The Fitoor wedding edit" loading="lazy">
+                                                    <div class="mega-feature-caption">
+                                                        <span class="eyebrow">New Edit</span>
+                                                        <h5>The Fitoor Collection</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="mega-feature">
+                                                    <img src="https://picsum.photos/seed/curiomega2/560/420"
+                                                        alt="Bandhgala craftsmanship" loading="lazy">
+                                                    <div class="mega-feature-caption">
+                                                        <span class="eyebrow">Signature</span>
+                                                        <h5>Hand-Embroidered Bandhgala</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="#footer">Store Locator</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-phone">
+                <i class="bi bi-telephone-fill"></i>
+                <span>+91 98765 43210</span>
             </div>
     </header>
 
@@ -148,31 +214,42 @@
         </div>
         <div class="offcanvas-body">
             <ul class="mobile-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#new-arrivals">New Arrivals</a></li>
+                <li><a href="#best-sellers">Best Seller</a></li>
+                <li><a href="#shop-all">Shop All</a></li>
                 <li>
-                    <a href="#" class="mobile-toggle" data-target="#sub-collections">Collections <i
+                    <a href="#" class="mobile-toggle" data-target="#sub-category">Category <i
                             class="bi bi-chevron-down"></i></a>
-                    <ul class="mobile-sub" id="sub-collections">
+                    <ul class="mobile-sub" id="sub-category">
                         <li><a href="#">Sherwani</a></li>
                         <li><a href="#">Bandhgala</a></li>
+                        <li><a href="#">Jodhpuri Suits</a></li>
+                        <li><a href="#">Nehru Jackets</a></li>
                         <li><a href="#">Kurta Sets</a></li>
+                        <li><a href="#">Short Kurtas</a></li>
                         <li><a href="#">Indowestern</a></li>
-                        <li><a href="#">Jodhpuri</a></li>
                         <li><a href="#">Pure Linen</a></li>
                     </ul>
                 </li>
-                <li><a href="#best-sellers">Bestsellers</a></li>
-                <li><a href="#lookbook">Lookbook</a></li>
-                <li><a href="#footer">Contact</a></li>
+                <li><a href="#shop-all" class="sale-link">Sale</a></li>
+                <li>
+                    <a href="#" class="mobile-toggle" data-target="#sub-occasions">Occasions <i
+                            class="bi bi-chevron-down"></i></a>
+                    <ul class="mobile-sub" id="sub-occasions">
+                        <li><a href="#">Wedding</a></li>
+                        <li><a href="#">Festive</a></li>
+                        <li><a href="#">Reception</a></li>
+                        <li><a href="#">Sangeet</a></li>
+                    </ul>
+                </li>
+                <li><a href="#footer">Store Locator</a></li>
             </ul>
             <div class="d-flex gap-3 mt-4">
-                <a href="#" class="nav-icon-btn" style="color:#fff;"><i class="bi bi-person"></i></a>
-                <a href="#" class="nav-icon-btn" style="color:#fff;"><i class="bi bi-heart"></i></a>
-                <a href="#" class="nav-icon-btn" style="color:#fff;"><i class="bi bi-bag"></i></a>
+                <a href="tel:+919876543210" class="nav-icon-btn" style="color:#fff;"><i
+                        class="bi bi-telephone-fill"></i> +91 98765 43210</a>
             </div>
         </div>
     </div>
+
 
     <!-- ============================================================
      HERO SLIDER
@@ -309,6 +386,24 @@
                     <div class="cat-circle"><img src="https://picsum.photos/seed/catlinen/300/300" alt="Pure Linen"
                             loading="lazy"></div><span>Pure Linen</span>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+     SHOP ALL PRODUCTS
+============================================================ -->
+    <section class="section section-cream" id="shop-all">
+        <div class="container-xl">
+            <div class="section-head-row" data-aos="fade-up">
+                <div>
+                    <span class="eyebrow">Full Catalogue</span>
+                    <h2>Shop All Products</h2>
+                </div>
+            </div>
+
+            <div class="row g-4" id="shopAllGrid">
+                <!-- Cards injected by JS -->
             </div>
         </div>
     </section>
@@ -688,28 +783,6 @@
     </div>
 
     <!-- ============================================================
-     SEARCH MODAL
-============================================================ -->
-    <div class="modal fade" id="searchModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content" style="border:none;border-radius:2px;background:var(--ivory);">
-                <div class="modal-body p-4">
-                    <div class="d-flex align-items-center gap-3 border-bottom pb-2"
-                        style="border-color:var(--line) !important;">
-                        <i class="bi bi-search" style="color:var(--royal);"></i>
-                        <input type="text" class="form-control border-0 bg-transparent shadow-none"
-                            placeholder="Search sherwani, kurta, bandhgala…" style="font-family:'Jost';font-size:1rem;"
-                            autofocus>
-                    </div>
-                    <p class="mt-3 mb-0"
-                        style="font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);">
-                        Popular: Sherwani · Bandhgala · Wedding Edit · Linen</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ============================================================
      JS
 ============================================================ -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
@@ -755,6 +828,10 @@
         document.getElementById('bestSellerGrid').innerHTML =
             PRODUCTS.slice(0, 4).map(p => productCard(p, 'col-lg-3 col-md-6 col-12')).join('');
 
+        /* Render Shop All (every product, 4-col grid) */
+        document.getElementById('shopAllGrid').innerHTML =
+            PRODUCTS.map(p => productCard(p, 'col-lg-3 col-md-6 col-12')).join('');
+
         /* Render New Arrivals track (horizontal scroller) */
         const newArrTrack = document.getElementById('newArrTrack');
         newArrTrack.innerHTML = PRODUCTS.slice(4, 8).map(p => `<div style="flex:0 0 270px;">${productCard(p, '')}</div>`).join('');
@@ -774,13 +851,43 @@
            PRELOADER
         --------------------------------------------------------- */
         window.addEventListener('load', () => {
-            document.getElementById('preloader').classList.add('loaded');
+            const pre = document.getElementById('preloader');
+            if (pre) pre.classList.add('loaded');
             AOS.init({ duration: 800, once: true, offset: 60, easing: 'ease-out-cubic' });
         });
 
         /* ---------------------------------------------------------
-           NAVBAR SCROLL STATE — compacts padding + adds shadow only.
-           The bar is solid at all times; nothing becomes transparent.
+           SITE SEARCH — filters Shop All grid, no popup
+        --------------------------------------------------------- */
+        function runSiteSearch() {
+            const q = document.getElementById('siteSearchInput').value.trim().toLowerCase();
+            const matches = q
+                ? PRODUCTS.filter(p => p.title.toLowerCase().includes(q) || p.cat.toLowerCase().includes(q))
+                : PRODUCTS;
+            document.getElementById('shopAllGrid').innerHTML =
+                (matches.length ? matches : PRODUCTS).map(p => productCard(p, 'col-lg-3 col-md-6 col-12')).join('');
+            document.getElementById('shop-all').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        document.getElementById('siteSearchBtn').addEventListener('click', runSiteSearch);
+        document.getElementById('siteSearchInput').addEventListener('keydown', e => {
+            if (e.key === 'Enter') { e.preventDefault(); runSiteSearch(); }
+        });
+
+        /* ---------------------------------------------------------
+           SALE NAV LINKS — filter Shop All grid to Sale-tagged items
+        --------------------------------------------------------- */
+        document.querySelectorAll('.sale-link').forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                const saleItems = PRODUCTS.filter(p => p.tag === 'Sale');
+                document.getElementById('shopAllGrid').innerHTML =
+                    saleItems.map(p => productCard(p, 'col-lg-3 col-md-6 col-12')).join('');
+                document.getElementById('shop-all').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+        /* ---------------------------------------------------------
+           NAVBAR SCROLL STATE — adds shadow only.
         --------------------------------------------------------- */
         const mainNav = document.getElementById('mainNav');
         function handleNavScroll() {
@@ -800,20 +907,12 @@
         backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
         /* ---------------------------------------------------------
-           ANNOUNCEMENT BAR ROTATOR
+           MOBILE MENU BUTTON — animates to X while offcanvas is open
         --------------------------------------------------------- */
-        (function () {
-            const spans = document.querySelectorAll('#announceTrack span');
-            let idx = 0;
-            function show(i) {
-                spans.forEach(s => s.classList.remove('active'));
-                idx = (i + spans.length) % spans.length;
-                spans[idx].classList.add('active');
-            }
-            let timer = setInterval(() => show(idx + 1), 4200);
-            document.querySelector('.announce-nav.next').addEventListener('click', () => { show(idx + 1); clearInterval(timer); timer = setInterval(() => show(idx + 1), 4200); });
-            document.querySelector('.announce-nav.prev').addEventListener('click', () => { show(idx - 1); clearInterval(timer); timer = setInterval(() => show(idx + 1), 4200); });
-        })();
+        const mobileMenuEl = document.getElementById('mobileMenu');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        mobileMenuEl.addEventListener('show.bs.offcanvas', () => mobileMenuBtn.classList.add('open'));
+        mobileMenuEl.addEventListener('hide.bs.offcanvas', () => mobileMenuBtn.classList.remove('open'));
 
         /* ---------------------------------------------------------
            MOBILE SUBMENU TOGGLE
@@ -842,7 +941,6 @@
         };
         function refreshWishlistUI() {
             const list = wishStore.get();
-            document.getElementById('wishlistCount').textContent = list.length;
             document.querySelectorAll('.wishlist-btn').forEach(btn => {
                 btn.classList.toggle('active', list.includes(btn.dataset.id));
             });
@@ -858,17 +956,6 @@
             refreshWishlistUI();
         });
         refreshWishlistUI();
-
-        /* ---------------------------------------------------------
-           CART (demo counter)
-        --------------------------------------------------------- */
-        let cartCount = 0;
-        document.getElementById('quickViewModal').addEventListener('click', e => {
-            if (e.target.closest('.qv-actions .btn-curio:not(.qv-wishlist)')) {
-                cartCount++;
-                document.getElementById('cartCount').textContent = cartCount;
-            }
-        });
 
         /* ---------------------------------------------------------
            QUICK VIEW MODAL POPULATION

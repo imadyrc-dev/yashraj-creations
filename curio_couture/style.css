@@ -159,12 +159,6 @@ img {
     display: block;
 }
 
-.nav-logo img {
-
-    height: 50px;
-    border: 1px solid red;
-}
-
 .divider-ornament {
     display: flex;
     align-items: center;
@@ -214,72 +208,183 @@ img {
     }
 }
 
-/* ---------- 2. ANNOUNCEMENT BAR ---------- */
-.announce-bar {
+/* ============================================================
+   2. HEADER — THREE-TIER STRUCTURE
+   Tier 1: top-bar (dark)   — social + shipping note + phone
+   Tier 2: brand-bar (dark) — logo + search icon
+   Tier 3: navbar-curio     — nav links + phone, on white
+   ============================================================ */
+
+/* ---------- 2a. TOP BAR ---------- */
+.top-bar {
     background: var(--royal-dark);
-    color: var(--gold-light);
-    font-size: .72rem;
-    letter-spacing: .18em;
-    text-transform: uppercase;
-    text-align: center;
-    padding: 10px 44px;
-    position: relative;
-    overflow: hidden;
-    height: 38px;
+    color: rgba(251, 248, 242, .85);
+    font-size: .8rem;
+    padding: 11px 0;
+    border-bottom: 1px solid rgba(251, 248, 242, .08);
 }
 
-.announce-track {
-    position: absolute;
-    inset: 0;
+.top-bar .container-xl {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.top-bar-group {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.top-bar-follow {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.top-bar-follow span {
+    letter-spacing: .04em;
+    color: rgba(251, 248, 242, .7);
+}
+
+.top-bar-social {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.top-bar-social a {
+    color: var(--gold-light);
+    font-size: .95rem;
+    transition: color .3s var(--ease), transform .3s var(--ease);
+}
+
+.top-bar-social a:hover {
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+.top-bar-divider {
+    width: 1px;
+    height: 18px;
+    background: rgba(251, 248, 242, .18);
+}
+
+.top-bar-ship {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(251, 248, 242, .85);
+}
+
+.top-bar-ship i {
+    color: var(--gold-light);
+    font-size: 1rem;
+}
+
+.top-bar-phone {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: .02em;
+}
+
+.top-bar-phone i {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.announce-track span {
-    position: absolute;
-    opacity: 0;
-    transition: opacity .6s var(--ease);
-    width: 100%;
-    padding: 0 40px;
-}
-
-.announce-track span.active {
-    opacity: 1;
-}
-
-.announce-nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: rgba(251, 248, 242, .12);
     color: var(--gold-light);
-    opacity: .55;
+    font-size: .8rem;
+}
+
+/* ---------- 2b. BRAND BAR ---------- */
+.brand-bar {
+    background: var(--royal-dark);
+    padding: 26px 0;
+}
+
+.brand-bar .container-xl {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.brand-bar .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-family: 'Fraunces', serif;
+    font-size: 1.7rem;
+    letter-spacing: .1em;
+    color: #fff;
+    flex-shrink: 0;
+}
+
+.brand-bar .nav-logo .ornament path,
+.brand-bar .nav-logo .ornament circle,
+.brand-bar .nav-logo .ornament line {
+    stroke: #fff;
+}
+
+.brand-search {
+    flex: 1 1 auto;
+    max-width: 620px;
+    display: flex;
+    align-items: center;
+    background: transparent;
+    border: 1px solid rgba(251, 248, 242, .35);
+    border-radius: 999px;
+    padding: 4px 6px 4px 26px;
+    transition: border-color .3s var(--ease);
+}
+
+.brand-search:focus-within {
+    border-color: var(--gold-light);
+}
+
+.brand-search input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-family: 'Jost';
+    font-size: .92rem;
+    padding: 11px 0;
+}
+
+.brand-search input::placeholder {
+    color: rgba(251, 248, 242, .55);
+}
+
+.brand-search button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background: transparent;
+    color: rgba(251, 248, 242, .85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    padding: 0 12px;
-    transition: opacity .3s;
+    font-size: 1rem;
+    transition: color .3s var(--ease);
 }
 
-.announce-nav:hover {
-    opacity: 1;
+.brand-search button:hover {
+    color: var(--gold-light);
 }
 
-.announce-nav.prev {
-    left: 6px;
-}
-
-.announce-nav.next {
-    right: 6px;
-}
-
-/* ============================================================
-   3. NAVBAR — SOLID, NON-TRANSPARENT
-   A fixed ivory bar with a hairline gold-adjacent border. It never
-   goes see-through over the hero; instead the hero sits below it
-   in normal flow, and the bar tightens slightly on scroll for a
-   quiet micro-interaction (padding + shadow only).
-   ============================================================ */
+/* ---------- 2c. MAIN NAV (white, links row) ---------- */
 .navbar-curio {
     position: sticky;
     top: 0;
@@ -288,12 +393,11 @@ img {
     z-index: 1000;
     background: var(--ivory);
     border-bottom: 1px solid var(--line);
-    padding: 20px 0;
-    transition: padding .4s var(--ease), box-shadow .4s var(--ease);
+    padding: 0;
+    transition: box-shadow .4s var(--ease);
 }
 
 .navbar-curio.scrolled {
-    padding: 12px 0;
     box-shadow: 0 12px 30px rgba(11, 34, 41, .08);
 }
 
@@ -302,21 +406,7 @@ img {
     align-items: center;
     justify-content: space-between;
     gap: 20px;
-}
-
-.nav-logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-family: 'Fraunces', serif;
-    font-size: 1.5rem;
-    letter-spacing: .06em;
-    color: var(--royal-dark);
-}
-
-.nav-logo .ornament path,
-.nav-logo .ornament circle {
-    stroke: var(--gold-deep);
+    min-height: 62px;
 }
 
 .nav-links {
@@ -329,13 +419,16 @@ img {
 }
 
 .nav-links>li>a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
     font-size: .78rem;
     letter-spacing: .14em;
     text-transform: uppercase;
     color: var(--ink);
     font-weight: 500;
     position: relative;
-    padding: 6px 0;
+    padding: 22px 0;
     transition: color .3s var(--ease);
 }
 
@@ -343,7 +436,7 @@ img {
     content: "";
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: 18px;
     height: 1px;
     width: 0;
     background: var(--gold-deep);
@@ -363,10 +456,32 @@ img {
     color: var(--royal);
 }
 
-.nav-icons {
+.nav-phone {
     display: flex;
     align-items: center;
-    gap: 22px;
+    gap: 12px;
+    flex-shrink: 0;
+    padding-left: 30px;
+    border-left: 1px solid var(--line);
+}
+
+.nav-phone i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--royal-dark);
+    color: var(--gold-light);
+    font-size: .82rem;
+}
+
+.nav-phone span {
+    font-size: .86rem;
+    font-weight: 500;
+    color: var(--royal-dark);
+    letter-spacing: .02em;
 }
 
 .nav-icon-btn {
@@ -384,29 +499,79 @@ img {
     transform: translateY(-2px);
 }
 
-.nav-badge {
-    position: absolute;
-    top: -8px;
-    right: -9px;
-    background: var(--gold-deep);
-    color: #fff;
-    font-size: .6rem;
-    width: 16px;
-    height: 16px;
+/* Unique mobile menu toggle — asymmetric three-line mark that morphs into an X */
+.mobile-menu-btn {
+    position: relative;
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
+    border: 1px solid rgba(251, 248, 242, .35);
+    background: transparent;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-family: 'Jost';
+    gap: 6px;
+    cursor: pointer;
+    transition: border-color .35s var(--ease), background .35s var(--ease);
+}
+
+.mobile-menu-btn:hover {
+    border-color: var(--gold-light);
+}
+
+.mobile-menu-btn-line {
+    display: block;
+    height: 1.5px;
+    border-radius: 2px;
+    background: var(--gold-light);
+    transition: all .4s var(--ease);
+}
+
+.mobile-menu-btn-line:nth-child(1) {
+    width: 20px;
+}
+
+.mobile-menu-btn-line:nth-child(2) {
+    width: 13px;
+    align-self: flex-end;
+    margin-right: 13px;
+}
+
+.mobile-menu-btn-line:nth-child(3) {
+    width: 20px;
+}
+
+.mobile-menu-btn.open {
+    background: var(--gold-light);
+    border-color: var(--gold-light);
+}
+
+.mobile-menu-btn.open .mobile-menu-btn-line {
+    background: var(--royal-dark);
+}
+
+.mobile-menu-btn.open .mobile-menu-btn-line:nth-child(1) {
+    width: 19px;
+    transform: translateY(7.5px) rotate(45deg);
+}
+
+.mobile-menu-btn.open .mobile-menu-btn-line:nth-child(2) {
+    width: 0;
+    opacity: 0;
+    margin-right: 0;
+}
+
+.mobile-menu-btn.open .mobile-menu-btn-line:nth-child(3) {
+    width: 19px;
+    align-self: center;
+    transform: translateY(-7.5px) rotate(-45deg);
 }
 
 /* Mega menu — anchored to the navbar itself, not floating over a hero */
 .mega-wrap {
     position: static;
-}
-
-header.navbar-curio {
-    position: sticky;
 }
 
 /* re-declared for cascade clarity */
@@ -1345,6 +1510,10 @@ header.navbar-curio {
     margin-top: 14px;
 }
 
+.nav-logo img {
+    height: 50px;
+}
+
 /* ---------- 14. FOOTER ---------- */
 .footer {
     background: var(--royal-dark);
@@ -1564,8 +1733,9 @@ header.navbar-curio {
 
 @media(max-width:991px) {
 
-    .nav-links,
-    .nav-icons .search-icon-desktop {
+    .top-bar,
+    .navbar-curio,
+    .brand-search {
         display: none !important;
     }
 
@@ -1584,6 +1754,23 @@ header.navbar-curio {
     .hero-title {
         font-size: clamp(2.1rem, 7vw, 3rem);
     }
+
+    .brand-bar {
+        padding: 18px 0;
+    }
+
+    .brand-bar .container-xl {
+        justify-content: space-between;
+        gap: 16px;
+    }
+
+    .brand-bar .nav-logo {
+        font-size: 1.3rem;
+    }
+
+    .brand-bar .nav-logo img {
+        height: 38px;
+    }
 }
 
 @media(max-width:575px) {
@@ -1593,6 +1780,10 @@ header.navbar-curio {
 
     .qv-img {
         min-height: 260px;
+    }
+
+    .brand-bar .nav-logo img {
+        height: 32px;
     }
 }
 
