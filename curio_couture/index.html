@@ -59,7 +59,7 @@
                 </div>
                 <span class="top-bar-divider"></span>
                 <div class="top-bar-phone">
-                    <i class="bi bi-telephone-fill"></i>
+                    <i class="bi bi-whatsapp"></i>
                     <span>+91 98765 43210</span>
                 </div>
             </div>
@@ -79,7 +79,7 @@
                 <span class="mobile-menu-btn-line"></span>
             </button>
 
-            <a href="#" class="nav-logo">
+            <a href="#" class="nav-logo" id="brandHomeLink">
                 <img src="images/Asset 2@2x.png" alt="Curio Couture">
             </a>
 
@@ -248,407 +248,394 @@
         </div>
     </div>
 
-
     <!-- ============================================================
-     HERO SLIDER
+     MAIN SHOP CONTENT — hidden when Quick View opens the product
+     detail view below, shown again when the user goes back.
 ============================================================ -->
-    <section class="hero">
-        <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="6500">
-            <div class="carousel-inner">
+    <div id="mainShopContent">
 
-                <div class="carousel-item active">
-                    <div class="hero-slide"
-                        style="background-image:url('https://picsum.photos/seed/curiohero1/1600/1000')">
-                        <div class="container-xl">
-                            <div class="hero-slide-content" data-aos="fade-up" data-aos-delay="100">
-                                <span class="eyebrow">The Fitoor Edit</span>
-                                <h1 class="hero-title">Heirlooms,<br>worn <em>forward</em>.</h1>
-                                <p class="hero-sub">Hand-embroidered sherwanis and bandhgalas, cut for the man who
-                                    treats occasion wear as an inheritance, not a costume.</p>
-                                <div class="hero-cta-row">
-                                    <a href="#new-arrivals" class="btn-curio">Shop The Edit <i
-                                            class="bi bi-arrow-right"></i></a>
-                                    <a href="#lookbook" class="btn-curio btn-curio-outline">View Lookbook</a>
+        <!-- HERO SLIDER -->
+        <section class="hero">
+            <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="6500">
+                <div class="carousel-inner">
+
+                    <div class="carousel-item active">
+                        <div class="hero-slide"
+                            style="background-image:url('https://picsum.photos/seed/curiohero1/1600/1000')">
+                            <div class="container-xl">
+                                <div class="hero-slide-content" data-aos="fade-up" data-aos-delay="100">
+                                    <span class="eyebrow">The Fitoor Edit</span>
+                                    <h1 class="hero-title">Heirlooms,<br>worn <em>forward</em>.</h1>
+                                    <p class="hero-sub">Hand-embroidered sherwanis and bandhgalas, cut for the man who
+                                        treats occasion wear as an inheritance, not a costume.</p>
+                                    <div class="hero-cta-row">
+                                        <a href="#new-arrivals" class="btn-curio">Shop The Edit <i
+                                                class="bi bi-arrow-right"></i></a>
+                                        <a href="#lookbook" class="btn-curio btn-curio-outline">View Lookbook</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="carousel-item">
-                    <div class="hero-slide"
-                        style="background-image:url('https://picsum.photos/seed/curiohero2/1600/1000')">
-                        <div class="container-xl">
-                            <div class="hero-slide-content" data-aos="fade-up" data-aos-delay="100">
-                                <span class="eyebrow">Atelier Series</span>
-                                <h1 class="hero-title">Tailored in<br>silence, <em>felt</em> in detail.</h1>
-                                <p class="hero-sub">Every stitch is placed by hand in our Jaipur atelier — a quiet
-                                    standard, in a market built on shortcuts.</p>
-                                <div class="hero-cta-row">
-                                    <a href="#best-sellers" class="btn-curio">Explore Bestsellers <i
-                                            class="bi bi-arrow-right"></i></a>
-                                    <a href="#" class="btn-curio btn-curio-outline">Book a Fitting</a>
+                    <div class="carousel-item">
+                        <div class="hero-slide"
+                            style="background-image:url('https://picsum.photos/seed/curiohero2/1600/1000')">
+                            <div class="container-xl">
+                                <div class="hero-slide-content" data-aos="fade-up" data-aos-delay="100">
+                                    <span class="eyebrow">Atelier Series</span>
+                                    <h1 class="hero-title">Tailored in<br>silence, <em>felt</em> in detail.</h1>
+                                    <p class="hero-sub">Every stitch is placed by hand in our Jaipur atelier — a quiet
+                                        standard, in a market built on shortcuts.</p>
+                                    <div class="hero-cta-row">
+                                        <a href="#best-sellers" class="btn-curio">Explore Bestsellers <i
+                                                class="bi bi-arrow-right"></i></a>
+                                        <a href="#" class="btn-curio btn-curio-outline">Book a Fitting</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="carousel-item">
-                    <div class="hero-slide"
-                        style="background-image:url('https://picsum.photos/seed/curiohero3/1600/1000')">
-                        <div class="container-xl">
-                            <div class="hero-slide-content" data-aos="fade-up" data-aos-delay="100">
-                                <span class="eyebrow">Pure Linen, SS26</span>
-                                <h1 class="hero-title">Lightness,<br>held with <em>weight</em>.</h1>
-                                <p class="hero-sub">Breathable linen kurtas and Indowestern sets for warm-weather
-                                    occasions — unhurried, unmistakably Curio.</p>
-                                <div class="hero-cta-row">
-                                    <a href="#" class="btn-curio">Shop Linen <i class="bi bi-arrow-right"></i></a>
-                                    <a href="#lookbook" class="btn-curio btn-curio-outline">View Lookbook</a>
+                    <div class="carousel-item">
+                        <div class="hero-slide"
+                            style="background-image:url('https://picsum.photos/seed/curiohero3/1600/1000')">
+                            <div class="container-xl">
+                                <div class="hero-slide-content" data-aos="fade-up" data-aos-delay="100">
+                                    <span class="eyebrow">Pure Linen, SS26</span>
+                                    <h1 class="hero-title">Lightness,<br>held with <em>weight</em>.</h1>
+                                    <p class="hero-sub">Breathable linen kurtas and Indowestern sets for warm-weather
+                                        occasions — unhurried, unmistakably Curio.</p>
+                                    <div class="hero-cta-row">
+                                        <a href="#" class="btn-curio">Shop Linen <i class="bi bi-arrow-right"></i></a>
+                                        <a href="#lookbook" class="btn-curio btn-curio-outline">View Lookbook</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
+                </div>
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+                </div>
             </div>
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+            <div class="hero-scroll-cue">
+                <span>Scroll</span>
+                <span class="stem"></span>
             </div>
-        </div>
-        <div class="hero-scroll-cue">
-            <span>Scroll</span>
-            <span class="stem"></span>
-        </div>
-    </section>
+        </section>
 
-    <!-- ============================================================
-     MARQUEE STRIP
-============================================================ -->
-    <div class="marquee-strip">
-        <div class="marquee-track">
-            <span><i class="bi bi-gem"></i> Hand-Embroidered Details</span>
-            <span><i class="bi bi-gem"></i> Complimentary Alterations</span>
-            <span><i class="bi bi-gem"></i> Worldwide Shipping</span>
-            <span><i class="bi bi-gem"></i> Crafted in Jaipur</span>
-            <span><i class="bi bi-gem"></i> Bespoke by Appointment</span>
-            <span><i class="bi bi-gem"></i> Hand-Embroidered Details</span>
-            <span><i class="bi bi-gem"></i> Complimentary Alterations</span>
-            <span><i class="bi bi-gem"></i> Worldwide Shipping</span>
-            <span><i class="bi bi-gem"></i> Crafted in Jaipur</span>
-            <span><i class="bi bi-gem"></i> Bespoke by Appointment</span>
-        </div>
-    </div>
-
-    <!-- ============================================================
-     SHOP BY CATEGORY
-============================================================ -->
-    <section class="section">
-        <div class="container-xl">
-            <div class="section-head" data-aos="fade-up">
-                <span class="eyebrow" style="justify-content:center;">Shop By Category</span>
-                <h2>Find your silhouette</h2>
-                <p>Seven wardrobe pillars, each engineered for a different occasion — from the wedding mandap to the
-                    linen-shirt evenings after.</p>
-            </div>
-
-            <div class="cat-scroll" data-aos="fade-up" data-aos-delay="100">
-                <div class="cat-item">
-                    <div class="cat-circle"><img src="https://picsum.photos/seed/catshortkurta/300/300"
-                            alt="Short Kurta" loading="lazy"></div><span>Short Kurta</span>
-                </div>
-                <div class="cat-item">
-                    <div class="cat-circle"><img src="https://picsum.photos/seed/catkurtaset/300/300" alt="Kurta Set"
-                            loading="lazy"></div><span>Kurta Set</span>
-                </div>
-                <div class="cat-item">
-                    <div class="cat-circle"><img src="https://picsum.photos/seed/catjacketset/300/300"
-                            alt="Kurta Jacket Set" loading="lazy"></div><span>Jacket Set</span>
-                </div>
-                <div class="cat-item">
-                    <div class="cat-circle"><img src="https://picsum.photos/seed/catjodhpuri/300/300" alt="Jodhpuri"
-                            loading="lazy"></div><span>Jodhpuri</span>
-                </div>
-                <div class="cat-item">
-                    <div class="cat-circle"><img src="https://picsum.photos/seed/catindowestern/300/300"
-                            alt="Indowestern" loading="lazy"></div><span>Indowestern</span>
-                </div>
-                <div class="cat-item">
-                    <div class="cat-circle"><img src="https://picsum.photos/seed/catsherwani/300/300" alt="Sherwani"
-                            loading="lazy"></div><span>Sherwani</span>
-                </div>
-                <div class="cat-item">
-                    <div class="cat-circle"><img src="https://picsum.photos/seed/catlinen/300/300" alt="Pure Linen"
-                            loading="lazy"></div><span>Pure Linen</span>
-                </div>
+        <!-- MARQUEE STRIP -->
+        <div class="marquee-strip">
+            <div class="marquee-track">
+                <span><i class="bi bi-gem"></i> Hand-Embroidered Details</span>
+                <span><i class="bi bi-gem"></i> Complimentary Alterations</span>
+                <span><i class="bi bi-gem"></i> Worldwide Shipping</span>
+                <span><i class="bi bi-gem"></i> Crafted in Jaipur</span>
+                <span><i class="bi bi-gem"></i> Bespoke by Appointment</span>
+                <span><i class="bi bi-gem"></i> Hand-Embroidered Details</span>
+                <span><i class="bi bi-gem"></i> Complimentary Alterations</span>
+                <span><i class="bi bi-gem"></i> Worldwide Shipping</span>
+                <span><i class="bi bi-gem"></i> Crafted in Jaipur</span>
+                <span><i class="bi bi-gem"></i> Bespoke by Appointment</span>
             </div>
         </div>
-    </section>
 
-    <!-- ============================================================
-     SHOP ALL PRODUCTS
-============================================================ -->
-    <section class="section section-cream" id="shop-all">
-        <div class="container-xl">
-            <div class="section-head-row" data-aos="fade-up">
-                <div>
-                    <span class="eyebrow">Full Catalogue</span>
-                    <h2>Shop All Products</h2>
+        <!-- SHOP BY CATEGORY -->
+        <section class="section">
+            <div class="container-xl">
+                <div class="section-head" data-aos="fade-up">
+                    <span class="eyebrow" style="justify-content:center;">Shop By Category</span>
+                    <h2>Find your silhouette</h2>
+                    <p>Seven wardrobe pillars, each engineered for a different occasion — from the wedding mandap to
+                        the linen-shirt evenings after.</p>
                 </div>
-            </div>
 
-            <div class="row g-4" id="shopAllGrid">
-                <!-- Cards injected by JS -->
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================================
-     FEATURED COLLECTION SPLIT BANNER
-============================================================ -->
-    <section class="split-banner" data-aos="fade">
-        <div class="split-media">
-            <img src="https://picsum.photos/seed/curiosplit/900/900" alt="The Zamindar Edit" loading="lazy">
-        </div>
-        <div class="split-text">
-            <span class="eyebrow">Featured Collection</span>
-            <h2>The Zamindar Edit</h2>
-            <p>Structured bandhgalas and Jodhpuri suits inspired by the landed courts of Rajasthan — reworked with a
-                modern shoulder line and breathable inner linings for the wedding season.</p>
-            <div>
-                <a href="#" class="btn-curio btn-curio-outline">Discover the Edit <i class="bi bi-arrow-right"></i></a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================================
-     BEST SELLERS
-============================================================ -->
-    <section class="section" id="best-sellers">
-        <div class="container-xl">
-            <div class="section-head-row" data-aos="fade-up">
-                <div>
-                    <span class="eyebrow">Most Coveted</span>
-                    <h2>Bestsellers</h2>
-                </div>
-                <a href="#" class="view-all-link">Shop All <i class="bi bi-arrow-right"></i></a>
-            </div>
-
-            <div class="row g-4" id="bestSellerGrid">
-                <!-- Cards injected by JS -->
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================================
-     PROMO BANNER (split, two-column)
-============================================================ -->
-    <section class="section section-cream">
-        <div class="container-xl">
-            <div class="row g-4">
-                <div class="col-lg-7" data-aos="fade-up">
-                    <div class="promo-banner"
-                        style="background-image:url('https://picsum.photos/seed/curiopromo1/1000/700')">
-                        <div class="promo-content">
-                            <span class="eyebrow">Limited Run</span>
-                            <h2>25% off, single item</h2>
-                            <p>30% on any two, 35% on three or more. Our festive discount ladder, live through the
-                                season.</p>
-                            <a href="#" class="btn-curio btn-curio-outline">Shop the Sale</a>
-                        </div>
+                <div class="cat-scroll" data-aos="fade-up" data-aos-delay="100">
+                    <div class="cat-item">
+                        <div class="cat-circle"><img src="https://picsum.photos/seed/catshortkurta/300/300"
+                                alt="Short Kurta" loading="lazy"></div><span>Short Kurta</span>
                     </div>
-                </div>
-                <div class="col-lg-5" data-aos="fade-up" data-aos-delay="150">
-                    <div class="promo-banner"
-                        style="background-image:url('https://picsum.photos/seed/curiopromo2/700/700');min-height:420px;">
-                        <div class="promo-content">
-                            <span class="eyebrow">By Appointment</span>
-                            <h2>Bespoke Tailoring</h2>
-                            <p>Sit with our master tailors — in-studio or virtually — for a made-to-measure sherwani.
-                            </p>
-                            <a href="#" class="btn-curio btn-curio-outline">Book a Fitting</a>
-                        </div>
+                    <div class="cat-item">
+                        <div class="cat-circle"><img src="https://picsum.photos/seed/catkurtaset/300/300"
+                                alt="Kurta Set" loading="lazy"></div><span>Kurta Set</span>
+                    </div>
+                    <div class="cat-item">
+                        <div class="cat-circle"><img src="https://picsum.photos/seed/catjacketset/300/300"
+                                alt="Kurta Jacket Set" loading="lazy"></div><span>Jacket Set</span>
+                    </div>
+                    <div class="cat-item">
+                        <div class="cat-circle"><img src="https://picsum.photos/seed/catjodhpuri/300/300" alt="Jodhpuri"
+                                loading="lazy"></div><span>Jodhpuri</span>
+                    </div>
+                    <div class="cat-item">
+                        <div class="cat-circle"><img src="https://picsum.photos/seed/catindowestern/300/300"
+                                alt="Indowestern" loading="lazy"></div><span>Indowestern</span>
+                    </div>
+                    <div class="cat-item">
+                        <div class="cat-circle"><img src="https://picsum.photos/seed/catsherwani/300/300" alt="Sherwani"
+                                loading="lazy"></div><span>Sherwani</span>
+                    </div>
+                    <div class="cat-item">
+                        <div class="cat-circle"><img src="https://picsum.photos/seed/catlinen/300/300" alt="Pure Linen"
+                                loading="lazy"></div><span>Pure Linen</span>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ============================================================
-     NEW ARRIVALS CAROUSEL
-============================================================ -->
-    <section class="section" id="new-arrivals">
-        <div class="container-xl">
-            <div class="section-head-row" data-aos="fade-up">
+        <!-- SHOP ALL PRODUCTS -->
+        <section class="section section-cream" id="shop-all">
+            <div class="container-xl">
+                <div class="section-head-row" data-aos="fade-up">
+                    <div>
+                        <span class="eyebrow">Full Catalogue</span>
+                        <h2>Shop All Products</h2>
+                    </div>
+                </div>
+
+                <div class="row g-4" id="shopAllGrid">
+                    <!-- Cards injected by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURED COLLECTION SPLIT BANNER -->
+        <section class="split-banner" data-aos="fade">
+            <div class="split-media">
+                <img src="https://picsum.photos/seed/curiosplit/900/900" alt="The Zamindar Edit" loading="lazy">
+            </div>
+            <div class="split-text">
+                <span class="eyebrow">Featured Collection</span>
+                <h2>The Zamindar Edit</h2>
+                <p>Structured bandhgalas and Jodhpuri suits inspired by the landed courts of Rajasthan — reworked
+                    with a modern shoulder line and breathable inner linings for the wedding season.</p>
                 <div>
-                    <span class="eyebrow">Just Landed</span>
-                    <h2>New Arrivals</h2>
-                </div>
-                <div class="new-arr-controls">
-                    <button class="new-arr-nav-btn" id="newArrPrev" aria-label="Previous"><i
-                            class="bi bi-arrow-left"></i></button>
-                    <button class="new-arr-nav-btn" id="newArrNext" aria-label="Next"><i
-                            class="bi bi-arrow-right"></i></button>
-                </div>
-            </div>
-            <div class="new-arr-viewport">
-                <div class="new-arr-track" id="newArrTrack">
-                    <!-- populated by JS -->
-                </div>
-            </div>
-            <div class="new-arr-progress"><span id="newArrProgressBar"></span></div>
-        </div>
-    </section>
-
-    <!-- ============================================================
-     LOOKBOOK / EDITORIAL
-============================================================ -->
-    <section class="section-royal py-5" id="lookbook" style="padding:110px 0;">
-        <div class="container-xl">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-5" data-aos="fade-right">
-                    <span class="eyebrow">Editorial</span>
-                    <h2 style="color:#fff;font-size:clamp(2rem,3.4vw,2.8rem);margin-top:16px;line-height:1.2;">Notes
-                        from the atelier floor</h2>
-                    <p style="color:rgba(251,248,242,.75);margin-top:20px;line-height:1.85;">Inside our Jaipur workshop,
-                        embroiderers spend up to eighty hours hand-finishing a single sherwani. This season's lookbook
-                        follows that process — from raw silk to reception-ready.</p>
-                    <a href="#" class="btn-curio btn-curio-outline mt-4">Read the Journal <i
+                    <a href="#" class="btn-curio btn-curio-outline">Discover the Edit <i
                             class="bi bi-arrow-right"></i></a>
                 </div>
-                <div class="col-lg-7" data-aos="fade-left">
-                    <div class="row g-3">
-                        <div class="col-6"><img src="https://picsum.photos/seed/curioedit1/500/650" class="img-fluid"
-                                style="aspect-ratio:3/4;object-fit:cover;" alt="Atelier embroidery detail"
-                                loading="lazy"></div>
-                        <div class="col-6" style="margin-top:40px;"><img
-                                src="https://picsum.photos/seed/curioedit2/500/650" class="img-fluid"
-                                style="aspect-ratio:3/4;object-fit:cover;" alt="Craftsman at work" loading="lazy"></div>
+            </div>
+        </section>
+
+        <!-- BEST SELLERS -->
+        <section class="section" id="best-sellers">
+            <div class="container-xl">
+                <div class="section-head-row" data-aos="fade-up">
+                    <div>
+                        <span class="eyebrow">Most Coveted</span>
+                        <h2>Bestsellers</h2>
                     </div>
+                    <a href="#" class="view-all-link">Shop All <i class="bi bi-arrow-right"></i></a>
+                </div>
+
+                <div class="row g-4" id="bestSellerGrid">
+                    <!-- Cards injected by JS -->
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ============================================================
-     TESTIMONIALS
-============================================================ -->
-    <section class="section">
-        <div class="container-xl">
-            <div class="section-head" data-aos="fade-up">
-                <span class="eyebrow" style="justify-content:center;">Client Notes</span>
-                <h2>Worn, and remembered</h2>
-            </div>
-
-            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="testimonial-slide" data-aos="fade-up">
-                            <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                    class="bi bi-star-fill"></i></div>
-                            <blockquote>"The sherwani I wore to my own wedding still hangs in my closet, not in storage.
-                                That's the difference with Curio — it wasn't a costume for a day, it was a piece I kept
-                                reaching for."</blockquote>
-                            <p class="author"><strong>Rohan Vashisht</strong> — Mumbai</p>
+        <!-- PROMO BANNER (split, two-column) -->
+        <section class="section section-cream">
+            <div class="container-xl">
+                <div class="row g-4">
+                    <div class="col-lg-7" data-aos="fade-up">
+                        <div class="promo-banner"
+                            style="background-image:url('https://picsum.photos/seed/curiopromo1/1000/700')">
+                            <div class="promo-content">
+                                <span class="eyebrow">Limited Run</span>
+                                <h2>25% off, single item</h2>
+                                <p>30% on any two, 35% on three or more. Our festive discount ladder, live through the
+                                    season.</p>
+                                <a href="#" class="btn-curio btn-curio-outline">Shop the Sale</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="carousel-item">
-                        <div class="testimonial-slide" data-aos="fade-up">
-                            <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                    class="bi bi-star-fill"></i></div>
-                            <blockquote>"The fitting appointment alone was worth it — they adjusted the shoulder line
-                                twice until it sat right. You feel the eighty hours in the embroidery."</blockquote>
-                            <p class="author"><strong>Aditya Kanoria</strong> — Jaipur</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="testimonial-slide" data-aos="fade-up">
-                            <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                    class="bi bi-star-fill"></i></div>
-                            <blockquote>"I've bought festive wear from a dozen labels. Curio is the only one where the
-                                lining is as considered as the embroidery you can see."</blockquote>
-                            <p class="author"><strong>Kabir Oberoi</strong> — Delhi</p>
+                    <div class="col-lg-5" data-aos="fade-up" data-aos-delay="150">
+                        <div class="promo-banner"
+                            style="background-image:url('https://picsum.photos/seed/curiopromo2/700/700');min-height:420px;">
+                            <div class="promo-content">
+                                <span class="eyebrow">By Appointment</span>
+                                <h2>Bespoke Tailoring</h2>
+                                <p>Sit with our master tailors — in-studio or virtually — for a made-to-measure
+                                    sherwani.</p>
+                                <a href="#" class="btn-curio btn-curio-outline">Book a Fitting</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                </button>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ============================================================
-     INSTAGRAM GALLERY
-============================================================ -->
-    <section class="section pt-0" style="padding-top:0;">
-        <div class="container-xl">
-            <div class="section-head" data-aos="fade-up">
-                <span class="eyebrow" style="justify-content:center;">@curiocouture</span>
-                <h2>Styled by our community</h2>
-            </div>
-        </div>
-        <div class="insta-grid" data-aos="fade-up">
-            <div class="insta-item"><img src="https://picsum.photos/seed/curioinsta1/400/400" alt="Instagram post 1"
-                    loading="lazy">
-                <div class="overlay"><i class="bi bi-instagram"></i></div>
-            </div>
-            <div class="insta-item"><img src="https://picsum.photos/seed/curioinsta2/400/400" alt="Instagram post 2"
-                    loading="lazy">
-                <div class="overlay"><i class="bi bi-instagram"></i></div>
-            </div>
-            <div class="insta-item"><img src="https://picsum.photos/seed/curioinsta3/400/400" alt="Instagram post 3"
-                    loading="lazy">
-                <div class="overlay"><i class="bi bi-instagram"></i></div>
-            </div>
-            <div class="insta-item"><img src="https://picsum.photos/seed/curioinsta4/400/400" alt="Instagram post 4"
-                    loading="lazy">
-                <div class="overlay"><i class="bi bi-instagram"></i></div>
-            </div>
-            <div class="insta-item"><img src="https://picsum.photos/seed/curioinsta5/400/400" alt="Instagram post 5"
-                    loading="lazy">
-                <div class="overlay"><i class="bi bi-instagram"></i></div>
-            </div>
-            <div class="insta-item"><img src="https://picsum.photos/seed/curioinsta6/400/400" alt="Instagram post 6"
-                    loading="lazy">
-                <div class="overlay"><i class="bi bi-instagram"></i></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================================
-     NEWSLETTER
-============================================================ -->
-    <section class="newsletter">
-        <div class="container-xl">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <span class="eyebrow">Stay In Curio</span>
-                    <h2>First word on new editions</h2>
-                    <p>New collections, atelier notes, and private trunk-show invitations — nothing else, unsubscribe
-                        any time.</p>
+        <!-- NEW ARRIVALS CAROUSEL -->
+        <section class="section" id="new-arrivals">
+            <div class="container-xl">
+                <div class="section-head-row" data-aos="fade-up">
+                    <div>
+                        <span class="eyebrow">Just Landed</span>
+                        <h2>New Arrivals</h2>
+                    </div>
+                    <div class="new-arr-controls">
+                        <button class="new-arr-nav-btn" id="newArrPrev" aria-label="Previous"><i
+                                class="bi bi-arrow-left"></i></button>
+                        <button class="new-arr-nav-btn" id="newArrNext" aria-label="Next"><i
+                                class="bi bi-arrow-right"></i></button>
+                    </div>
                 </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <form class="newsletter-form" id="newsletterForm">
-                        <input type="email" placeholder="Your email address" required aria-label="Email address">
-                        <button type="submit">Subscribe <i class="bi bi-arrow-right"></i></button>
-                    </form>
-                    <p class="newsletter-note" id="newsletterNote">We respect your inbox. No spam, ever.</p>
+                <div class="new-arr-viewport">
+                    <div class="new-arr-track" id="newArrTrack">
+                        <!-- populated by JS -->
+                    </div>
+                </div>
+                <div class="new-arr-progress"><span id="newArrProgressBar"></span></div>
+            </div>
+        </section>
+
+        <!-- LOOKBOOK / EDITORIAL -->
+        <section class="section-royal py-5" id="lookbook" style="padding:110px 0;">
+            <div class="container-xl">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-5" data-aos="fade-right">
+                        <span class="eyebrow">Editorial</span>
+                        <h2 style="color:#fff;font-size:clamp(2rem,3.4vw,2.8rem);margin-top:16px;line-height:1.2;">
+                            Notes from the atelier floor</h2>
+                        <p style="color:rgba(251,248,242,.75);margin-top:20px;line-height:1.85;">Inside our Jaipur
+                            workshop, embroiderers spend up to eighty hours hand-finishing a single sherwani. This
+                            season's lookbook follows that process — from raw silk to reception-ready.</p>
+                        <a href="#" class="btn-curio btn-curio-outline mt-4">Read the Journal <i
+                                class="bi bi-arrow-right"></i></a>
+                    </div>
+                    <div class="col-lg-7" data-aos="fade-left">
+                        <div class="row g-3">
+                            <div class="col-6"><img src="https://picsum.photos/seed/curioedit1/500/650"
+                                    class="img-fluid" style="aspect-ratio:3/4;object-fit:cover;"
+                                    alt="Atelier embroidery detail" loading="lazy"></div>
+                            <div class="col-6" style="margin-top:40px;"><img
+                                    src="https://picsum.photos/seed/curioedit2/500/650" class="img-fluid"
+                                    style="aspect-ratio:3/4;object-fit:cover;" alt="Craftsman at work" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- TESTIMONIALS -->
+        <section class="section">
+            <div class="container-xl">
+                <div class="section-head" data-aos="fade-up">
+                    <span class="eyebrow" style="justify-content:center;">Client Notes</span>
+                    <h2>Worn, and remembered</h2>
+                </div>
+
+                <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="testimonial-slide" data-aos="fade-up">
+                                <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star-fill"></i></div>
+                                <blockquote>"The sherwani I wore to my own wedding still hangs in my closet, not in
+                                    storage. That's the difference with Curio — it wasn't a costume for a day, it was
+                                    a piece I kept reaching for."</blockquote>
+                                <p class="author"><strong>Rohan Vashisht</strong> — Mumbai</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="testimonial-slide" data-aos="fade-up">
+                                <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star-fill"></i></div>
+                                <blockquote>"The fitting appointment alone was worth it — they adjusted the shoulder
+                                    line twice until it sat right. You feel the eighty hours in the embroidery."
+                                </blockquote>
+                                <p class="author"><strong>Aditya Kanoria</strong> — Jaipur</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="testimonial-slide" data-aos="fade-up">
+                                <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star-fill"></i></div>
+                                <blockquote>"I've bought festive wear from a dozen labels. Curio is the only one
+                                    where the lining is as considered as the embroidery you can see."</blockquote>
+                                <p class="author"><strong>Kabir Oberoi</strong> — Delhi</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- INSTAGRAM GALLERY -->
+        <section class="section pt-0" style="padding-top:0;">
+            <div class="container-xl">
+                <div class="section-head" data-aos="fade-up">
+                    <span class="eyebrow" style="justify-content:center;">@curiocouture</span>
+                    <h2>Styled by our community</h2>
+                </div>
+            </div>
+            <div class="insta-grid" data-aos="fade-up">
+                <div class="insta-item"><img src="https://picsum.photos/seed/curioinsta1/400/400" alt="Instagram post 1"
+                        loading="lazy">
+                    <div class="overlay"><i class="bi bi-instagram"></i></div>
+                </div>
+                <div class="insta-item"><img src="https://picsum.photos/seed/curioinsta2/400/400" alt="Instagram post 2"
+                        loading="lazy">
+                    <div class="overlay"><i class="bi bi-instagram"></i></div>
+                </div>
+                <div class="insta-item"><img src="https://picsum.photos/seed/curioinsta3/400/400" alt="Instagram post 3"
+                        loading="lazy">
+                    <div class="overlay"><i class="bi bi-instagram"></i></div>
+                </div>
+                <div class="insta-item"><img src="https://picsum.photos/seed/curioinsta4/400/400" alt="Instagram post 4"
+                        loading="lazy">
+                    <div class="overlay"><i class="bi bi-instagram"></i></div>
+                </div>
+                <div class="insta-item"><img src="https://picsum.photos/seed/curioinsta5/400/400" alt="Instagram post 5"
+                        loading="lazy">
+                    <div class="overlay"><i class="bi bi-instagram"></i></div>
+                </div>
+                <div class="insta-item"><img src="https://picsum.photos/seed/curioinsta6/400/400" alt="Instagram post 6"
+                        loading="lazy">
+                    <div class="overlay"><i class="bi bi-instagram"></i></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEWSLETTER -->
+        <section class="newsletter">
+            <div class="container-xl">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6" data-aos="fade-right">
+                        <span class="eyebrow">Stay In Curio</span>
+                        <h2>First word on new editions</h2>
+                        <p>New collections, atelier notes, and private trunk-show invitations — nothing else,
+                            unsubscribe any time.</p>
+                    </div>
+                    <div class="col-lg-6" data-aos="fade-left">
+                        <form class="newsletter-form" id="newsletterForm">
+                            <input type="email" placeholder="Your email address" required aria-label="Email address">
+                            <button type="submit">Subscribe <i class="bi bi-arrow-right"></i></button>
+                        </form>
+                        <p class="newsletter-note" id="newsletterNote">We respect your inbox. No spam, ever.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
 
     <!-- ============================================================
      FOOTER
@@ -735,69 +722,34 @@
     <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
 
     <!-- ============================================================
-     QUICK VIEW MODAL
-============================================================ -->
-    <div class="modal fade modal-curio" id="quickViewModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <button type="button" class="btn-close position-absolute top-0 end-0 m-3" style="z-index:5;"
-                    data-bs-dismiss="modal"></button>
-                <div class="modal-body">
-                    <div class="row g-0">
-                        <div class="col-md-6">
-                            <img src="https://picsum.photos/seed/curioqv1/700/900" class="qv-img" id="qvImage"
-                                alt="Product quick view">
-                        </div>
-                        <div class="col-md-6">
-                            <div class="qv-info">
-                                <span class="p-cat" id="qvCat">Sherwani</span>
-                                <h3 id="qvTitle">Sanjh Cutdana Black Short Kurta</h3>
-                                <div class="qv-price"><span id="qvPrice">₹17,549</span></div>
-                                <p class="qv-desc" id="qvDesc">Hand-embroidered cutdana work over raw silk, finished
-                                    with a mandarin collar and hand-stitched button placket. Fully lined for
-                                    occasion-length wear.</p>
-                                <div>
-                                    <div class="eyebrow" style="margin-top:10px;">Select Size</div>
-                                    <div class="size-row">
-                                        <div class="size-swatch">S</div>
-                                        <div class="size-swatch active">M</div>
-                                        <div class="size-swatch">L</div>
-                                        <div class="size-swatch">XL</div>
-                                        <div class="size-swatch">XXL</div>
-                                    </div>
-                                </div>
-                                <div class="qv-actions">
-                                    <button class="btn-curio flex-fill">Add to Bag</button>
-                                    <button class="btn-curio btn-curio-ghost qv-wishlist"><i
-                                            class="bi bi-heart"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ============================================================
      JS
 ============================================================ -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
         /* ---------------------------------------------------------
-           PRODUCT DATA (shared source for Best Sellers + New Arrivals)
+           PRODUCT DATA (shared source for Best Sellers + New Arrivals + Product Detail view)
         --------------------------------------------------------- */
         const PRODUCTS = [
-            { id: 'p1', cat: 'Short Kurta', title: 'Sanjh Cutdana Black Short Kurta', price: '₹17,549', was: '₹23,399', img: 'curioprod1', img2: 'curioprod1b', tag: 'Bestseller', rating: '★★★★★ (128)' },
-            { id: 'p2', cat: 'Kurta Set', title: 'Paisely Pink Wedding Kurta Set', price: '₹20,249', was: '₹26,999', img: 'curioprod2', img2: 'curioprod2b', tag: 'Trending', rating: '★★★★★ (96)' },
-            { id: 'p3', cat: 'Kurta Set', title: 'Phoolpankh Haldi Kurta Set', price: '₹20,249', was: '₹26,999', img: 'curioprod3', img2: 'curioprod3b', tag: 'Sale', rating: '★★★★☆ (74)' },
-            { id: 'p4', cat: 'Short Kurta', title: 'Chaar Kadam Black Kurta Set', price: '₹14,137', was: '₹18,850', img: 'curioprod4', img2: 'curioprod4b', tag: 'Bestseller', rating: '★★★★★ (112)' },
-            { id: 'p5', cat: 'Sherwani', title: 'Rajwada Ivory Zari Sherwani', price: '₹32,499', was: '₹42,000', img: 'curioprod5', img2: 'curioprod5b', tag: 'New', rating: '★★★★★ (58)' },
-            { id: 'p6', cat: 'Bandhgala', title: 'Ashfaaq Navy Bandhgala', price: '₹24,750', was: '', img: 'curioprod6', img2: 'curioprod6b', tag: 'New', rating: '★★★★☆ (41)' },
-            { id: 'p7', cat: 'Jodhpuri', title: 'Rangmahal Rust Jodhpuri Suit', price: '₹27,999', was: '₹34,999', img: 'curioprod7', img2: 'curioprod7b', tag: 'Sale', rating: '★★★★★ (67)' },
-            { id: 'p8', cat: 'Pure Linen', title: 'Sanwaan Sand Linen Kurta', price: '₹8,499', was: '', img: 'curioprod8', img2: 'curioprod8b', tag: 'New', rating: '★★★★☆ (33)' },
+            { id: 'p1', cat: 'Short Kurta', title: 'Sanjh Cutdana Black Short Kurta', price: '₹17,549', was: '₹23,399', img: 'images/Dress/1.jpeg', img2: 'images/Dress/1.jpeg', tag: 'Bestseller' },
+            { id: 'p2', cat: 'Short Kurta', title: 'Sanjh Cutdana Black Short Kurta', price: '₹17,549', was: '₹23,399', img: 'images/Dress/2.jpeg', img2: 'images/Dress/2.jpeg', tag: 'Bestseller' },
         ];
+
+        /* WhatsApp business number used across the site — update to your real number */
+        const WHATSAPP_NUMBER = '919876543210';
+
+        /* Builds a wa.me link pre-filled with a message about the given product */
+        function buildWhatsAppLink(p) {
+            const message = `Hi Curio Couture, I'm interested in "${p.title}" (${p.price}). Could you share more details?`;
+            return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+        }
+
+        function getProductImageSrc(pathOrSeed, size) {
+            const value = pathOrSeed || '';
+            if (!value) return '';
+            if (value.startsWith('http') || value.startsWith('./') || value.includes('/') || value.includes('\\')) return value;
+            return `https://picsum.photos/seed/${value}/${size}`;
+        }
 
         function productCard(p, size) {
             return `
@@ -805,8 +757,8 @@
     <div class="product-media">
       <span class="product-tag ${p.tag === 'Sale' ? 'sale' : ''}">${p.tag}</span>
       <button class="wishlist-btn" data-id="${p.id}" aria-label="Add to wishlist"><i class="bi bi-heart"></i></button>
-      <img class="img-front lazy-fade" src="https://picsum.photos/seed/${p.img}/500/650" alt="${p.title}" loading="lazy" onload="this.classList.add('loaded')">
-      <img class="img-back" src="https://picsum.photos/seed/${p.img2}/500/650" alt="${p.title} alternate view" loading="lazy">
+      <img class="img-front lazy-fade" src="${getProductImageSrc(p.img, '500/650')}" alt="${p.title}" loading="lazy" onload="this.classList.add('loaded')">
+      <img class="img-back" src="${getProductImageSrc(p.img2, '500/650')}" alt="${p.title} alternate view" loading="lazy">
       <span class="corner-orn ornament">
         <svg width="26" height="26" viewBox="0 0 64 64" fill="none"><path d="M8 16C8 11 12 8 16 8C20 8 24 12 28 20C24 12 28 8 32 8C36 8 40 12 40 16C40 20 36 24 28 20" stroke="#BD9A4C" stroke-width="1.6"/></svg>
       </span>
@@ -816,8 +768,8 @@
       <span class="p-cat">${p.cat}</span>
       <h5>${p.title}</h5>
       <div class="product-price"><span class="now">${p.price}</span>${p.was ? `<span class="was">${p.was}</span>` : ''}</div>
-      <div class="product-rating">${p.rating}</div>
-      <button class="add-to-bag-btn" data-id="${p.id}"><i class="bi bi-bag-plus"></i> Add to Bag</button>
+    
+      <button class="add-to-bag-btn mt-2" data-id="${p.id}"><i class="bi bi-whatsapp"></i> Buy On Whatsapp</button>
     </div>
   </div>`;
         }
@@ -1042,15 +994,20 @@
         refreshWishlistUI();
 
         /* ---------------------------------------------------------
-           ADD TO BAG — small visual confirmation on the card button
+           BUY ON WHATSAPP (product cards) — opens a real WhatsApp
+           chat pre-filled with the product name and price, plus a
+           small visual confirmation on the card button.
         --------------------------------------------------------- */
         document.addEventListener('click', e => {
             const btn = e.target.closest('.add-to-bag-btn');
             if (!btn) return;
+            const p = PRODUCTS.find(x => x.id === btn.dataset.id);
+            if (p) window.open(buildWhatsAppLink(p), '_blank', 'noopener');
+
             if (btn.classList.contains('added')) return;
             const original = btn.innerHTML;
             btn.classList.add('added');
-            btn.innerHTML = '<i class="bi bi-check2"></i> Added';
+            btn.innerHTML = '<i class="bi bi-check2"></i> Opening WhatsApp';
             setTimeout(() => {
                 btn.classList.remove('added');
                 btn.innerHTML = original;
@@ -1058,29 +1015,102 @@
         });
 
         /* ---------------------------------------------------------
-           QUICK VIEW MODAL POPULATION
+           PRODUCT DETAIL VIEW — Quick View opens this in place of
+           the shop content, all within this same page (no reload,
+           no separate file). Back link restores the shop content.
         --------------------------------------------------------- */
-        const qvModalEl = document.getElementById('quickViewModal');
-        const qvModal = new bootstrap.Modal(qvModalEl);
+        const mainShopContent = document.getElementById('mainShopContent');
+        const productDetailView = document.getElementById('productDetailView');
+
+        function showProductDetail(id) {
+            const p = PRODUCTS.find(x => x.id === id);
+            if (!p) return;
+
+            document.getElementById('pdBreadcrumbCat').textContent = p.cat;
+            document.getElementById('pdCat').textContent = p.cat;
+            document.getElementById('pdTitle').textContent = p.title;
+            document.getElementById('pdPrice').textContent = p.price;
+            document.getElementById('pdWas').textContent = p.was || '';
+            document.getElementById('pdDesc').textContent =
+                `Hand-finished ${p.cat.toLowerCase()} crafted in our Jaipur atelier — fully lined, with hand-set embroidery detail and a considered, occasion-ready drape.`;
+
+            const images = [p.img, p.img2].filter(Boolean);
+            const mainImg = document.getElementById('pdMainImage');
+            mainImg.src = getProductImageSrc(images[0], '800/1000');
+            mainImg.alt = p.title;
+
+            document.getElementById('pdThumbs').innerHTML = images.map((seed, i) => `
+                <img class="pd-thumb ${i === 0 ? 'active' : ''}" data-seed="${seed}"
+                     src="${getProductImageSrc(seed, '200/250')}" alt="${p.title} view ${i + 1}">
+            `).join('');
+            document.querySelectorAll('.pd-thumb').forEach(thumb => {
+                thumb.addEventListener('click', () => {
+                    document.querySelectorAll('.pd-thumb').forEach(t => t.classList.remove('active'));
+                    thumb.classList.add('active');
+                    mainImg.src = getProductImageSrc(thumb.dataset.seed, '800/1000');
+                });
+            });
+
+            const pdWhatsappBtn = document.getElementById('pdWhatsappBtn');
+            pdWhatsappBtn.onclick = () => window.open(buildWhatsAppLink(p), '_blank', 'noopener');
+
+            const pdWishlistBtn = document.getElementById('pdWishlistBtn');
+            const refreshPdWishlist = () => pdWishlistBtn.classList.toggle('active', wishStore.get().includes(p.id));
+            pdWishlistBtn.onclick = () => {
+                const list = wishStore.get();
+                const i = list.indexOf(p.id);
+                if (i > -1) list.splice(i, 1); else list.push(p.id);
+                wishStore.set(list);
+                refreshPdWishlist();
+                refreshWishlistUI();
+            };
+            refreshPdWishlist();
+
+            mainShopContent.classList.add('pd-hidden');
+            productDetailView.classList.add('open');
+            history.pushState({ pdId: p.id }, '', `#product=${p.id}`);
+            window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
+        }
+
+        function hideProductDetail() {
+            productDetailView.classList.remove('open');
+            mainShopContent.classList.remove('pd-hidden');
+            history.pushState({}, '', window.location.pathname + window.location.search);
+            window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
+        }
+
         document.addEventListener('click', e => {
             const btn = e.target.closest('.quick-view-btn');
             if (!btn) return;
-            const p = PRODUCTS.find(x => x.id === btn.dataset.id);
-            if (!p) return;
-            document.getElementById('qvImage').src = `https://picsum.photos/seed/${p.img}/700/900`;
-            document.getElementById('qvCat').textContent = p.cat;
-            document.getElementById('qvTitle').textContent = p.title;
-            document.getElementById('qvPrice').innerHTML = `${p.price} ${p.was ? `<span class="was" style="text-decoration:line-through;color:var(--ink-soft);font-size:.9rem;margin-left:8px;">${p.was}</span>` : ''}`;
-            document.getElementById('qvDesc').textContent = `Hand-finished ${p.cat.toLowerCase()} crafted in our Jaipur atelier — fully lined, with hand-set embroidery detail and a considered, occasion-ready drape.`;
-            qvModal.show();
+            showProductDetail(btn.dataset.id);
         });
 
-        /* Size swatch selection inside quick view */
-        document.querySelectorAll('.size-swatch').forEach(sw => {
-            sw.addEventListener('click', () => {
-                sw.parentElement.querySelectorAll('.size-swatch').forEach(s => s.classList.remove('active'));
-                sw.classList.add('active');
-            });
+        document.getElementById('pdBackLink').addEventListener('click', hideProductDetail);
+        document.getElementById('brandHomeLink').addEventListener('click', e => {
+            if (productDetailView.classList.contains('open')) {
+                e.preventDefault();
+                hideProductDetail();
+            }
+        });
+
+        window.addEventListener('popstate', () => {
+            const match = window.location.hash.match(/^#product=(.+)$/);
+            if (match) showProductDetail(decodeURIComponent(match[1]));
+            else hideProductDetail();
+        });
+
+        /* Open detail view directly if the page is loaded with #product=ID already in the URL */
+        (function openFromHashOnLoad() {
+            const match = window.location.hash.match(/^#product=(.+)$/);
+            if (match) showProductDetail(decodeURIComponent(match[1]));
+        })();
+
+        /* Size swatch selection — shared by product cards' quick view state (if reused) and product detail view */
+        document.addEventListener('click', e => {
+            const sw = e.target.closest('.size-swatch');
+            if (!sw) return;
+            sw.parentElement.querySelectorAll('.size-swatch').forEach(s => s.classList.remove('active'));
+            sw.classList.add('active');
         });
 
         /* ---------------------------------------------------------

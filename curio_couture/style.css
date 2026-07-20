@@ -1216,11 +1216,19 @@ img {
 }
 
 /* ---------- 9. PRODUCT CARDS ---------- */
+/* ============================================================
+   PRODUCT CARD — v2 (replace the "9. PRODUCT CARDS" block
+   in style.css with everything below)
+   ============================================================ */
+
 .product-card {
     position: relative;
     background: var(--ivory);
     border-radius: 6px;
     transition: transform .5s var(--ease), box-shadow .5s var(--ease);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .product-card:hover {
@@ -1231,9 +1239,10 @@ img {
 .product-media {
     position: relative;
     overflow: hidden;
-    aspect-ratio: 3/4;
+    aspect-ratio: 4/5;
     background: var(--cream);
     border-radius: 6px 6px 0 0;
+    flex-shrink: 0;
 }
 
 .product-media img {
@@ -1361,15 +1370,22 @@ img {
     transform: translate(0, 0);
 }
 
+/* Info panel is now a flex column: title clamps to exactly 2 lines,
+   price sits right under it, and the buy button gets pushed to the
+   very bottom with margin-top:auto — so every card in a row ends at
+   the same height no matter how long/short the title is. */
 .product-info {
-    padding: 20px 16px 22px;
+    padding: 18px 16px 18px;
     border: 1px solid var(--line);
     border-top: none;
     border-radius: 0 0 6px 6px;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
 }
 
 .product-info .p-cat {
-    font-size: .68rem;
+    font-size: .66rem;
     letter-spacing: .16em;
     text-transform: uppercase;
     color: var(--gold-deep);
@@ -1377,16 +1393,21 @@ img {
 
 .product-info h5 {
     font-family: 'Fraunces';
-    font-size: 1.08rem;
-    margin-top: 8px;
+    font-size: 1.02rem;
+    margin-top: 7px;
     font-weight: 400;
     color: var(--royal-dark);
     line-height: 1.35;
-    min-height: 2.7em;
+    /* clamp to 2 lines instead of forcing a min-height — short
+       titles no longer leave an empty gap above the price */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .product-price {
-    margin-top: 10px;
+    margin-top: 9px;
     display: flex;
     gap: 10px;
     align-items: baseline;
@@ -1413,7 +1434,6 @@ img {
 
 .add-to-bag-btn {
     width: 100%;
-    margin-top: 16px;
     padding: 12px;
     background: transparent;
     border: 1px solid var(--royal);
@@ -1430,6 +1450,9 @@ img {
     justify-content: center;
     gap: 8px;
     transition: all .35s var(--ease);
+    /* pins to the bottom of the card regardless of title/price height above it */
+    margin-top: auto;
+    align-self: stretch;
 }
 
 .add-to-bag-btn:hover {
@@ -1441,6 +1464,18 @@ img {
     background: var(--gold-deep);
     border-color: var(--gold-deep);
     color: #fff;
+}
+
+/* Grid rows: stretch every card in a row to equal height so the
+   flex layout above actually has something to fill. */
+#bestSellerGrid.row,
+#shopAllGrid.row {
+    align-items: stretch;
+}
+
+#bestSellerGrid>[class*="col-"],
+#shopAllGrid>[class*="col-"] {
+    display: flex;
 }
 
 /* ---------- 10. PROMO BANNER ---------- */
