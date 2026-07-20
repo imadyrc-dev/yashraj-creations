@@ -308,9 +308,11 @@ img {
 .brand-bar {
     background: var(--royal-dark);
     padding: 26px 0;
+    position: relative;
+    z-index: 1001;
 }
 
-.brand-bar .container-xl {
+.brand-bar-grid {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -332,6 +334,89 @@ img {
 .brand-bar .nav-logo .ornament circle,
 .brand-bar .nav-logo .ornament line {
     stroke: #fff;
+}
+
+/* Mobile search toggle button lives in the brand bar (dark) — style for that context */
+.brand-search-toggle {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid rgba(251, 248, 242, .35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold-light);
+    transition: border-color .35s var(--ease), background .35s var(--ease), color .35s var(--ease);
+}
+
+.brand-search-toggle:hover {
+    border-color: var(--gold-light);
+    transform: none;
+}
+
+.brand-search-toggle.active {
+    background: var(--gold-light);
+    border-color: var(--gold-light);
+    color: var(--royal-dark);
+}
+
+/* Mobile-only expanding search panel, anchored under the brand bar */
+.mobile-search-panel {
+    max-height: 0;
+    overflow: hidden;
+    background: var(--royal-dark);
+    border-top: 0 solid rgba(251, 248, 242, .12);
+    opacity: 0;
+    transition: max-height .4s var(--ease), opacity .3s var(--ease), border-color .4s var(--ease);
+}
+
+.mobile-search-panel.open {
+    max-height: 90px;
+    opacity: 1;
+    border-top-color: rgba(251, 248, 242, .12);
+}
+
+.mobile-search-panel .brand-search {
+    display: flex;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(251, 248, 242, .3);
+}
+
+.mobile-search-panel .brand-search input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-family: 'Jost';
+    font-size: .95rem;
+    padding: 4px 0;
+}
+
+.mobile-search-panel .brand-search input::placeholder {
+    color: rgba(251, 248, 242, .55);
+}
+
+.mobile-search-panel .brand-search button {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background: transparent;
+    color: var(--gold-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1rem;
+    flex-shrink: 0;
+    transition: color .3s var(--ease);
+}
+
+.mobile-search-panel .brand-search button:hover {
+    color: #fff;
 }
 
 /* ---------- 2c. MAIN NAV (white, links row) ---------- */
@@ -1134,6 +1219,13 @@ img {
 .product-card {
     position: relative;
     background: var(--ivory);
+    border-radius: 6px;
+    transition: transform .5s var(--ease), box-shadow .5s var(--ease);
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 46px rgba(11, 34, 41, .12);
 }
 
 .product-media {
@@ -1141,7 +1233,7 @@ img {
     overflow: hidden;
     aspect-ratio: 3/4;
     background: var(--cream);
-    border-radius: var(--radius-lg);
+    border-radius: 6px 6px 0 0;
 }
 
 .product-media img {
@@ -1177,7 +1269,8 @@ img {
     letter-spacing: .12em;
     text-transform: uppercase;
     padding: 6px 12px;
-    border-radius: 2px;
+    border-radius: 20px;
+    box-shadow: 0 6px 14px rgba(11, 34, 41, .18);
 }
 
 .product-tag.sale {
@@ -1192,7 +1285,7 @@ img {
     width: 38px;
     height: 38px;
     border-radius: 50%;
-    background: rgba(251, 248, 242, .9);
+    background: rgba(251, 248, 242, .92);
     border: none;
     display: flex;
     align-items: center;
@@ -1203,6 +1296,7 @@ img {
     transition: all .35s var(--ease);
     opacity: 0;
     transform: translateY(-6px);
+    box-shadow: 0 6px 14px rgba(11, 34, 41, .14);
 }
 
 .product-card:hover .wishlist-btn {
@@ -1227,13 +1321,14 @@ img {
     bottom: 14px;
     z-index: 2;
     padding: 13px;
-    background: rgba(251, 248, 242, .96);
+    background: rgba(251, 248, 242, .97);
     color: var(--royal-dark);
     font-size: .7rem;
     letter-spacing: .18em;
     text-transform: uppercase;
     text-align: center;
     border: none;
+    border-radius: 4px;
     cursor: pointer;
     opacity: 0;
     transform: translateY(14px);
@@ -1267,7 +1362,10 @@ img {
 }
 
 .product-info {
-    padding: 20px 2px 0;
+    padding: 20px 16px 22px;
+    border: 1px solid var(--line);
+    border-top: none;
+    border-radius: 0 0 6px 6px;
 }
 
 .product-info .p-cat {
@@ -1283,6 +1381,8 @@ img {
     margin-top: 8px;
     font-weight: 400;
     color: var(--royal-dark);
+    line-height: 1.35;
+    min-height: 2.7em;
 }
 
 .product-price {
@@ -1309,6 +1409,38 @@ img {
     color: var(--gold-deep);
     font-size: .72rem;
     letter-spacing: .05em;
+}
+
+.add-to-bag-btn {
+    width: 100%;
+    margin-top: 16px;
+    padding: 12px;
+    background: transparent;
+    border: 1px solid var(--royal);
+    color: var(--royal);
+    font-family: 'Jost';
+    font-size: .72rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all .35s var(--ease);
+}
+
+.add-to-bag-btn:hover {
+    background: var(--royal);
+    color: var(--ivory);
+}
+
+.add-to-bag-btn.added {
+    background: var(--gold-deep);
+    border-color: var(--gold-deep);
+    color: #fff;
 }
 
 /* ---------- 10. PROMO BANNER ---------- */
@@ -1721,7 +1853,85 @@ img {
     margin-top: 28px;
 }
 
-/* ---------- 16. BACK TO TOP + MISC ---------- */
+/* ---------- 16. NEW ARRIVALS — horizontal scroll-snap carousel ---------- */
+.new-arr-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.new-arr-nav-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    background: var(--ivory);
+    color: var(--royal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all .3s var(--ease);
+    flex-shrink: 0;
+}
+
+.new-arr-nav-btn:hover {
+    background: var(--royal);
+    color: var(--gold-light);
+    border-color: var(--royal);
+}
+
+.new-arr-nav-btn.disabled {
+    opacity: .35;
+    pointer-events: none;
+}
+
+.new-arr-viewport {
+    overflow: hidden;
+}
+
+.new-arr-track {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding: 4px 4px 12px;
+    margin: 0 -4px;
+}
+
+.new-arr-track::-webkit-scrollbar {
+    display: none;
+}
+
+.new-arr-track {
+    scrollbar-width: none;
+}
+
+.new-arr-slide {
+    flex: 0 0 auto;
+    width: 270px;
+    scroll-snap-align: start;
+}
+
+.new-arr-progress {
+    height: 2px;
+    background: var(--line);
+    margin-top: 20px;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.new-arr-progress span {
+    display: block;
+    height: 100%;
+    width: 0%;
+    background: var(--gold-deep);
+    transition: width .2s linear;
+}
+
+/* ---------- 17. BACK TO TOP + MISC ---------- */
 .back-to-top {
     position: fixed;
     bottom: 26px;
@@ -1766,8 +1976,7 @@ img {
 @media(max-width:991px) {
 
     .top-bar,
-    .navbar-curio,
-    .brand-search {
+    .navbar-curio {
         display: none !important;
     }
 
@@ -1791,9 +2000,21 @@ img {
         padding: 18px 0;
     }
 
-    .brand-bar .container-xl {
-        justify-content: center;
+    .brand-bar-grid {
+        display: flex !important;
+        align-items: center;
+        justify-content: space-between;
         gap: 16px;
+    }
+
+    .brand-bar .nav-logo {
+        flex: 1;
+        justify-content: center;
+    }
+
+    .mobile-menu-btn,
+    .brand-search-toggle {
+        flex-shrink: 0;
     }
 
     .brand-bar .nav-logo {
@@ -1802,7 +2023,18 @@ img {
 
     .brand-bar .nav-logo img {
         height: 38px;
-        justify-content: center;
+    }
+
+    .new-arr-slide {
+        width: 220px;
+    }
+
+    .new-arr-controls {
+        display: none;
+    }
+
+    .product-info h5 {
+        min-height: 0;
     }
 }
 
@@ -1815,8 +2047,18 @@ img {
         min-height: 260px;
     }
 
+    .nav-icon-btn {
+        color: var(--cream);
+        border: 1px solid rgb(148, 147, 147);
+    }
+
+
     .brand-bar .nav-logo img {
         height: 32px;
+    }
+
+    .new-arr-slide {
+        width: 72vw;
     }
 }
 

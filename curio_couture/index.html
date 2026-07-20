@@ -487,20 +487,19 @@
                     <span class="eyebrow">Just Landed</span>
                     <h2>New Arrivals</h2>
                 </div>
-                <div class="d-flex gap-2">
-                    <button class="nav-icon-btn border rounded-circle"
-                        style="color:var(--royal);width:42px;height:42px;" id="newArrPrev"><i
+                <div class="new-arr-controls">
+                    <button class="new-arr-nav-btn" id="newArrPrev" aria-label="Previous"><i
                             class="bi bi-arrow-left"></i></button>
-                    <button class="nav-icon-btn border rounded-circle"
-                        style="color:var(--royal);width:42px;height:42px;" id="newArrNext"><i
+                    <button class="new-arr-nav-btn" id="newArrNext" aria-label="Next"><i
                             class="bi bi-arrow-right"></i></button>
                 </div>
             </div>
-            <div class="overflow-hidden">
-                <div class="d-flex gap-4" id="newArrTrack" style="transition:transform .6s var(--ease);">
+            <div class="new-arr-viewport">
+                <div class="new-arr-track" id="newArrTrack">
                     <!-- populated by JS -->
                 </div>
             </div>
+            <div class="new-arr-progress"><span id="newArrProgressBar"></span></div>
         </div>
     </section>
 
@@ -818,6 +817,7 @@
       <h5>${p.title}</h5>
       <div class="product-price"><span class="now">${p.price}</span>${p.was ? `<span class="was">${p.was}</span>` : ''}</div>
       <div class="product-rating">${p.rating}</div>
+      <button class="add-to-bag-btn" data-id="${p.id}"><i class="bi bi-bag-plus"></i> Add to Bag</button>
     </div>
   </div>`;
         }
@@ -830,46 +830,36 @@
         document.getElementById('shopAllGrid').innerHTML =
             PRODUCTS.map(p => productCard(p, 'col-lg-3 col-md-6 col-12')).join('');
 
-        /* Render New Arrivals track (horizontal scroller) — use all products so it always overflows */
+        /* Render New Arrivals track (horizontal scroller, native scroll-snap) */
         const newArrTrack = document.getElementById('newArrTrack');
         newArrTrack.innerHTML = PRODUCTS.map(p => `<div class="new-arr-slide">${productCard(p, '')}</div>`).join('');
 
-        /* New arrivals prev/next — measures real card width, clamps to real overflow */
-        const newArrViewport = newArrTrack.parentElement;
+        /* New arrivals prev/next — scrolls by one card width, native smooth scroll */
         const newArrPrevBtn = document.getElementById('newArrPrev');
         const newArrNextBtn = document.getElementById('newArrNext');
-        let newArrOffset = 0;
+        const newArrProgressBar = document.getElementById('newArrProgressBar');
 
         function newArrStep() {
             const first = newArrTrack.querySelector('.new-arr-slide');
             const gap = parseFloat(getComputedStyle(newArrTrack).columnGap) || 24;
             return first ? first.getBoundingClientRect().width + gap : 294;
         }
-        function newArrMaxOffset() {
-            const overflow = newArrTrack.scrollWidth - newArrViewport.offsetWidth;
-            return overflow > 0 ? -overflow : 0;
-        }
-        function newArrRefreshButtons() {
-            const maxOffset = newArrMaxOffset();
-            newArrPrevBtn.classList.toggle('disabled', newArrOffset >= 0);
-            newArrNextBtn.classList.toggle('disabled', newArrOffset <= maxOffset);
+        function newArrRefresh() {
+            const maxScroll = newArrTrack.scrollWidth - newArrTrack.clientWidth;
+            newArrPrevBtn.classList.toggle('disabled', newArrTrack.scrollLeft <= 4);
+            newArrNextBtn.classList.toggle('disabled', newArrTrack.scrollLeft >= maxScroll - 4);
+            const pct = maxScroll > 0 ? Math.min(100, (newArrTrack.scrollLeft / maxScroll) * 100) : 0;
+            if (newArrProgressBar) newArrProgressBar.style.width = pct + '%';
         }
         newArrNextBtn.addEventListener('click', () => {
-            newArrOffset = Math.max(newArrOffset - newArrStep(), newArrMaxOffset());
-            newArrTrack.style.transform = `translateX(${newArrOffset}px)`;
-            newArrRefreshButtons();
+            newArrTrack.scrollBy({ left: newArrStep(), behavior: 'smooth' });
         });
         newArrPrevBtn.addEventListener('click', () => {
-            newArrOffset = Math.min(newArrOffset + newArrStep(), 0);
-            newArrTrack.style.transform = `translateX(${newArrOffset}px)`;
-            newArrRefreshButtons();
+            newArrTrack.scrollBy({ left: -newArrStep(), behavior: 'smooth' });
         });
-        window.addEventListener('resize', () => {
-            newArrOffset = Math.max(Math.min(newArrOffset, 0), newArrMaxOffset());
-            newArrTrack.style.transform = `translateX(${newArrOffset}px)`;
-            newArrRefreshButtons();
-        });
-        newArrRefreshButtons();
+        newArrTrack.addEventListener('scroll', () => window.requestAnimationFrame(newArrRefresh));
+        window.addEventListener('resize', newArrRefresh);
+        newArrRefresh();
 
         /* ---------------------------------------------------------
            PRELOADER
@@ -881,7 +871,7 @@
         });
 
         /* ---------------------------------------------------------
-           NAV SEARCH TOGGLE — expands the search panel under the navbar
+           NAV SEARCH TOGGLE — expands the search panel under the navbar (desktop)
         --------------------------------------------------------- */
         const navSearchToggle = document.getElementById('navSearchToggle');
         const navSearchPanel = document.getElementById('navSearchPanel');
@@ -909,26 +899,62 @@
                 closeNavSearch();
             }
         });
+
+        /* ---------------------------------------------------------
+           MOBILE SEARCH TOGGLE — expands the search panel in the brand bar (mobile)
+        --------------------------------------------------------- */
+        const mobileSearchToggle = document.getElementById('mobileSearchToggle');
+        const mobileSearchPanel = document.getElementById('mobileSearchPanel');
+        const mobileSearchInputEl = document.getElementById('mobileSearchInput');
+
+        function closeMobileSearch() {
+            mobileSearchPanel.classList.remove('open');
+            mobileSearchToggle.setAttribute('aria-expanded', 'false');
+            mobileSearchToggle.classList.remove('active');
+        }
+        function toggleMobileSearch() {
+            const isOpen = mobileSearchPanel.classList.toggle('open');
+            mobileSearchToggle.setAttribute('aria-expanded', String(isOpen));
+            mobileSearchToggle.classList.toggle('active', isOpen);
+            if (isOpen) setTimeout(() => mobileSearchInputEl.focus(), 250);
+        }
+        mobileSearchToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleMobileSearch();
+        });
+        document.addEventListener('click', (e) => {
+            if (mobileSearchPanel.classList.contains('open') &&
+                !mobileSearchPanel.contains(e.target) &&
+                !mobileSearchToggle.contains(e.target)) {
+                closeMobileSearch();
+            }
+        });
+
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeNavSearch();
+            if (e.key === 'Escape') { closeNavSearch(); closeMobileSearch(); }
         });
 
         /* ---------------------------------------------------------
-           SITE SEARCH — filters Shop All grid, no popup
+           SITE SEARCH — filters Shop All grid, no popup (shared by desktop + mobile)
         --------------------------------------------------------- */
-        function runSiteSearch() {
-            const q = siteSearchInputEl.value.trim().toLowerCase();
+        function runSiteSearch(query) {
+            const q = query.trim().toLowerCase();
             const matches = q
                 ? PRODUCTS.filter(p => p.title.toLowerCase().includes(q) || p.cat.toLowerCase().includes(q))
                 : PRODUCTS;
             document.getElementById('shopAllGrid').innerHTML =
                 (matches.length ? matches : PRODUCTS).map(p => productCard(p, 'col-lg-3 col-md-6 col-12')).join('');
             closeNavSearch();
+            closeMobileSearch();
             document.getElementById('shop-all').scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
-        document.getElementById('siteSearchBtn').addEventListener('click', runSiteSearch);
+        document.getElementById('siteSearchBtn').addEventListener('click', () => runSiteSearch(siteSearchInputEl.value));
         siteSearchInputEl.addEventListener('keydown', e => {
-            if (e.key === 'Enter') { e.preventDefault(); runSiteSearch(); }
+            if (e.key === 'Enter') { e.preventDefault(); runSiteSearch(siteSearchInputEl.value); }
+        });
+        document.getElementById('mobileSearchBtn').addEventListener('click', () => runSiteSearch(mobileSearchInputEl.value));
+        mobileSearchInputEl.addEventListener('keydown', e => {
+            if (e.key === 'Enter') { e.preventDefault(); runSiteSearch(mobileSearchInputEl.value); }
         });
 
         /* ---------------------------------------------------------
@@ -1014,6 +1040,22 @@
             refreshWishlistUI();
         });
         refreshWishlistUI();
+
+        /* ---------------------------------------------------------
+           ADD TO BAG — small visual confirmation on the card button
+        --------------------------------------------------------- */
+        document.addEventListener('click', e => {
+            const btn = e.target.closest('.add-to-bag-btn');
+            if (!btn) return;
+            if (btn.classList.contains('added')) return;
+            const original = btn.innerHTML;
+            btn.classList.add('added');
+            btn.innerHTML = '<i class="bi bi-check2"></i> Added';
+            setTimeout(() => {
+                btn.classList.remove('added');
+                btn.innerHTML = original;
+            }, 1600);
+        });
 
         /* ---------------------------------------------------------
            QUICK VIEW MODAL POPULATION
