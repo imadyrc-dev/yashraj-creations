@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop By Occasion — Curio Couture</title>
+    <title>Shop By Category — Curio Couture</title>
     <meta name="description"
-        content="Shop Curio Couture by occasion — Wedding, Festive, Reception and Sangeet edits of sherwanis, bandhgalas, Jodhpuri suits, kurta sets and more, hand-finished in our Jaipur atelier.">
+        content="Shop Curio Couture by category — Sherwani, Bandhgala, Jodhpuri Suits, Nehru Jackets, Kurta Sets, Short Kurtas, Indowestern and Pure Linen, hand-finished in our Jaipur atelier.">
     <meta name="keywords"
-        content="menswear, wedding sherwani, festive kurta, reception outfit, sangeet indowestern, Curio Couture">
+        content="menswear, sherwani, bandhgala, jodhpuri suit, nehru jacket, kurta set, indowestern, Curio Couture">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,16 +30,19 @@
 
     <style>
         /* ============================================================
-           Page-specific additive rules for the Occasions listing.
+           Page-specific additive rules for the Categories listing.
            Nothing in style.css is modified — only new, scoped classes.
+           Named cat-tile-* (not cat-item/cat-circle/cat-scroll) so
+           nothing here collides with the homepage category-circle
+           rules already defined in style.css section 7.
            ============================================================ */
-        .occ-grid {
+        .cat-tile-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 26px;
         }
 
-        .occ-card {
+        .cat-tile {
             position: relative;
             border-radius: 6px;
             overflow: hidden;
@@ -48,14 +51,14 @@
             box-shadow: 0 14px 30px rgba(11, 34, 41, .1);
         }
 
-        .occ-card img {
+        .cat-tile img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 1s var(--ease);
         }
 
-        .occ-card::before {
+        .cat-tile::before {
             content: "";
             position: absolute;
             inset: 0;
@@ -64,11 +67,11 @@
             z-index: 1;
         }
 
-        .occ-card:hover img {
+        .cat-tile:hover img {
             transform: scale(1.08);
         }
 
-        .occ-card-body {
+        .cat-tile-body {
             position: absolute;
             left: 0;
             right: 0;
@@ -78,7 +81,7 @@
             color: #fff;
         }
 
-        .occ-card-count {
+        .cat-tile-count {
             font-size: .64rem;
             letter-spacing: .2em;
             text-transform: uppercase;
@@ -86,14 +89,14 @@
             font-weight: 500;
         }
 
-        .occ-card-body h3 {
+        .cat-tile-body h3 {
             font-family: 'Fraunces';
             color: #fff;
             font-size: 1.5rem;
             margin-top: 8px;
         }
 
-        .occ-card-link {
+        .cat-tile-link {
             display: inline-flex;
             align-items: center;
             gap: 8px;
@@ -107,13 +110,13 @@
             transition: gap .3s var(--ease), color .3s var(--ease), border-color .3s var(--ease);
         }
 
-        .occ-card:hover .occ-card-link {
+        .cat-tile:hover .cat-tile-link {
             gap: 13px;
             color: var(--gold-light);
             border-color: var(--gold-light);
         }
 
-        /* Featured edits — two-up feature strip */
+        /* Trending Now — two-up feature strip */
         .edit-strip {
             display: grid;
             grid-template-columns: 1.3fr 1fr;
@@ -189,7 +192,7 @@
         }
 
         @media (max-width: 991px) {
-            .occ-grid {
+            .cat-tile-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
@@ -208,7 +211,7 @@
         }
 
         @media (max-width: 575px) {
-            .occ-grid {
+            .cat-tile-grid {
                 grid-template-columns: 1fr 1fr;
                 gap: 14px;
             }
@@ -217,7 +220,7 @@
                 flex-direction: column;
             }
 
-            .occ-card-body h3 {
+            .cat-tile-body h3 {
                 font-size: 1.15rem;
             }
         }
@@ -296,12 +299,6 @@
     <!-- ============================================================
      TIER 3 — MAIN NAV: search icon · centered links · phone, on white
 ============================================================ -->
-    <!-- ============================================================
-     TIER 3 — MAIN NAV: search icon · centered links · phone, on white
-============================================================ -->
-    <!-- ============================================================
-     TIER 3 — MAIN NAV: search icon · centered links · phone, on white
-============================================================ -->
     <header class="navbar-curio" id="mainNav">
         <div class="container-xl nav-inner">
 
@@ -312,7 +309,7 @@
 
             <nav>
                 <ul class="nav-links">
-                    <li><a href="bestseller.html">Best Seller</a></li>
+                    <li><a href="bestsellers.html">Best Seller</a></li>
                     <li><a href="shopall.html">Shop All</a></li>
                     <li class="mega-wrap">
                         <a href="categories.html">Category <i class="bi bi-chevron-down"
@@ -323,19 +320,19 @@
                                     <div class="col-lg-3 col-6">
                                         <span class="mega-col-title">Occasion Wear</span>
                                         <ul class="mega-links">
-                                            <li><a href="#">Sherwani</a></li>
-                                            <li><a href="#">Bandhgala</a></li>
-                                            <li><a href="#">Jodhpuri Suits</a></li>
-                                            <li><a href="#">Nehru Jackets</a></li>
+                                            <li><a href="categories.html#sherwani">Sherwani</a></li>
+                                            <li><a href="categories.html#bandhgala">Bandhgala</a></li>
+                                            <li><a href="categories.html#jodhpuri-suits">Jodhpuri Suits</a></li>
+                                            <li><a href="categories.html#nehru-jackets">Nehru Jackets</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-3 col-6">
                                         <span class="mega-col-title">Everyday Curio</span>
                                         <ul class="mega-links">
-                                            <li><a href="#">Kurta Sets</a></li>
-                                            <li><a href="#">Short Kurtas</a></li>
-                                            <li><a href="#">Indowestern</a></li>
-                                            <li><a href="#">Pure Linen</a></li>
+                                            <li><a href="categories.html#kurta-set">Kurta Sets</a></li>
+                                            <li><a href="categories.html#short-kurta">Short Kurtas</a></li>
+                                            <li><a href="categories.html#indowestern">Indowestern</a></li>
+                                            <li><a href="categories.html#pure-linen">Pure Linen</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-3 col-6">
@@ -412,20 +409,20 @@
         </div>
         <div class="offcanvas-body">
             <ul class="mobile-links">
-                <li><a href="bestseller.html">Best Seller</a></li>
+                <li><a href="bestsellers.html">Best Seller</a></li>
                 <li><a href="shopall.html">Shop All</a></li>
                 <li>
                     <a href="categories.html" class="mobile-toggle" data-target="#sub-category">Category <i
                             class="bi bi-chevron-down"></i></a>
                     <ul class="mobile-sub" id="sub-category">
-                        <li><a href="#">Sherwani</a></li>
-                        <li><a href="#">Bandhgala</a></li>
-                        <li><a href="#">Jodhpuri Suits</a></li>
-                        <li><a href="#">Nehru Jackets</a></li>
-                        <li><a href="#">Kurta Sets</a></li>
-                        <li><a href="#">Short Kurtas</a></li>
-                        <li><a href="#">Indowestern</a></li>
-                        <li><a href="#">Pure Linen</a></li>
+                        <li><a href="categories.html#sherwani">Sherwani</a></li>
+                        <li><a href="categories.html#bandhgala">Bandhgala</a></li>
+                        <li><a href="categories.html#jodhpuri-suits">Jodhpuri Suits</a></li>
+                        <li><a href="categories.html#nehru-jackets">Nehru Jackets</a></li>
+                        <li><a href="categories.html#kurta-set">Kurta Sets</a></li>
+                        <li><a href="categories.html#short-kurta">Short Kurtas</a></li>
+                        <li><a href="categories.html#indowestern">Indowestern</a></li>
+                        <li><a href="categories.html#pure-linen">Pure Linen</a></li>
                     </ul>
                 </li>
                 <li><a href="sale.html" class="sale-link">Sale</a></li>
@@ -449,52 +446,94 @@
     </div>
 
     <!-- ============================================================
-     OCCASION CARDS
+     CATEGORY TILES
 ============================================================ -->
-    <section class="section" id="occCardsSection">
+    <section class="section" id="catTilesSection">
         <div class="container-xl">
 
             <div class="section-head bestseller-head" data-aos="fade-up">
-                <span class="eyebrow" style="justify-content:center;">Edit By</span>
-                <h2>Shop By Occasion</h2>
-                <p>Every edit is built around how the day actually moves — tap in to see the pieces curated for
-                    it.</p>
+                <span class="eyebrow" style="justify-content:center;">Shop By</span>
+                <h2>Shop By Category</h2>
+                <p>Every silhouette in the atelier, sorted the way you actually shop — tap a category to see it on
+                    its own.</p>
             </div>
 
-            <div class="occ-grid">
-                <div class="occ-card" data-occ="Wedding" data-aos="fade-up">
-                    <img src="https://picsum.photos/seed/curiowed1/600/800"
-                        alt="Wedding edit — sherwanis and bandhgalas">
-                    <div class="occ-card-body">
-                        <span class="occ-card-count">08 Pieces</span>
-                        <h3>Wedding</h3>
-                        <span class="occ-card-link">Shop the Edit <i class="bi bi-arrow-right"></i></span>
+            <div class="cat-tile-grid">
+                <div class="cat-tile" data-cat="Sherwani" data-slug="sherwani" data-aos="fade-up">
+                    <img src="https://picsum.photos/seed/curiosher1/600/800"
+                        alt="Sherwani — hand-embroidered occasion silhouettes">
+                    <div class="cat-tile-body">
+                        <span class="cat-tile-count">04 Pieces</span>
+                        <h3>Sherwani</h3>
+                        <span class="cat-tile-link">Shop the Edit <i class="bi bi-arrow-right"></i></span>
                     </div>
                 </div>
-                <div class="occ-card" data-occ="Festive" data-aos="fade-up" data-aos-delay="80">
-                    <img src="https://picsum.photos/seed/curiofest1/600/800"
-                        alt="Festive edit — kurta sets and Nehru jackets">
-                    <div class="occ-card-body">
-                        <span class="occ-card-count">07 Pieces</span>
-                        <h3>Festive</h3>
-                        <span class="occ-card-link">Shop the Edit <i class="bi bi-arrow-right"></i></span>
+                <div class="cat-tile" data-cat="Bandhgala" data-slug="bandhgala" data-aos="fade-up" data-aos-delay="60">
+                    <img src="https://picsum.photos/seed/curiobandh2/600/800"
+                        alt="Bandhgala — structured single-breasted tailoring">
+                    <div class="cat-tile-body">
+                        <span class="cat-tile-count">04 Pieces</span>
+                        <h3>Bandhgala</h3>
+                        <span class="cat-tile-link">Shop the Edit <i class="bi bi-arrow-right"></i></span>
                     </div>
                 </div>
-                <div class="occ-card" data-occ="Reception" data-aos="fade-up" data-aos-delay="160">
-                    <img src="https://picsum.photos/seed/curiorecep1/600/800" alt="Reception edit — pure linen kurtas">
-                    <div class="occ-card-body">
-                        <span class="occ-card-count">03 Pieces</span>
-                        <h3>Reception</h3>
-                        <span class="occ-card-link">Shop the Edit <i class="bi bi-arrow-right"></i></span>
+                <div class="cat-tile" data-cat="Jodhpuri Suits" data-slug="jodhpuri-suits" data-aos="fade-up"
+                    data-aos-delay="120">
+                    <img src="https://picsum.photos/seed/curiojodh1/600/800"
+                        alt="Jodhpuri Suits — tapered bandhgala-style suiting">
+                    <div class="cat-tile-body">
+                        <span class="cat-tile-count">02 Pieces</span>
+                        <h3>Jodhpuri Suits</h3>
+                        <span class="cat-tile-link">Shop the Edit <i class="bi bi-arrow-right"></i></span>
                     </div>
                 </div>
-                <div class="occ-card" data-occ="Sangeet" data-aos="fade-up" data-aos-delay="240">
-                    <img src="https://picsum.photos/seed/curiosangeet1/600/800"
-                        alt="Sangeet edit — indowestern and short kurtas">
-                    <div class="occ-card-body">
-                        <span class="occ-card-count">06 Pieces</span>
-                        <h3>Sangeet</h3>
-                        <span class="occ-card-link">Shop the Edit <i class="bi bi-arrow-right"></i></span>
+                <div class="cat-tile" data-cat="Nehru Jackets" data-slug="nehru-jackets" data-aos="fade-up"
+                    data-aos-delay="180">
+                    <img src="https://picsum.photos/seed/curionehru1/600/800"
+                        alt="Nehru Jackets — collarless festive layering">
+                    <div class="cat-tile-body">
+                        <span class="cat-tile-count">02 Pieces</span>
+                        <h3>Nehru Jackets</h3>
+                        <span class="cat-tile-link">Shop the Edit <i class="bi bi-arrow-right"></i></span>
+                    </div>
+                </div>
+                <div class="cat-tile" data-cat="Kurta Set" data-slug="kurta-set" data-aos="fade-up">
+                    <img src="https://picsum.photos/seed/curiokurta1/600/800"
+                        alt="Kurta Sets — everyday and festive kurta-pyjama">
+                    <div class="cat-tile-body">
+                        <span class="cat-tile-count">04 Pieces</span>
+                        <h3>Kurta Sets</h3>
+                        <span class="cat-tile-link">Shop the Edit <i class="bi bi-arrow-right"></i></span>
+                    </div>
+                </div>
+                <div class="cat-tile" data-cat="Short Kurta" data-slug="short-kurta" data-aos="fade-up"
+                    data-aos-delay="60">
+                    <img src="https://picsum.photos/seed/curioshort1/600/800"
+                        alt="Short Kurtas — cropped, easy-movement pieces">
+                    <div class="cat-tile-body">
+                        <span class="cat-tile-count">03 Pieces</span>
+                        <h3>Short Kurtas</h3>
+                        <span class="cat-tile-link">Shop the Edit <i class="bi bi-arrow-right"></i></span>
+                    </div>
+                </div>
+                <div class="cat-tile" data-cat="Indowestern" data-slug="indowestern" data-aos="fade-up"
+                    data-aos-delay="120">
+                    <img src="https://picsum.photos/seed/curioindo1/600/800"
+                        alt="Indowestern — draped, asymmetric silhouettes">
+                    <div class="cat-tile-body">
+                        <span class="cat-tile-count">02 Pieces</span>
+                        <h3>Indowestern</h3>
+                        <span class="cat-tile-link">Shop the Edit <i class="bi bi-arrow-right"></i></span>
+                    </div>
+                </div>
+                <div class="cat-tile" data-cat="Pure Linen" data-slug="pure-linen" data-aos="fade-up"
+                    data-aos-delay="180">
+                    <img src="https://picsum.photos/seed/curiolinen2/600/800"
+                        alt="Pure Linen — breathable warm-weather pieces">
+                    <div class="cat-tile-body">
+                        <span class="cat-tile-count">03 Pieces</span>
+                        <h3>Pure Linen</h3>
+                        <span class="cat-tile-link">Shop the Edit <i class="bi bi-arrow-right"></i></span>
                     </div>
                 </div>
             </div>
@@ -503,15 +542,15 @@
     </section>
 
     <!-- ============================================================
-     FEATURED EDITS — two-up feature strip
+     TRENDING NOW — two-up feature strip
 ============================================================ -->
-    <section class="section section-cream" id="featuredEditsSection">
+    <section class="section section-cream" id="trendingSection">
         <div class="container-xl">
 
             <div class="section-head-row" data-aos="fade-up">
                 <div>
                     <span class="eyebrow">Curated</span>
-                    <h2>Featured Edits</h2>
+                    <h2>Trending Now</h2>
                 </div>
                 <a href="shopall.html" class="view-all-link">View All <i class="bi bi-arrow-right"></i></a>
             </div>
@@ -535,11 +574,11 @@
                         </div>
                     </div>
                     <div class="edit-feature" data-aos="fade-up" data-aos-delay="160">
-                        <img src="https://picsum.photos/seed/curiolinen1/700/500" alt="Pure Linen, SS26">
+                        <img src="https://picsum.photos/seed/curiowed1/700/500" alt="Wedding Edit">
                         <div class="edit-feature-body">
-                            <span class="eyebrow">Warm Weather</span>
-                            <h3>Pure Linen, SS26</h3>
-                            <a href="shopall.html" class="btn-curio btn-curio-outline">Explore</a>
+                            <span class="eyebrow">Occasion</span>
+                            <h3>Wedding Edit</h3>
+                            <a href="occasions.html#wedding" class="btn-curio btn-curio-outline">Explore</a>
                         </div>
                     </div>
                 </div>
@@ -549,15 +588,16 @@
     </section>
 
     <!-- ============================================================
-     OCCASION PRODUCT GRID — filterable, anchor targets for
-     #wedding / #festive / #reception / #sangeet
+     CATEGORY PRODUCT GRID — filterable, anchor targets for
+     #sherwani / #bandhgala / #jodhpuri-suits / #nehru-jackets /
+     #kurta-set / #short-kurta / #indowestern / #pure-linen
 ============================================================ -->
-    <section class="section" id="occasionShop">
+    <section class="section" id="categoryShop">
         <div class="container-xl">
 
             <div class="section-head bestseller-head" data-aos="fade-up">
                 <span class="eyebrow" style="justify-content:center;" id="shopEyebrow">Shop The Edits</span>
-                <h2 id="shopHeading">Find Your Occasion</h2>
+                <h2 id="shopHeading">Find Your Category</h2>
                 <p id="shopSub">Every piece from the atelier, all in one place.</p>
             </div>
 
@@ -569,8 +609,8 @@
                 <div class="shop-toolbar-filters">
                     <div class="filter-chip">
                         <i class="bi bi-funnel"></i>
-                        <select id="filterSelect" aria-label="Filter by category">
-                            <option value="all">All Categories</option>
+                        <select id="filterSelect" aria-label="Filter by occasion">
+                            <option value="all">All Occasions</option>
                         </select>
                     </div>
                     <div class="filter-chip">
@@ -596,13 +636,13 @@
                 </div>
             </div>
 
-            <div class="row g-4" id="occasionGrid">
+            <div class="row g-4" id="categoryGrid">
                 <!-- Cards injected by JS -->
             </div>
 
             <div class="shop-empty" id="shopEmpty">
                 <i class="bi bi-emoji-neutral"></i>
-                No pieces match this occasion yet — try another edit.
+                No pieces match this category yet — try another edit.
             </div>
 
         </div>
@@ -641,11 +681,11 @@
                 <div class="col-lg-2 col-6">
                     <h6>Shop</h6>
                     <ul class="footer-links">
-                        <li><a href="#">Sherwani</a></li>
-                        <li><a href="#">Bandhgala</a></li>
-                        <li><a href="#">Kurta Sets</a></li>
-                        <li><a href="#">Indowestern</a></li>
-                        <li><a href="#">Pure Linen</a></li>
+                        <li><a href="categories.html#sherwani">Sherwani</a></li>
+                        <li><a href="categories.html#bandhgala">Bandhgala</a></li>
+                        <li><a href="categories.html#kurta-set">Kurta Sets</a></li>
+                        <li><a href="categories.html#indowestern">Indowestern</a></li>
+                        <li><a href="categories.html#pure-linen">Pure Linen</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-2 col-6">
@@ -743,9 +783,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
         /* ---------------------------------------------------------
-           CATALOGUE — same shape as bestsellers/shopall, with an
-           added `occ` (occasion) field so this page can filter by
-           Wedding / Festive / Reception / Sangeet.
+           CATALOGUE — same catalogue/shape as occasions.html, with
+           both `cat` (category) and `occ` (occasion) on every item
+           so this page can filter by category first and occasion
+           second (the mirror image of how occasions.html works).
         --------------------------------------------------------- */
         const PRODUCTS = [
             { id: 's1', cat: 'Sherwani', occ: 'Wedding', title: 'Fitoor Hand-Embroidered Cream Sherwani', price: '₹42,999', was: '₹57,999', img: 'curiosa1', img2: 'curiosa1b', tag: 'Bestseller', date: 6 },
@@ -854,48 +895,64 @@
         });
 
         /* ---------------------------------------------------------
-           OCCASION FILTER + GRID RENDER
+           CATEGORY FILTER + GRID RENDER
+           (mirror of occasions.html's occasion filter, with
+           category as the primary axis and occasion as the
+           secondary "filterSelect" dropdown)
         --------------------------------------------------------- */
-        const grid = document.getElementById('occasionGrid');
+        const grid = document.getElementById('categoryGrid');
         const resultsCount = document.getElementById('resultsCount');
         const shopEmpty = document.getElementById('shopEmpty');
-        const occCardsSection = document.getElementById('occCardsSection');
-        const featuredEditsSection = document.getElementById('featuredEditsSection');
+        const catTilesSection = document.getElementById('catTilesSection');
+        const trendingSection = document.getElementById('trendingSection');
         const shopEyebrow = document.getElementById('shopEyebrow');
         const shopHeading = document.getElementById('shopHeading');
         const shopSub = document.getElementById('shopSub');
         const filterSelect = document.getElementById('filterSelect');
         const priceSelect = document.getElementById('priceSelect');
         const sortSelect = document.getElementById('sortSelect');
-        let activeOcc = 'all';
+        let activeCat = 'all';
 
-        const OCC_HASH_TO_NAME = { wedding: 'Wedding', festive: 'Festive', reception: 'Reception', sangeet: 'Sangeet' };
-        const OCC_COPY = {
-            Wedding: 'Sherwanis, bandhgalas and Jodhpuri suits — built for the mandap, the baraat and everything in between.',
-            Festive: 'Nehru jackets and kurta sets for every festive gathering on the calendar.',
-            Reception: 'Refined pure linen and bandhgala pieces for a polished reception look.',
-            Sangeet: 'Indowestern sets and short kurtas made for a night on the dance floor.'
+        const CAT_HASH_TO_NAME = {
+            'sherwani': 'Sherwani',
+            'bandhgala': 'Bandhgala',
+            'jodhpuri-suits': 'Jodhpuri Suits',
+            'nehru-jackets': 'Nehru Jackets',
+            'kurta-set': 'Kurta Set',
+            'short-kurta': 'Short Kurta',
+            'indowestern': 'Indowestern',
+            'pure-linen': 'Pure Linen'
+        };
+        const CAT_COPY = {
+            'Sherwani': 'Hand-embroidered silhouettes built for the mandap and the baraat.',
+            'Bandhgala': 'Structured, single-breasted tailoring for weddings, receptions and beyond.',
+            'Jodhpuri Suits': 'Fitted, bandhgala-style suiting with a modern, tapered silhouette.',
+            'Nehru Jackets': 'Collarless layering pieces for festive gatherings and evening functions.',
+            'Kurta Set': 'Festive kurta-pyjama sets in hand-finished fabrics.',
+            'Short Kurta': 'Cropped, easy-movement kurtas made for the dance floor.',
+            'Indowestern': 'Draped, asymmetric silhouettes that sit between kurta and jacket.',
+            'Pure Linen': 'Breathable linen pieces for warm-weather occasions and daywear.'
         };
 
         function priceToNumber(str) {
             return parseInt(str.replace(/[^\d]/g, ''), 10) || 0;
         }
 
-        /* Rebuilds the category dropdown from whatever occasion is
-           currently active, since Wedding vs Sangeet etc. each only
-           span a handful of categories. */
-        function rebuildCategoryOptions() {
-            const base = activeOcc === 'all' ? PRODUCTS : PRODUCTS.filter(p => p.occ === activeOcc);
-            const cats = [...new Set(base.map(p => p.cat))].sort();
-            filterSelect.innerHTML = '<option value="all">All Categories</option>' +
-                cats.map(c => `<option value="${c}">${c}</option>`).join('');
+        /* Rebuilds the occasion dropdown from whatever category is
+           currently active, since Sherwani vs Pure Linen etc. each
+           only span a handful of occasions. */
+        function rebuildOccasionOptions() {
+            const base = activeCat === 'all' ? PRODUCTS : PRODUCTS.filter(p => p.cat === activeCat);
+            const occs = [...new Set(base.map(p => p.occ))].sort();
+            filterSelect.innerHTML = '<option value="all">All Occasions</option>' +
+                occs.map(o => `<option value="${o}">${o}</option>`).join('');
         }
 
         function getFilteredSorted() {
-            let list = activeOcc === 'all' ? [...PRODUCTS] : PRODUCTS.filter(p => p.occ === activeOcc);
+            let list = activeCat === 'all' ? [...PRODUCTS] : PRODUCTS.filter(p => p.cat === activeCat);
 
             if (filterSelect.value !== 'all') {
-                list = list.filter(p => p.cat === filterSelect.value);
+                list = list.filter(p => p.occ === filterSelect.value);
             }
 
             if (priceSelect.value !== 'all') {
@@ -931,7 +988,7 @@
             shopEmpty.classList.toggle('show', list.length === 0);
             resultsCount.innerHTML = list.length === 0
                 ? `Showing <strong>0</strong> results`
-                : (activeOcc === 'all' && filterSelect.value === 'all' && priceSelect.value === 'all'
+                : (activeCat === 'all' && filterSelect.value === 'all' && priceSelect.value === 'all'
                     ? `Showing all <strong>${list.length}</strong> results`
                     : `Showing <strong>${list.length}</strong> results`);
             refreshWishlistUI();
@@ -942,54 +999,54 @@
         priceSelect.addEventListener('change', renderGrid);
         sortSelect.addEventListener('change', renderGrid);
 
-        function setActiveOcc(occ) {
-            activeOcc = occ;
-            const isSingleOcc = occ !== 'all';
+        function setActiveCat(cat) {
+            activeCat = cat;
+            const isSingleCat = cat !== 'all';
 
-            /* On a specific occasion (reached via the navbar's Occasions
-               links, e.g. occasions.html#wedding), this becomes a
-               single-occasion page: the occasion-card grid and Featured
-               Edits strip are hidden, and only that occasion's products
+            /* On a specific category (reached via the navbar's Category
+               mega-menu, e.g. categories.html#sherwani), this becomes a
+               single-category page: the category-tile grid and Trending
+               Now strip are hidden, and only that category's products
                remain on the page. */
-            occCardsSection.style.display = isSingleOcc ? 'none' : '';
-            featuredEditsSection.style.display = isSingleOcc ? 'none' : '';
+            catTilesSection.style.display = isSingleCat ? 'none' : '';
+            trendingSection.style.display = isSingleCat ? 'none' : '';
 
-            if (isSingleOcc) {
-                shopEyebrow.textContent = occ + ' Edit';
-                shopHeading.textContent = 'The ' + occ + ' Collection';
-                shopSub.textContent = OCC_COPY[occ];
+            if (isSingleCat) {
+                shopEyebrow.textContent = cat;
+                shopHeading.textContent = 'The ' + cat + ' Edit';
+                shopSub.textContent = CAT_COPY[cat] || 'Every piece from the atelier, all in one place.';
             } else {
                 shopEyebrow.textContent = 'Shop The Edits';
-                shopHeading.textContent = 'Find Your Occasion';
+                shopHeading.textContent = 'Find Your Category';
                 shopSub.textContent = 'Every piece from the atelier, all in one place.';
             }
 
-            /* Reset the manual filters whenever the occasion changes,
-               then rebuild the category list to match. */
+            /* Reset the manual filters whenever the category changes,
+               then rebuild the occasion list to match. */
             filterSelect.value = 'all';
             priceSelect.value = 'all';
             sortSelect.value = 'featured';
-            rebuildCategoryOptions();
+            rebuildOccasionOptions();
 
             renderGrid();
         }
 
-        /* Occasion cards jump straight to a single-occasion filtered page */
-        document.querySelectorAll('.occ-card').forEach(card => {
-            card.addEventListener('click', () => {
-                window.location.hash = card.dataset.occ.toLowerCase();
+        /* Category tiles jump straight to a single-category filtered page */
+        document.querySelectorAll('.cat-tile').forEach(tile => {
+            tile.addEventListener('click', () => {
+                window.location.hash = tile.dataset.slug;
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
         });
 
         function applyHash() {
             const hash = window.location.hash.replace('#', '');
-            setActiveOcc(OCC_HASH_TO_NAME[hash] || 'all');
+            setActiveCat(CAT_HASH_TO_NAME[hash] || 'all');
         }
 
         window.addEventListener('DOMContentLoaded', applyHash);
-        /* Reacts if the navbar's Occasions mega-menu / mobile links (which point
-           to occasions.html#wedding etc.) are clicked while already on this page */
+        /* Reacts if the navbar's Category mega-menu / mobile links (which point
+           to categories.html#sherwani etc.) are clicked while already on this page */
         window.addEventListener('hashchange', applyHash);
 
         /* ---------------------------------------------------------
