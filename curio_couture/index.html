@@ -759,7 +759,7 @@
   <div class="${size} product-card" data-aos="fade-up">
     <div class="product-media">
       <span class="product-tag ${p.tag === 'Sale' ? 'sale' : ''}">${p.tag}</span>
-      <button class="wishlist-btn" data-id="${p.id}" aria-label="Add to wishlist"><i class="bi bi-heart"></i></button>
+      
       <img class="img-front lazy-fade" src="${getProductImageSrc(p.img, '500/650')}" alt="${p.title}" loading="lazy" onload="this.classList.add('loaded')">
       <img class="img-back" src="${getProductImageSrc(p.img2, '500/650')}" alt="${p.title} alternate view" loading="lazy">
       <span class="corner-orn ornament">

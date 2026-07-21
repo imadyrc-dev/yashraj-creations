@@ -110,7 +110,7 @@
 
             <nav>
                 <ul class="nav-links">
-                    <li class="active"><a href="bestsellers.html">Best Seller</a></li>
+                    <li><a href="bestseller.html">Best Seller</a></li>
                     <li><a href="shopall.html">Shop All</a></li>
                     <li class="mega-wrap">
                         <a href="categories.html">Category <i class="bi bi-chevron-down"
@@ -210,7 +210,7 @@
         </div>
         <div class="offcanvas-body">
             <ul class="mobile-links">
-                <li><a href="bestsellers.html">Best Seller</a></li>
+                <li><a href="bestseller.html">Best Seller</a></li>
                 <li><a href="shopall.html">Shop All</a></li>
                 <li>
                     <a href="categories.html" class="mobile-toggle" data-target="#sub-category">Category <i
@@ -245,6 +245,7 @@
             </div>
         </div>
     </div>
+
 
     <!-- ============================================================
      BESTSELLERS LISTING
@@ -486,7 +487,7 @@
   <div class="col-lg-3 col-md-6 col-12 product-card" data-aos="fade-up">
     <div class="product-media">
       <span class="product-tag ${disc ? 'sale' : ''}">${disc ? disc + '% Off' : p.tag}</span>
-      <button class="wishlist-btn" data-id="${p.id}" aria-label="Add to wishlist"><i class="bi bi-heart"></i></button>
+ 
       <img class="img-front lazy-fade" src="${getProductImageSrc(p.img, '500/650')}" alt="${p.title}" loading="lazy" onload="this.classList.add('loaded')">
       <img class="img-back" src="${getProductImageSrc(p.img2, '500/650')}" alt="${p.title} alternate view" loading="lazy">
       <span class="corner-orn ornament">
