@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store Locator — Curio Couture</title>
+    <meta name="description"
+        content="Visit the Curio Couture atelier — find our store addresses, contact details and visiting hours in Jaipur and Delhi.">
+    <meta name="keywords" content="Curio Couture store, atelier address, menswear store Jaipur, menswear store Delhi">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Jost:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+    <!-- AOS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+    <!-- Curio Couture stylesheet (same file as the rest of the site) -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* ============================================================
+           Page-specific additive rules for About Us + Store Locator.
+           Nothing in style.css is modified — only new, scoped classes.
+           ============================================================ */
+
+        /* ---------- About Us: light two-column intro ---------- */
+        .about-split {
+            display: grid;
+            grid-template-columns: 1fr 1.15fr;
+            gap: clamp(30px, 5vw, 80px);
+            align-items: center;
+        }
+
+        .about-split-text h2 {
+            font-size: clamp(2rem, 3.4vw, 2.7rem);
+            letter-spacing: .02em;
+        }
+
+        .about-split-text p {
+            color: var(--ink-soft);
+            line-height: 1.85;
+            margin-top: 20px;
+            font-size: .98rem;
+        }
+
+        .about-split-text h4 {
+            font-family: 'Fraunces';
+            font-weight: 400;
+            font-size: 1.15rem;
+            color: var(--royal-dark);
+            margin-top: 30px;
+        }
+
+        .about-split-media {
+            position: relative;
+            border-radius: 6px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            box-shadow: 0 26px 54px rgba(11, 34, 41, .16);
+        }
+
+        .about-split-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1s var(--ease);
+        }
+
+        .about-split-media:hover img {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 991px) {
+            .about-split {
+                grid-template-columns: 1fr;
+            }
+
+            .about-split-media {
+                order: -1;
+            }
+        }
+
+        /* ---------- Store Locator cards ---------- */
+        .store-card {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: clamp(28px, 4vw, 60px);
+            align-items: center;
+            padding: 50px 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .store-card:last-child {
+            border-bottom: none;
+        }
+
+        .store-card.reverse {
+            grid-template-columns: 1fr 1.1fr;
+        }
+
+        .store-card.reverse .store-media {
+            order: 2;
+        }
+
+        .store-media {
+            position: relative;
+            border-radius: 6px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            box-shadow: 0 20px 44px rgba(11, 34, 41, .14);
+        }
+
+        .store-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1s var(--ease);
+        }
+
+        .store-card:hover .store-media img {
+            transform: scale(1.05);
+        }
+
+        .store-tag {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            background: var(--royal-dark);
+            color: var(--gold-light);
+            font-size: .64rem;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+            padding: 8px 16px;
+            border-radius: 20px;
+        }
+
+        .store-info h3 {
+            font-size: 1.55rem;
+            margin-bottom: 20px;
+        }
+
+        .store-info p {
+            color: var(--ink-soft);
+            line-height: 1.8;
+            font-size: .95rem;
+            margin-bottom: 14px;
+        }
+
+        .store-info p strong {
+            color: var(--royal-dark);
+            font-weight: 500;
+        }
+
+        .store-info a.store-link {
+            color: var(--gold-deep);
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: border-color .3s var(--ease);
+        }
+
+        .store-info a.store-link:hover {
+            border-color: var(--gold-deep);
+        }
+
+        .store-hours {
+            margin-top: 18px;
+            padding: 16px 20px;
+            background: var(--cream);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .store-hours i {
+            color: var(--gold-deep);
+            font-size: 1.05rem;
+            flex-shrink: 0;
+        }
+
+        .store-hours span {
+            font-size: .88rem;
+            color: var(--ink);
+            line-height: 1.6;
+        }
+
+        .store-hours strong {
+            display: block;
+            font-size: .68rem;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+            color: var(--gold-deep);
+            margin-bottom: 3px;
+        }
+
+        .store-actions {
+            display: flex;
+            gap: 14px;
+            margin-top: 26px;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 767px) {
+            .store-card {
+                grid-template-columns: 1fr;
+                padding: 36px 0;
+            }
+
+            .store-card.reverse {
+                grid-template-columns: 1fr;
+            }
+
+            .store-card.reverse .store-media {
+                order: -1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ============================================================
+     TIER 1 — TOP BAR: social links · shipping note · phone
+============================================================ -->
+    <div class="top-bar">
+        <div class="container-xl">
+            <div class="top-bar-group top-bar-follow">
+                <span>Follow Us :</span>
+                <div class="top-bar-social">
+                    <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="bi bi-pinterest"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                    <a href="#" aria-label="Email"><i class="bi bi-envelope"></i></a>
+                </div>
+            </div>
+
+            <div class="top-bar-group">
+                <span class="top-bar-divider"></span>
+                <div class="top-bar-ship">
+                    <i class="bi bi-truck"></i>
+                    <span>Worldwide Shipping, Duties Included</span>
+                </div>
+                <span class="top-bar-divider"></span>
+                <div class="top-bar-phone">
+                    <i class="bi bi-whatsapp"></i>
+                    <span>+91 98765 43210</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+     TIER 2 — BRAND BAR: logo · menu toggle (mobile)
+============================================================ -->
+    <div class="brand-bar">
+        <div class="container-xl brand-bar-grid">
+
+            <button class="mobile-menu-btn d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu"
+                aria-label="Open menu" id="mobileMenuBtn">
+                <span class="mobile-menu-btn-line"></span>
+                <span class="mobile-menu-btn-line"></span>
+                <span class="mobile-menu-btn-line"></span>
+            </button>
+
+            <a href="index.html" class="nav-logo" id="brandHomeLink">
+                <img src="images/Asset 2@2x.png" alt="Curio Couture">
+            </a>
+
+            <button class="nav-icon-btn brand-search-toggle d-lg-none" id="mobileSearchToggle" aria-label="Search"
+                aria-expanded="false" aria-controls="mobileSearchPanel">
+                <i class="bi bi-search"></i>
+            </button>
+        </div>
+
+        <!-- Mobile-only expanding search panel -->
+        <div class="mobile-search-panel d-lg-none" id="mobileSearchPanel">
+            <div class="container-xl">
+                <div class="brand-search">
+                    <input type="text" placeholder="Search for products…" aria-label="Search" id="mobileSearchInput">
+                    <button type="button" aria-label="Search" id="mobileSearchBtn">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+     TIER 3 — MAIN NAV: search icon · centered links · phone, on white
+============================================================ -->
+    <header class="navbar-curio" id="mainNav">
+        <div class="container-xl nav-inner">
+
+            <button class="nav-icon-btn nav-search-toggle" id="navSearchToggle" aria-label="Search"
+                aria-expanded="false" aria-controls="navSearchPanel">
+                <i class="bi bi-search"></i>
+            </button>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="bestsellers.html">Best Seller</a></li>
+                    <li><a href="shopall.html">Shop All</a></li>
+                    <li class="mega-wrap">
+                        <a href="categories.html">Category <i class="bi bi-chevron-down"
+                                style="font-size:.6rem;"></i></a>
+                        <div class="mega-menu">
+                            <div class="container-xl">
+                                <div class="row g-5 justify-content-center">
+                                    <div class="col-lg-3 col-6">
+                                        <span class="mega-col-title">Occasion Wear</span>
+                                        <ul class="mega-links">
+                                            <li><a href="#">Sherwani</a></li>
+                                            <li><a href="#">Bandhgala</a></li>
+                                            <li><a href="#">Jodhpuri Suits</a></li>
+                                            <li><a href="#">Nehru Jackets</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-3 col-6">
+                                        <span class="mega-col-title">Everyday Curio</span>
+                                        <ul class="mega-links">
+                                            <li><a href="#">Kurta Sets</a></li>
+                                            <li><a href="#">Short Kurtas</a></li>
+                                            <li><a href="#">Indowestern</a></li>
+                                            <li><a href="#">Pure Linen</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-3 col-6">
+                                        <span class="mega-col-title">Trending Now</span>
+                                        <ul class="mega-links">
+                                            <li><a href="#">The Fitoor Collection</a></li>
+                                            <li><a href="#">Hand-Embroidered Bandhgala</a></li>
+                                            <li><a href="#">Wedding Edit</a></li>
+                                            <li><a href="#">Festive Best Sellers</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="sale.html" class="sale-link">Sale</a></li>
+
+                    <li class="mega-wrap">
+                        <a href="occasions.html">Occasions <i class="bi bi-chevron-down"
+                                style="font-size:.6rem;"></i></a>
+                        <div class="mega-menu">
+                            <div class="container-xl">
+                                <div class="row g-5 justify-content-center">
+                                    <div class="col-lg-3 col-6">
+                                        <span class="mega-col-title">Edit By</span>
+                                        <ul class="mega-links">
+                                            <li><a href="occasions.html#wedding">Wedding</a></li>
+                                            <li><a href="occasions.html#festive">Festive</a></li>
+                                            <li><a href="occasions.html#reception">Reception</a></li>
+                                            <li><a href="occasions.html#sangeet">Sangeet</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-3 col-6">
+                                        <span class="mega-col-title">Featured Edits</span>
+                                        <ul class="mega-links">
+                                            <li><a href="#">The Fitoor Collection</a></li>
+                                            <li><a href="#">Hand-Embroidered Bandhgala</a></li>
+                                            <li><a href="#">The Zamindar Edit</a></li>
+                                            <li><a href="#">Pure Linen, SS26</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="active"><a href="storelocator.html">Store Locator</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-phone">
+                <i class="bi bi-telephone-fill"></i>
+                <span>+91 98765 43210</span>
+            </div>
+        </div>
+
+        <!-- Expanding search panel, toggled by the search icon above -->
+        <div class="nav-search-panel" id="navSearchPanel">
+            <div class="container-xl">
+                <div class="brand-search">
+                    <input type="text" placeholder="Search for products…" aria-label="Search" id="siteSearchInput">
+                    <button type="button" aria-label="Search" id="siteSearchBtn">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Offcanvas -->
+    <div class="offcanvas offcanvas-start offcanvas-curio" tabindex="-1" id="mobileMenu">
+        <div class="offcanvas-header">
+            <span class="nav-logo" style="color:#fff;font-size:1.2rem;">Curio Couture</span>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="mobile-links">
+                <li><a href="bestsellers.html">Best Seller</a></li>
+                <li><a href="shopall.html">Shop All</a></li>
+                <li>
+                    <a href="categories.html" class="mobile-toggle" data-target="#sub-category">Category <i
+                            class="bi bi-chevron-down"></i></a>
+                    <ul class="mobile-sub" id="sub-category">
+                        <li><a href="#">Sherwani</a></li>
+                        <li><a href="#">Bandhgala</a></li>
+                        <li><a href="#">Jodhpuri Suits</a></li>
+                        <li><a href="#">Nehru Jackets</a></li>
+                        <li><a href="#">Kurta Sets</a></li>
+                        <li><a href="#">Short Kurtas</a></li>
+                        <li><a href="#">Indowestern</a></li>
+                        <li><a href="#">Pure Linen</a></li>
+                    </ul>
+                </li>
+                <li><a href="sale.html" class="sale-link">Sale</a></li>
+                <li>
+                    <a href="occasions.html" class="mobile-toggle" data-target="#sub-occasions">Occasions <i
+                            class="bi bi-chevron-down"></i></a>
+                    <ul class="mobile-sub" id="sub-occasions">
+                        <li><a href="occasions.html#wedding">Wedding</a></li>
+                        <li><a href="occasions.html#festive">Festive</a></li>
+                        <li><a href="occasions.html#reception">Reception</a></li>
+                        <li><a href="occasions.html#sangeet">Sangeet</a></li>
+                    </ul>
+                </li>
+                <li><a href="storelocator.html">Store Locator</a></li>
+            </ul>
+            <div class="d-flex gap-3 mt-4">
+                <a href="tel:+919876543210" class="nav-icon-btn" style="color:#fff;"><i
+                        class="bi bi-telephone-fill"></i> +91 98765 43210</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+     PAGE INTRO
+============================================================ -->
+    <section class="section pb-0">
+        <div class="container-xl">
+            <div class="section-head bestseller-head" data-aos="fade-up">
+                <span class="eyebrow" style="justify-content:center;">Visit Us</span>
+                <h2>Store Locator</h2>
+                <p>Fabric, fit and finish read differently in person. Step into the atelier — try on a piece,
+                    meet the karigars, and see the handwork up close.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+     ABOUT US
+============================================================ -->
+    <section class="section">
+        <div class="container-xl">
+            <div class="about-split">
+                <div class="about-split-text" data-aos="fade-up">
+                    <span class="eyebrow">Our Story</span>
+                    <h2>About Us</h2>
+                    <p>Curio Couture began as a single cutting table in Jaipur, built on a simple belief — that
+                        occasion menswear should feel handed down, not mass produced. Every sherwani, bandhgala
+                        and kurta set that leaves our atelier carries the patience of a craft practised over
+                        generations, cut for a wardrobe that's meant to outlast the season it was bought for.</p>
+                    <h4>Handwork That Outlasts A Trend</h4>
+                    <p>Inside our Jaipur workshop, master karigars still hand-set every zardozi thread and
+                        cutdana bead, the same way it's been done for decades. We believe an occasion outfit
+                        deserves to be worn again and again — not once and forgotten — so every piece is
+                        fully lined, finished by hand, and built to hold its shape through years of weddings,
+                        festivals and celebrations still to come.</p>
+                </div>
+                <div class="about-split-media" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://picsum.photos/seed/curioatelier1/900/700" alt="Inside the Curio Couture atelier">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+     STORE LOCATIONS
+============================================================ -->
+    <section class="section section-cream">
+        <div class="container-xl">
+
+            <div class="section-head bestseller-head" data-aos="fade-up">
+                <span class="eyebrow" style="justify-content:center;">Find Us</span>
+                <h2>Our Stores</h2>
+                <p>Two doors into the Curio Couture world — walk in, or write to us before you do.</p>
+            </div>
+
+            <!-- Jaipur — Flagship Atelier -->
+            <div class="store-card" data-aos="fade-up">
+                <div class="store-media">
+                    <span class="store-tag">Flagship Atelier</span>
+                    <img src="https://picsum.photos/seed/curiostorejaipur/800/600"
+                        alt="Curio Couture flagship atelier, Jaipur">
+                </div>
+                <div class="store-info">
+                    <h3>Address — Jaipur</h3>
+                    <p>Shop No. 4, Panch Batti Shopping Arcade, Mirza Ismail Road,<br>
+                        C-Scheme, Jaipur, Rajasthan – 302001</p>
+                    <p>Email – <a class="store-link" href="mailto:support@curiocouture.com">support@curiocouture.com</a>
+                    </p>
+                    <p>Contact – <a class="store-link" href="tel:+919876543210">+91 98765 43210</a></p>
+                    <p><em>(Customer support address is same as the atelier address)</em></p>
+                    <div class="store-hours">
+                        <i class="bi bi-clock-history"></i>
+                        <span><strong>Call Support Timings</strong>7 Days Open · 11:00 AM to 8:00 PM</span>
+                    </div>
+                    <div class="store-actions">
+                        <button class="btn-curio store-contact-btn" data-store="Jaipur" data-phone="919876543210"><i
+                                class="bi bi-whatsapp"></i> Contact Us</button>
+                        <button class="btn-curio btn-curio-ghost store-direction-btn"
+                            data-address="Shop No. 4, Panch Batti Shopping Arcade, Mirza Ismail Road, C-Scheme, Jaipur, Rajasthan 302001"><i
+                                class="bi bi-geo-alt"></i> Get Direction</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Delhi — Studio -->
+            <div class="store-card reverse" data-aos="fade-up">
+                <div class="store-media">
+                    <span class="store-tag">Curio Couture Studio</span>
+                    <img src="https://picsum.photos/seed/curiostoredelhi/800/600" alt="Curio Couture studio, Delhi">
+                </div>
+                <div class="store-info">
+                    <h3>Address — Delhi</h3>
+                    <p>Shop No. 12, DLF Emporio Mall, Nelson Mandela Marg,<br>
+                        Vasant Kunj, New Delhi – 110070</p>
+                    <p>Email – <a class="store-link" href="mailto:delhi@curiocouture.com">delhi@curiocouture.com</a></p>
+                    <p>Contact – <a class="store-link" href="tel:+919876543211">+91 98765 43211</a></p>
+                    <p><em>(Walk-ins welcome; styling appointments recommended on weekends)</em></p>
+                    <div class="store-hours">
+                        <i class="bi bi-clock-history"></i>
+                        <span><strong>Call Support Timings</strong>7 Days Open · 11:00 AM to 8:00 PM</span>
+                    </div>
+                    <div class="store-actions">
+                        <button class="btn-curio store-contact-btn" data-store="Delhi" data-phone="919876543211"><i
+                                class="bi bi-whatsapp"></i> Contact Us</button>
+                        <button class="btn-curio btn-curio-ghost store-direction-btn"
+                            data-address="Shop No. 12, DLF Emporio Mall, Nelson Mandela Marg, Vasant Kunj, New Delhi 110070"><i
+                                class="bi bi-geo-alt"></i> Get Direction</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================================
+     FOOTER
+============================================================ -->
+    <footer class="footer" id="footer">
+        <div class="container-xl">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <a href="index.html" class="nav-logo">
+                        <span class="ornament">
+                            <svg width="30" height="30" viewBox="0 0 64 64" fill="none">
+                                <path
+                                    d="M8 16C8 11 12 8 16 8C20 8 24 12 28 20C24 12 28 8 32 8C36 8 40 12 40 16C40 20 36 24 28 20"
+                                    stroke="#E4CE95" stroke-width="1.6" />
+                                <path
+                                    d="M8 48C8 53 12 56 16 56C20 56 24 52 28 44C24 52 28 56 32 56C36 56 40 52 40 48C40 44 36 40 28 44"
+                                    stroke="#E4CE95" stroke-width="1.6" />
+                                <circle cx="32" cy="32" r="2.2" fill="#E4CE95" />
+                            </svg>
+                        </span>
+                        Curio Couture
+                    </a>
+                    <p class="tag">A Jaipur atelier crafting occasion menswear for men who want their wardrobe to
+                        outlast the trend cycle.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" aria-label="Pinterest"><i class="bi bi-pinterest"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-6">
+                    <h6>Shop</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">Sherwani</a></li>
+                        <li><a href="#">Bandhgala</a></li>
+                        <li><a href="#">Kurta Sets</a></li>
+                        <li><a href="#">Indowestern</a></li>
+                        <li><a href="#">Pure Linen</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-6">
+                    <h6>Curio Couture</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">The Atelier</a></li>
+                        <li><a href="#">Journal</a></li>
+                        <li><a href="storelocator.html">Store Locator</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-6">
+                    <h6>Support</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-6">
+                    <h6>Bespoke</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">Book a Fitting</a></li>
+                        <li><a href="#">Made to Measure</a></li>
+                        <li><a href="#">Trunk Shows</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>© 2026 Curio Couture. All rights reserved.</span>
+                <div class="payment-icons">
+                    <i class="bi bi-credit-card-2-front"></i>
+                    <i class="bi bi-paypal"></i>
+                    <i class="bi bi-wallet2"></i>
+                    <i class="bi bi-bank"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+
+    <!-- ============================================================
+     JS
+============================================================ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        /* ---------------------------------------------------------
+           PRELOADER / AOS
+        --------------------------------------------------------- */
+        window.addEventListener('load', () => {
+            AOS.init({ duration: 800, once: true, offset: 60, easing: 'ease-out-cubic' });
+        });
+
+        /* ---------------------------------------------------------
+           NAV SEARCH TOGGLE (desktop) — routes to shopall.html
+        --------------------------------------------------------- */
+        const navSearchToggle = document.getElementById('navSearchToggle');
+        const navSearchPanel = document.getElementById('navSearchPanel');
+        const siteSearchInputEl = document.getElementById('siteSearchInput');
+
+        function closeNavSearch() {
+            navSearchPanel.classList.remove('open');
+            navSearchToggle.setAttribute('aria-expanded', 'false');
+            navSearchToggle.classList.remove('active');
+        }
+        function toggleNavSearch() {
+            const isOpen = navSearchPanel.classList.toggle('open');
+            navSearchToggle.setAttribute('aria-expanded', String(isOpen));
+            navSearchToggle.classList.toggle('active', isOpen);
+            if (isOpen) setTimeout(() => siteSearchInputEl.focus(), 250);
+        }
+        navSearchToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleNavSearch();
+        });
+        document.addEventListener('click', (e) => {
+            if (navSearchPanel.classList.contains('open') &&
+                !navSearchPanel.contains(e.target) &&
+                !navSearchToggle.contains(e.target)) {
+                closeNavSearch();
+            }
+        });
+
+        /* ---------------------------------------------------------
+           MOBILE SEARCH TOGGLE
+        --------------------------------------------------------- */
+        const mobileSearchToggle = document.getElementById('mobileSearchToggle');
+        const mobileSearchPanel = document.getElementById('mobileSearchPanel');
+        const mobileSearchInputEl = document.getElementById('mobileSearchInput');
+
+        function closeMobileSearch() {
+            mobileSearchPanel.classList.remove('open');
+            mobileSearchToggle.setAttribute('aria-expanded', 'false');
+            mobileSearchToggle.classList.remove('active');
+        }
+        function toggleMobileSearch() {
+            const isOpen = mobileSearchPanel.classList.toggle('open');
+            mobileSearchToggle.setAttribute('aria-expanded', String(isOpen));
+            mobileSearchToggle.classList.toggle('active', isOpen);
+            if (isOpen) setTimeout(() => mobileSearchInputEl.focus(), 250);
+        }
+        mobileSearchToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleMobileSearch();
+        });
+        document.addEventListener('click', (e) => {
+            if (mobileSearchPanel.classList.contains('open') &&
+                !mobileSearchPanel.contains(e.target) &&
+                !mobileSearchToggle.contains(e.target)) {
+                closeMobileSearch();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') { closeNavSearch(); closeMobileSearch(); }
+        });
+
+        function runSiteSearch(query) {
+            const q = query.trim();
+            if (!q) return;
+            window.location.href = 'shopall.html?q=' + encodeURIComponent(q);
+        }
+        document.getElementById('siteSearchBtn').addEventListener('click', () => runSiteSearch(siteSearchInputEl.value));
+        siteSearchInputEl.addEventListener('keydown', e => {
+            if (e.key === 'Enter') { e.preventDefault(); runSiteSearch(siteSearchInputEl.value); }
+        });
+        document.getElementById('mobileSearchBtn').addEventListener('click', () => runSiteSearch(mobileSearchInputEl.value));
+        mobileSearchInputEl.addEventListener('keydown', e => {
+            if (e.key === 'Enter') { e.preventDefault(); runSiteSearch(mobileSearchInputEl.value); }
+        });
+
+        /* ---------------------------------------------------------
+           NAVBAR SCROLL STATE
+        --------------------------------------------------------- */
+        const mainNav = document.getElementById('mainNav');
+        function handleNavScroll() {
+            if (window.scrollY > 60) { mainNav.classList.add('scrolled'); }
+            else { mainNav.classList.remove('scrolled'); }
+        }
+        window.addEventListener('scroll', handleNavScroll);
+        handleNavScroll();
+
+        /* ---------------------------------------------------------
+           BACK TO TOP
+        --------------------------------------------------------- */
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            backToTop.classList.toggle('show', window.scrollY > 500);
+        });
+        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        /* ---------------------------------------------------------
+           MOBILE MENU BUTTON
+        --------------------------------------------------------- */
+        const mobileMenuEl = document.getElementById('mobileMenu');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        mobileMenuEl.addEventListener('show.bs.offcanvas', () => mobileMenuBtn.classList.add('open'));
+        mobileMenuEl.addEventListener('hide.bs.offcanvas', () => mobileMenuBtn.classList.remove('open'));
+
+        /* ---------------------------------------------------------
+           MOBILE SUBMENU TOGGLE
+        --------------------------------------------------------- */
+        document.querySelectorAll('.mobile-toggle').forEach(t => {
+            t.addEventListener('click', e => {
+                e.preventDefault();
+                document.querySelector(t.dataset.target).classList.toggle('open');
+                t.querySelector('i').classList.toggle('bi-chevron-down');
+                t.querySelector('i').classList.toggle('bi-chevron-up');
+            });
+        });
+
+        /* ---------------------------------------------------------
+           STORE CARD ACTIONS — Contact Us (WhatsApp) / Get Direction (Maps)
+        --------------------------------------------------------- */
+        document.querySelectorAll('.store-contact-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const store = btn.dataset.store;
+                const phone = btn.dataset.phone;
+                const message = `Hi Curio Couture, I'd like to know more about visiting the ${store} store.`;
+                window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank', 'noopener');
+            });
+        });
+
+        document.querySelectorAll('.store-direction-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const address = btn.dataset.address;
+                window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`, '_blank', 'noopener');
+            });
+        });
+    </script>
+</body>
+
+</html>
