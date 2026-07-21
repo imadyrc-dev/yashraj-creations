@@ -2431,29 +2431,88 @@ img {
     background-position: right center;
 }
 
-/* Sort chip — filled, so the two controls read as visually distinct at a glance */
+/* ============================================================
+   22. SORT CHIP — refined, distinct treatment
+   Deep gradient shell, coin-style icon badge, gold focus ring,
+   and a soft diagonal sheen sweep on hover.
+   (additive/overriding rules only — nothing above this line
+   is modified)
+   ============================================================ */
+
 .filter-chip-sort {
-    background: var(--royal-dark);
-    border-color: var(--royal-dark);
+    position: relative;
+    background: linear-gradient(150deg, var(--royal-soft) 0%, var(--royal-dark) 65%);
+    border: 1px solid rgba(228, 206, 149, .28);
+    box-shadow: 0 10px 26px rgba(11, 34, 41, .22), inset 0 1px 0 rgba(255, 255, 255, .06);
+    padding: 9px 22px 9px 12px;
+    gap: 12px;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+/* diagonal sheen that sweeps across on hover */
+.filter-chip-sort::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(115deg, transparent 20%, rgba(228, 206, 149, .16) 45%, transparent 70%);
+    transform: translateX(-120%);
+    transition: transform .7s var(--ease);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.filter-chip-sort:hover::before {
+    transform: translateX(120%);
 }
 
 .filter-chip-sort:hover,
 .filter-chip-sort:focus-within {
+    transform: translateY(-2px);
     border-color: var(--gold-light);
-    box-shadow: 0 10px 24px rgba(11, 34, 41, .22);
+    box-shadow: 0 16px 34px rgba(11, 34, 41, .32), inset 0 1px 0 rgba(255, 255, 255, .1);
 }
 
+/* coin-style badge around the icon, instead of a bare glyph */
 .filter-chip-sort i {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    flex-shrink: 0;
     color: var(--gold-light);
+    font-size: .74rem;
+    background: rgba(228, 206, 149, .14);
+    border: 1px solid rgba(228, 206, 149, .3);
+    transition: transform .45s var(--ease), background .35s var(--ease);
+}
+
+.filter-chip-sort:hover i {
+    transform: rotate(-12deg) scale(1.06);
+    background: rgba(228, 206, 149, .22);
 }
 
 .filter-chip-sort select {
+    position: relative;
+    z-index: 1;
     color: #fff;
+    letter-spacing: .12em;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23E4CE95' stroke-width='1.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 }
 
 .filter-chip-sort select option {
     color: var(--ink);
+    background: var(--ivory);
+}
+
+@media (max-width: 575px) {
+    .filter-chip-sort {
+        padding: 9px 18px 9px 10px;
+    }
 }
 
 @media (max-width: 767px) {
@@ -2484,5 +2543,95 @@ img {
 
     .filter-chip {
         width: 100%;
+    }
+}
+
+/* ============================================================
+   23. FILTER CHIP (Category / Price) — royal-soft treatment
+   Solid #24505E shell (var(--royal-soft)), coin-style icon
+   badge, gold focus ring, and a gentle underline accent that
+   draws in on hover.
+   (additive/overriding rules only — nothing above this line
+   is modified; specificity/order keeps .filter-chip-sort intact)
+   ============================================================ */
+
+.filter-chip {
+    position: relative;
+    background: #24505E;
+    border: 1px solid rgba(228, 206, 149, .22);
+    border-radius: 30px;
+    padding: 9px 22px 9px 12px;
+    box-shadow: 0 8px 20px rgba(11, 34, 41, .18);
+    overflow: hidden;
+}
+
+/* thin gold underline accent, tucked at the base of the chip, grows in on hover/focus */
+.filter-chip::after {
+    content: "";
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 6px;
+    height: 1px;
+    background: var(--gold-light);
+    transform: scaleX(0);
+    transform-origin: left;
+    opacity: 0;
+    transition: transform .4s var(--ease), opacity .4s var(--ease);
+    pointer-events: none;
+}
+
+.filter-chip:hover::after,
+.filter-chip:focus-within::after {
+    transform: scaleX(1);
+    opacity: .6;
+}
+
+.filter-chip:hover,
+.filter-chip:focus-within {
+    border-color: var(--gold-light);
+    box-shadow: 0 14px 30px rgba(11, 34, 41, .28);
+    transform: translateY(-2px);
+}
+
+/* coin-style icon badge, echoing the sort chip's icon treatment */
+.filter-chip i {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    color: var(--gold-light);
+    font-size: .76rem;
+    background: rgba(228, 206, 149, .14);
+    border: 1px solid rgba(228, 206, 149, .3);
+    transition: transform .45s var(--ease), background .35s var(--ease), color .35s var(--ease);
+}
+
+.filter-chip:hover i {
+    transform: rotate(10deg) scale(1.06);
+    background: var(--gold-light);
+    color: var(--royal-dark);
+}
+
+.filter-chip select {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23E4CE95' stroke-width='1.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+.filter-chip select option {
+    color: var(--ink);
+    background: var(--ivory);
+}
+
+@media (max-width: 575px) {
+    .filter-chip {
+        padding: 9px 18px 9px 10px;
     }
 }
