@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bestsellers — Curio Couture</title>
+    <meta name="description"
+        content="Shop Curio Couture's bestselling sherwanis, bandhgalas, kurta sets and Indowestern pieces — the most coveted, most worn silhouettes from our Jaipur atelier.">
+    <meta name="keywords" content="bestseller menswear, sherwani, bandhgala, kurta set, Indowestern, Curio Couture">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Jost:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+    <!-- AOS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+    <!-- Curio Couture stylesheet (same file as the rest of the site) -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ============================================================
+     TIER 1 — TOP BAR: social links · shipping note · phone
+============================================================ -->
+    <div class="top-bar">
+        <div class="container-xl">
+            <div class="top-bar-group top-bar-follow">
+                <span>Follow Us :</span>
+                <div class="top-bar-social">
+                    <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="bi bi-pinterest"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                    <a href="#" aria-label="Email"><i class="bi bi-envelope"></i></a>
+                </div>
+            </div>
+
+            <div class="top-bar-group">
+                <span class="top-bar-divider"></span>
+                <div class="top-bar-ship">
+                    <i class="bi bi-truck"></i>
+                    <span>Worldwide Shipping, Duties Included</span>
+                </div>
+                <span class="top-bar-divider"></span>
+                <div class="top-bar-phone">
+                    <i class="bi bi-whatsapp"></i>
+                    <span>+91 98765 43210</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+     TIER 2 — BRAND BAR: logo · menu toggle (mobile)
+============================================================ -->
+    <div class="brand-bar">
+        <div class="container-xl brand-bar-grid">
+
+            <button class="mobile-menu-btn d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu"
+                aria-label="Open menu" id="mobileMenuBtn">
+                <span class="mobile-menu-btn-line"></span>
+                <span class="mobile-menu-btn-line"></span>
+                <span class="mobile-menu-btn-line"></span>
+            </button>
+
+            <a href="index.html" class="nav-logo" id="brandHomeLink">
+                <img src="images/Asset 2@2x.png" alt="Curio Couture">
+            </a>
+
+            <button class="nav-icon-btn brand-search-toggle d-lg-none" id="mobileSearchToggle" aria-label="Search"
+                aria-expanded="false" aria-controls="mobileSearchPanel">
+                <i class="bi bi-search"></i>
+            </button>
+        </div>
+
+        <!-- Mobile-only expanding search panel -->
+        <div class="mobile-search-panel d-lg-none" id="mobileSearchPanel">
+            <div class="container-xl">
+                <div class="brand-search">
+                    <input type="text" placeholder="Search for products…" aria-label="Search" id="mobileSearchInput">
+                    <button type="button" aria-label="Search" id="mobileSearchBtn">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+     TIER 3 — MAIN NAV: search icon · centered links · phone, on white
+============================================================ -->
+    <header class="navbar-curio" id="mainNav">
+        <div class="container-xl nav-inner">
+
+            <button class="nav-icon-btn nav-search-toggle" id="navSearchToggle" aria-label="Search"
+                aria-expanded="false" aria-controls="navSearchPanel">
+                <i class="bi bi-search"></i>
+            </button>
+
+            <nav>
+                <ul class="nav-links">
+                    <li class="active"><a href="bestsellers.html">Best Seller</a></li>
+                    <li><a href="shopall.html">Shop All</a></li>
+                    <li class="mega-wrap">
+                        <a href="categories.html">Category <i class="bi bi-chevron-down"
+                                style="font-size:.6rem;"></i></a>
+                        <div class="mega-menu">
+                            <div class="container-xl">
+                                <div class="row g-5 justify-content-center">
+                                    <div class="col-lg-3 col-6">
+                                        <span class="mega-col-title">Occasion Wear</span>
+                                        <ul class="mega-links">
+                                            <li><a href="#">Sherwani</a></li>
+                                            <li><a href="#">Bandhgala</a></li>
+                                            <li><a href="#">Jodhpuri Suits</a></li>
+                                            <li><a href="#">Nehru Jackets</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-3 col-6">
+                                        <span class="mega-col-title">Everyday Curio</span>
+                                        <ul class="mega-links">
+                                            <li><a href="#">Kurta Sets</a></li>
+                                            <li><a href="#">Short Kurtas</a></li>
+                                            <li><a href="#">Indowestern</a></li>
+                                            <li><a href="#">Pure Linen</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-3 col-6">
+                                        <span class="mega-col-title">Trending Now</span>
+                                        <ul class="mega-links">
+                                            <li><a href="#">The Fitoor Collection</a></li>
+                                            <li><a href="#">Hand-Embroidered Bandhgala</a></li>
+                                            <li><a href="#">Wedding Edit</a></li>
+                                            <li><a href="#">Festive Best Sellers</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="sale.html" class="sale-link">Sale</a></li>
+
+                    <li class="mega-wrap">
+                        <a href="occasions.html">Occasions <i class="bi bi-chevron-down"
+                                style="font-size:.6rem;"></i></a>
+                        <div class="mega-menu">
+                            <div class="container-xl">
+                                <div class="row g-5 justify-content-center">
+                                    <div class="col-lg-3 col-6">
+                                        <span class="mega-col-title">Edit By</span>
+                                        <ul class="mega-links">
+                                            <li><a href="">Wedding</a></li>
+                                            <li><a href="">Festive</a></li>
+                                            <li><a href="">Reception</a></li>
+                                            <li><a href="#">Sangeet</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-3 col-6">
+                                        <span class="mega-col-title">Featured Edits</span>
+                                        <ul class="mega-links">
+                                            <li><a href="#">The Fitoor Collection</a></li>
+                                            <li><a href="#">Hand-Embroidered Bandhgala</a></li>
+                                            <li><a href="#">The Zamindar Edit</a></li>
+                                            <li><a href="#">Pure Linen, SS26</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="storelocator.html">Store Locator</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-phone">
+                <i class="bi bi-telephone-fill"></i>
+                <span>+91 98765 43210</span>
+            </div>
+        </div>
+
+        <!-- Expanding search panel, toggled by the search icon above -->
+        <div class="nav-search-panel" id="navSearchPanel">
+            <div class="container-xl">
+                <div class="brand-search">
+                    <input type="text" placeholder="Search for products…" aria-label="Search" id="siteSearchInput">
+                    <button type="button" aria-label="Search" id="siteSearchBtn">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Offcanvas -->
+    <div class="offcanvas offcanvas-start offcanvas-curio" tabindex="-1" id="mobileMenu">
+        <div class="offcanvas-header">
+            <span class="nav-logo" style="color:#fff;font-size:1.2rem;">Curio Couture</span>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="mobile-links">
+                <li><a href="bestsellers.html">Best Seller</a></li>
+                <li><a href="shopall.html">Shop All</a></li>
+                <li>
+                    <a href="categories.html" class="mobile-toggle" data-target="#sub-category">Category <i
+                            class="bi bi-chevron-down"></i></a>
+                    <ul class="mobile-sub" id="sub-category">
+                        <li><a href="#">Sherwani</a></li>
+                        <li><a href="#">Bandhgala</a></li>
+                        <li><a href="#">Jodhpuri Suits</a></li>
+                        <li><a href="#">Nehru Jackets</a></li>
+                        <li><a href="#">Kurta Sets</a></li>
+                        <li><a href="#">Short Kurtas</a></li>
+                        <li><a href="#">Indowestern</a></li>
+                        <li><a href="#">Pure Linen</a></li>
+                    </ul>
+                </li>
+                <li><a href="sale.html" class="sale-link">Sale</a></li>
+                <li>
+                    <a href="occasions.html" class="mobile-toggle" data-target="#sub-occasions">Occasions <i
+                            class="bi bi-chevron-down"></i></a>
+                    <ul class="mobile-sub" id="sub-occasions">
+                        <li><a href="#">Wedding</a></li>
+                        <li><a href="#">Festive</a></li>
+                        <li><a href="#">Reception</a></li>
+                        <li><a href="#">Sangeet</a></li>
+                    </ul>
+                </li>
+                <li><a href="storelocator.html">Store Locator</a></li>
+            </ul>
+            <div class="d-flex gap-3 mt-4">
+                <a href="tel:+919876543210" class="nav-icon-btn" style="color:#fff;"><i
+                        class="bi bi-telephone-fill"></i> +91 98765 43210</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+     BESTSELLERS LISTING
+============================================================ -->
+    <section class="section">
+        <div class="container-xl">
+
+            <!-- Stylish centered heading (replaces the dark page-banner) -->
+            <div class="section-head bestseller-head" data-aos="fade-up">
+                <span class="eyebrow" style="justify-content:center;">Most Coveted</span>
+                <h2>Bestsellers</h2>
+                <p>The silhouettes our clients return for — hand-finished sherwanis, bandhgalas and kurta sets, worn
+                    again long after the occasion that first called for them.</p>
+            </div>
+
+            <div class="shop-toolbar">
+                <div class="shop-toolbar-count" id="resultsCount">
+                    Showing <strong>1–8</strong> of <strong>12</strong> results
+                </div>
+
+                <div class="shop-toolbar-filters">
+                    <div class="filter-chip">
+                        <i class="bi bi-funnel"></i>
+                        <select id="filterSelect" aria-label="Filter by category">
+                            <option value="all">All Categories</option>
+                        </select>
+                    </div>
+                    <div class="filter-chip filter-chip-sort">
+                        <i class="bi bi-arrow-down-up"></i>
+                        <select id="sortSelect" aria-label="Sort products">
+                            <option value="featured">Featured</option>
+                            <option value="price-asc">Price: Low to High</option>
+                            <option value="price-desc">Price: High to Low</option>
+                            <option value="newest">Newest First</option>
+                            <option value="discount">Highest Discount</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4" id="bestSellersPageGrid">
+                <!-- Cards injected by JS -->
+            </div>
+
+            <div class="shop-empty" id="shopEmpty">
+                <i class="bi bi-emoji-neutral"></i>
+                No pieces match this filter — try another category.
+            </div>
+
+            <nav class="pagination-curio" id="paginationCurio" aria-label="Bestsellers pagination">
+                <!-- Buttons injected by JS -->
+            </nav>
+
+        </div>
+    </section>
+
+    <!-- ============================================================
+     FOOTER
+============================================================ -->
+    <footer class="footer" id="footer">
+        <div class="container-xl">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <a href="index.html" class="nav-logo">
+                        <span class="ornament">
+                            <svg width="30" height="30" viewBox="0 0 64 64" fill="none">
+                                <path
+                                    d="M8 16C8 11 12 8 16 8C20 8 24 12 28 20C24 12 28 8 32 8C36 8 40 12 40 16C40 20 36 24 28 20"
+                                    stroke="#E4CE95" stroke-width="1.6" />
+                                <path
+                                    d="M8 48C8 53 12 56 16 56C20 56 24 52 28 44C24 52 28 56 32 56C36 56 40 52 40 48C40 44 36 40 28 44"
+                                    stroke="#E4CE95" stroke-width="1.6" />
+                                <circle cx="32" cy="32" r="2.2" fill="#E4CE95" />
+                            </svg>
+                        </span>
+                        Curio Couture
+                    </a>
+                    <p class="tag">A Jaipur atelier crafting occasion menswear for men who want their wardrobe to
+                        outlast the trend cycle.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" aria-label="Pinterest"><i class="bi bi-pinterest"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-6">
+                    <h6>Shop</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">Sherwani</a></li>
+                        <li><a href="#">Bandhgala</a></li>
+                        <li><a href="#">Kurta Sets</a></li>
+                        <li><a href="#">Indowestern</a></li>
+                        <li><a href="#">Pure Linen</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-6">
+                    <h6>Curio Couture</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">The Atelier</a></li>
+                        <li><a href="#">Journal</a></li>
+                        <li><a href="#">Store Locator</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-6">
+                    <h6>Support</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-6">
+                    <h6>Bespoke</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">Book a Fitting</a></li>
+                        <li><a href="#">Made to Measure</a></li>
+                        <li><a href="#">Trunk Shows</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>© 2026 Curio Couture. All rights reserved.</span>
+                <div class="payment-icons">
+                    <i class="bi bi-credit-card-2-front"></i>
+                    <i class="bi bi-paypal"></i>
+                    <i class="bi bi-wallet2"></i>
+                    <i class="bi bi-bank"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+
+    <!-- ============================================================
+     QUICK VIEW MODAL — uses the .modal-curio / .qv- classes already
+     defined in style.css (section 15), unused elsewhere on the site.
+============================================================ -->
+    <div class="modal fade modal-curio" id="quickViewModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <button type="button" class="btn-close position-absolute top-0 end-0 m-3" style="z-index:3;"
+                    data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-body">
+                    <div class="row g-0">
+                        <div class="col-md-6">
+                            <img class="qv-img" id="qvImage" src="" alt="">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="qv-info">
+                                <span class="p-cat" id="qvCat"></span>
+                                <h3 id="qvTitle"></h3>
+                                <div class="qv-price">
+                                    <span class="now" id="qvPrice"></span>
+                                    <span class="was ms-2" id="qvWas"></span>
+                                </div>
+                                <p class="qv-desc" id="qvDesc"></p>
+                                <div class="size-row" id="qvSizes">
+                                    <div class="size-swatch active">S</div>
+                                    <div class="size-swatch">M</div>
+                                    <div class="size-swatch">L</div>
+                                    <div class="size-swatch">XL</div>
+                                    <div class="size-swatch">XXL</div>
+                                </div>
+                                <div class="qv-actions">
+                                    <button class="btn-curio" id="qvWhatsappBtn"><i class="bi bi-whatsapp"></i> Buy
+                                        On Whatsapp</button>
+                                    <button class="btn-curio btn-curio-ghost" id="qvWishlistBtn"><i
+                                            class="bi bi-heart"></i> Wishlist</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+     JS
+============================================================ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        /* ---------------------------------------------------------
+           BESTSELLER PRODUCT DATA
+           Same shape/fields as the homepage PRODUCTS array so the
+           card markup, WhatsApp buy flow and wishlist logic below
+           are identical to the rest of the site.
+        --------------------------------------------------------- */
+        const PRODUCTS = [
+            { id: 'b1', cat: 'Sherwani', title: 'Fitoor Hand-Embroidered Cream Sherwani', price: '₹42,999', was: '₹57,999', img: 'curiobs1', img2: 'curiobs1b', tag: 'Bestseller', date: 6 },
+            { id: 'b2', cat: 'Bandhgala', title: 'Zamindar Structured Bottle-Green Bandhgala', price: '₹31,499', was: '', img: 'curiobs2', img2: 'curiobs2b', tag: 'Bestseller', date: 12 },
+            { id: 'b3', cat: 'Short Kurta', title: 'Sanjh Cutdana Black Short Kurta', price: '₹17,549', was: '₹23,399', img: 'images/Dress/1.jpeg', img2: 'images/Dress/1.jpeg', tag: 'Bestseller', date: 3 },
+            { id: 'b4', cat: 'Kurta Set', title: 'Rung Ivory Zari-Border Kurta Set', price: '₹19,899', was: '', img: 'curiobs4', img2: 'curiobs4b', tag: 'Bestseller', date: 20 },
+            { id: 'b5', cat: 'Jodhpuri Suits', title: 'Zamindar Navy Jodhpuri Suit', price: '₹38,299', was: '₹47,999', img: 'curiobs5', img2: 'curiobs5b', tag: 'Bestseller', date: 9 },
+            { id: 'b6', cat: 'Indowestern', title: 'Rooh Asymmetric Rust Indowestern Set', price: '₹24,999', was: '', img: 'curiobs6', img2: 'curiobs6b', tag: 'Bestseller', date: 15 },
+            { id: 'b7', cat: 'Nehru Jackets', title: 'Adaab Velvet Emerald Nehru Jacket', price: '₹14,299', was: '₹18,999', img: 'curiobs7', img2: 'curiobs7b', tag: 'Bestseller', date: 27 },
+            { id: 'b8', cat: 'Pure Linen', title: 'Saanjh Pure Linen Sand Kurta Set', price: '₹12,499', was: '', img: 'curiobs8', img2: 'curiobs8b', tag: 'Bestseller', date: 30 },
+            { id: 'b9', cat: 'Sherwani', title: 'Noor Hand-Cutdana Ivory Sherwani', price: '₹49,999', was: '₹64,999', img: 'curiobs9', img2: 'curiobs9b', tag: 'Bestseller', date: 2 },
+            { id: 'b10', cat: 'Bandhgala', title: 'Rajwada Maroon Silk Bandhgala', price: '₹33,999', was: '', img: 'curiobs10', img2: 'curiobs10b', tag: 'Bestseller', date: 18 },
+            { id: 'b11', cat: 'Short Kurta', title: 'Sanjh Cutdana Black Short Kurta — Charcoal', price: '₹17,549', was: '₹23,399', img: 'images/Dress/2.jpeg', img2: 'images/Dress/2.jpeg', tag: 'Bestseller', date: 24 },
+            { id: 'b12', cat: 'Kurta Set', title: 'Fitoor Gold-Thread Beige Kurta Set', price: '₹21,299', was: '₹26,999', img: 'curiobs12', img2: 'curiobs12b', tag: 'Bestseller', date: 11 },
+        ];
+
+        const WHATSAPP_NUMBER = '919876543210';
+        const PAGE_SIZE = 8;
+        let currentPage = 1;
+
+        function buildWhatsAppLink(p) {
+            const message = `Hi Curio Couture, I'm interested in "${p.title}" (${p.price}). Could you share more details?`;
+            return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+        }
+
+        function getProductImageSrc(pathOrSeed, size) {
+            const value = pathOrSeed || '';
+            if (!value) return '';
+            if (value.startsWith('http') || value.startsWith('./') || value.includes('/') || value.includes('\\')) return value;
+            return `https://picsum.photos/seed/${value}/${size}`;
+        }
+
+        function discountPercent(p) {
+            if (!p.was) return 0;
+            const now = parseInt(p.price.replace(/[^\d]/g, ''), 10);
+            const was = parseInt(p.was.replace(/[^\d]/g, ''), 10);
+            if (!was || was <= now) return 0;
+            return Math.round(((was - now) / was) * 100);
+        }
+
+        function productCard(p) {
+            const disc = discountPercent(p);
+            return `
+  <div class="col-lg-3 col-md-6 col-12 product-card" data-aos="fade-up">
+    <div class="product-media">
+      <span class="product-tag ${disc ? 'sale' : ''}">${disc ? disc + '% Off' : p.tag}</span>
+      <button class="wishlist-btn" data-id="${p.id}" aria-label="Add to wishlist"><i class="bi bi-heart"></i></button>
+      <img class="img-front lazy-fade" src="${getProductImageSrc(p.img, '500/650')}" alt="${p.title}" loading="lazy" onload="this.classList.add('loaded')">
+      <img class="img-back" src="${getProductImageSrc(p.img2, '500/650')}" alt="${p.title} alternate view" loading="lazy">
+      <span class="corner-orn ornament">
+        <svg width="26" height="26" viewBox="0 0 64 64" fill="none"><path d="M8 16C8 11 12 8 16 8C20 8 24 12 28 20C24 12 28 8 32 8C36 8 40 12 40 16C40 20 36 24 28 20" stroke="#BD9A4C" stroke-width="1.6"/></svg>
+      </span>
+      <button class="quick-view-btn" data-id="${p.id}">Quick View</button>
+    </div>
+    <div class="product-info">
+      <span class="p-cat">${p.cat}</span>
+      <h5>${p.title}</h5>
+      <div class="product-price"><span class="now">${p.price}</span>${p.was ? `<span class="was">${p.was}</span>` : ''}</div>
+      <button class="add-to-bag-btn mt-2" data-id="${p.id}"><i class="bi bi-whatsapp"></i> Buy On Whatsapp</button>
+    </div>
+  </div>`;
+        }
+
+        /* ---------------------------------------------------------
+           FILTER OPTIONS — built from the categories present in PRODUCTS
+        --------------------------------------------------------- */
+        /* ---------------------------------------------------------
+           WISHLIST (same localStorage key as the rest of the site)
+           Defined up-front since renderGrid() below calls
+           refreshWishlistUI() as soon as the page loads.
+        --------------------------------------------------------- */
+        const wishStore = {
+            get() {
+                try { return JSON.parse(localStorage.getItem('curio_wishlist') || '[]'); }
+                catch (e) { return window.__curioWishlist || []; }
+            },
+            set(list) {
+                try { localStorage.setItem('curio_wishlist', JSON.stringify(list)); }
+                catch (e) { window.__curioWishlist = list; }
+            }
+        };
+        function refreshWishlistUI() {
+            const list = wishStore.get();
+            document.querySelectorAll('.wishlist-btn').forEach(btn => {
+                btn.classList.toggle('active', list.includes(btn.dataset.id));
+            });
+        }
+        document.addEventListener('click', e => {
+            const btn = e.target.closest('.wishlist-btn');
+            if (!btn) return;
+            const list = wishStore.get();
+            const id = btn.dataset.id;
+            const i = list.indexOf(id);
+            if (i > -1) list.splice(i, 1); else list.push(id);
+            wishStore.set(list);
+            refreshWishlistUI();
+        });
+
+        const filterSelect = document.getElementById('filterSelect');
+        [...new Set(PRODUCTS.map(p => p.cat))].sort().forEach(cat => {
+            const opt = document.createElement('option');
+            opt.value = cat;
+            opt.textContent = cat;
+            filterSelect.appendChild(opt);
+        });
+
+        const sortSelect = document.getElementById('sortSelect');
+        const grid = document.getElementById('bestSellersPageGrid');
+        const resultsCount = document.getElementById('resultsCount');
+        const shopEmpty = document.getElementById('shopEmpty');
+        const paginationEl = document.getElementById('paginationCurio');
+
+        function priceToNumber(str) {
+            return parseInt(str.replace(/[^\d]/g, ''), 10) || 0;
+        }
+
+        function getFilteredSorted() {
+            const cat = filterSelect.value;
+            let list = cat === 'all' ? [...PRODUCTS] : PRODUCTS.filter(p => p.cat === cat);
+
+            switch (sortSelect.value) {
+                case 'price-asc':
+                    list.sort((a, b) => priceToNumber(a.price) - priceToNumber(b.price));
+                    break;
+                case 'price-desc':
+                    list.sort((a, b) => priceToNumber(b.price) - priceToNumber(a.price));
+                    break;
+                case 'newest':
+                    list.sort((a, b) => a.date - b.date);
+                    break;
+                case 'discount':
+                    list.sort((a, b) => discountPercent(b) - discountPercent(a));
+                    break;
+                default:
+                    break; // featured = catalogue order
+            }
+            return list;
+        }
+
+        function renderPagination(totalItems) {
+            const totalPages = Math.max(1, Math.ceil(totalItems / PAGE_SIZE));
+            if (currentPage > totalPages) currentPage = totalPages;
+
+            let html = '';
+            html += `<button class="pg-btn ${currentPage === 1 ? 'disabled' : ''}" data-page="${currentPage - 1}" aria-label="Previous page"><i class="bi bi-arrow-left"></i></button>`;
+
+            const pages = [];
+            for (let i = 1; i <= totalPages; i++) {
+                if (i === 1 || i === totalPages || Math.abs(i - currentPage) <= 1) pages.push(i);
+            }
+            let prevPage = 0;
+            pages.forEach(i => {
+                if (prevPage && i - prevPage > 1) html += `<span class="pg-dots">···</span>`;
+                html += `<button class="pg-btn ${i === currentPage ? 'active' : ''}" data-page="${i}">${i}</button>`;
+                prevPage = i;
+            });
+
+            html += `<button class="pg-btn ${currentPage === totalPages ? 'disabled' : ''}" data-page="${currentPage + 1}" aria-label="Next page"><i class="bi bi-arrow-right"></i></button>`;
+            paginationEl.innerHTML = html;
+            paginationEl.style.display = totalPages <= 1 ? 'none' : 'flex';
+        }
+
+        function renderGrid() {
+            const list = getFilteredSorted();
+            const totalItems = list.length;
+            const totalPages = Math.max(1, Math.ceil(totalItems / PAGE_SIZE));
+            if (currentPage > totalPages) currentPage = totalPages;
+
+            const start = (currentPage - 1) * PAGE_SIZE;
+            const pageItems = list.slice(start, start + PAGE_SIZE);
+
+            grid.innerHTML = pageItems.map(productCard).join('');
+            shopEmpty.classList.toggle('show', totalItems === 0);
+
+            if (totalItems === 0) {
+                resultsCount.innerHTML = `Showing <strong>0</strong> of <strong>0</strong> results`;
+            } else {
+                resultsCount.innerHTML = `Showing <strong>${start + 1}–${Math.min(start + PAGE_SIZE, totalItems)}</strong> of <strong>${totalItems}</strong> results`;
+            }
+
+            renderPagination(totalItems);
+            refreshWishlistUI();
+            if (window.AOS) AOS.refreshHard();
+        }
+
+        filterSelect.addEventListener('change', () => { currentPage = 1; renderGrid(); });
+        sortSelect.addEventListener('change', () => { currentPage = 1; renderGrid(); });
+
+        paginationEl.addEventListener('click', e => {
+            const btn = e.target.closest('.pg-btn');
+            if (!btn || btn.classList.contains('disabled')) return;
+            const page = parseInt(btn.dataset.page, 10);
+            if (!page || page === currentPage) return;
+            currentPage = page;
+            renderGrid();
+            document.querySelector('.shop-toolbar').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        renderGrid();
+
+        /* ---------------------------------------------------------
+           PRELOADER / AOS
+        --------------------------------------------------------- */
+        window.addEventListener('load', () => {
+            AOS.init({ duration: 800, once: true, offset: 60, easing: 'ease-out-cubic' });
+        });
+
+        /* ---------------------------------------------------------
+           NAV SEARCH TOGGLE (desktop)
+        --------------------------------------------------------- */
+        const navSearchToggle = document.getElementById('navSearchToggle');
+        const navSearchPanel = document.getElementById('navSearchPanel');
+        const siteSearchInputEl = document.getElementById('siteSearchInput');
+
+        function closeNavSearch() {
+            navSearchPanel.classList.remove('open');
+            navSearchToggle.setAttribute('aria-expanded', 'false');
+            navSearchToggle.classList.remove('active');
+        }
+        function toggleNavSearch() {
+            const isOpen = navSearchPanel.classList.toggle('open');
+            navSearchToggle.setAttribute('aria-expanded', String(isOpen));
+            navSearchToggle.classList.toggle('active', isOpen);
+            if (isOpen) setTimeout(() => siteSearchInputEl.focus(), 250);
+        }
+        navSearchToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleNavSearch();
+        });
+        document.addEventListener('click', (e) => {
+            if (navSearchPanel.classList.contains('open') &&
+                !navSearchPanel.contains(e.target) &&
+                !navSearchToggle.contains(e.target)) {
+                closeNavSearch();
+            }
+        });
+
+        /* ---------------------------------------------------------
+           MOBILE SEARCH TOGGLE
+        --------------------------------------------------------- */
+        const mobileSearchToggle = document.getElementById('mobileSearchToggle');
+        const mobileSearchPanel = document.getElementById('mobileSearchPanel');
+        const mobileSearchInputEl = document.getElementById('mobileSearchInput');
+
+        function closeMobileSearch() {
+            mobileSearchPanel.classList.remove('open');
+            mobileSearchToggle.setAttribute('aria-expanded', 'false');
+            mobileSearchToggle.classList.remove('active');
+        }
+        function toggleMobileSearch() {
+            const isOpen = mobileSearchPanel.classList.toggle('open');
+            mobileSearchToggle.setAttribute('aria-expanded', String(isOpen));
+            mobileSearchToggle.classList.toggle('active', isOpen);
+            if (isOpen) setTimeout(() => mobileSearchInputEl.focus(), 250);
+        }
+        mobileSearchToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleMobileSearch();
+        });
+        document.addEventListener('click', (e) => {
+            if (mobileSearchPanel.classList.contains('open') &&
+                !mobileSearchPanel.contains(e.target) &&
+                !mobileSearchToggle.contains(e.target)) {
+                closeMobileSearch();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') { closeNavSearch(); closeMobileSearch(); }
+        });
+
+        /* Site search on this page jumps to Shop All on the homepage, carrying the query */
+        function runSiteSearch(query) {
+            const q = query.trim();
+            window.location.href = q ? `shopall.html?q=${encodeURIComponent(q)}` : 'shopall.html';
+        }
+        document.getElementById('siteSearchBtn').addEventListener('click', () => runSiteSearch(siteSearchInputEl.value));
+        siteSearchInputEl.addEventListener('keydown', e => {
+            if (e.key === 'Enter') { e.preventDefault(); runSiteSearch(siteSearchInputEl.value); }
+        });
+        document.getElementById('mobileSearchBtn').addEventListener('click', () => runSiteSearch(mobileSearchInputEl.value));
+        mobileSearchInputEl.addEventListener('keydown', e => {
+            if (e.key === 'Enter') { e.preventDefault(); runSiteSearch(mobileSearchInputEl.value); }
+        });
+
+        /* ---------------------------------------------------------
+           NAVBAR SCROLL STATE
+        --------------------------------------------------------- */
+        const mainNav = document.getElementById('mainNav');
+        function handleNavScroll() {
+            if (window.scrollY > 60) { mainNav.classList.add('scrolled'); }
+            else { mainNav.classList.remove('scrolled'); }
+        }
+        window.addEventListener('scroll', handleNavScroll);
+        handleNavScroll();
+
+        /* ---------------------------------------------------------
+           BACK TO TOP
+        --------------------------------------------------------- */
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            backToTop.classList.toggle('show', window.scrollY > 500);
+        });
+        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        /* ---------------------------------------------------------
+           MOBILE MENU BUTTON
+        --------------------------------------------------------- */
+        const mobileMenuEl = document.getElementById('mobileMenu');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        mobileMenuEl.addEventListener('show.bs.offcanvas', () => mobileMenuBtn.classList.add('open'));
+        mobileMenuEl.addEventListener('hide.bs.offcanvas', () => mobileMenuBtn.classList.remove('open'));
+
+        /* ---------------------------------------------------------
+           MOBILE SUBMENU TOGGLE
+        --------------------------------------------------------- */
+        document.querySelectorAll('.mobile-toggle').forEach(t => {
+            t.addEventListener('click', e => {
+                e.preventDefault();
+                document.querySelector(t.dataset.target).classList.toggle('open');
+                t.querySelector('i').classList.toggle('bi-chevron-down');
+                t.querySelector('i').classList.toggle('bi-chevron-up');
+            });
+        });
+
+        /* ---------------------------------------------------------
+           BUY ON WHATSAPP
+        --------------------------------------------------------- */
+        document.addEventListener('click', e => {
+            const btn = e.target.closest('.add-to-bag-btn');
+            if (!btn) return;
+            const p = PRODUCTS.find(x => x.id === btn.dataset.id);
+            if (p) window.open(buildWhatsAppLink(p), '_blank', 'noopener');
+
+            if (btn.classList.contains('added')) return;
+            const original = btn.innerHTML;
+            btn.classList.add('added');
+            btn.innerHTML = '<i class="bi bi-check2"></i> Opening WhatsApp';
+            setTimeout(() => {
+                btn.classList.remove('added');
+                btn.innerHTML = original;
+            }, 1600);
+        });
+
+        /* ---------------------------------------------------------
+           QUICK VIEW MODAL
+        --------------------------------------------------------- */
+        const quickViewModalEl = document.getElementById('quickViewModal');
+        const quickViewModal = new bootstrap.Modal(quickViewModalEl);
+
+        function openQuickView(id) {
+            const p = PRODUCTS.find(x => x.id === id);
+            if (!p) return;
+
+            document.getElementById('qvImage').src = getProductImageSrc(p.img, '700/850');
+            document.getElementById('qvImage').alt = p.title;
+            document.getElementById('qvCat').textContent = p.cat;
+            document.getElementById('qvTitle').textContent = p.title;
+            document.getElementById('qvPrice').textContent = p.price;
+            document.getElementById('qvWas').textContent = p.was || '';
+            document.getElementById('qvDesc').textContent =
+                `Hand-finished ${p.cat.toLowerCase()} crafted in our Jaipur atelier — fully lined, with hand-set embroidery detail and a considered, occasion-ready drape.`;
+
+            document.querySelectorAll('#qvSizes .size-swatch').forEach((s, i) => s.classList.toggle('active', i === 0));
+
+            document.getElementById('qvWhatsappBtn').onclick = () => window.open(buildWhatsAppLink(p), '_blank', 'noopener');
+
+            const qvWishlistBtn = document.getElementById('qvWishlistBtn');
+            const refreshQvWishlist = () => {
+                const active = wishStore.get().includes(p.id);
+                qvWishlistBtn.classList.toggle('btn-curio-ghost', !active);
+                qvWishlistBtn.innerHTML = active ? '<i class="bi bi-heart-fill"></i> Wishlisted' : '<i class="bi bi-heart"></i> Wishlist';
+            };
+            qvWishlistBtn.onclick = () => {
+                const list = wishStore.get();
+                const i = list.indexOf(p.id);
+                if (i > -1) list.splice(i, 1); else list.push(p.id);
+                wishStore.set(list);
+                refreshQvWishlist();
+                refreshWishlistUI();
+            };
+            refreshQvWishlist();
+
+            quickViewModal.show();
+        }
+
+        document.addEventListener('click', e => {
+            const btn = e.target.closest('.quick-view-btn');
+            if (!btn) return;
+            openQuickView(btn.dataset.id);
+        });
+
+        document.addEventListener('click', e => {
+            const sw = e.target.closest('.size-swatch');
+            if (!sw) return;
+            sw.parentElement.querySelectorAll('.size-swatch').forEach(s => s.classList.remove('active'));
+            sw.classList.add('active');
+        });
+
+        /* ---------------------------------------------------------
+           LAZY FADE-IN OBSERVER
+        --------------------------------------------------------- */
+        if ('IntersectionObserver' in window) {
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('loaded');
+                        io.unobserve(entry.target);
+                    }
+                });
+            }, { rootMargin: '80px' });
+            document.querySelectorAll('.lazy-fade').forEach(img => io.observe(img));
+        }
+    </script>
+</body>
+
+</html>

@@ -2247,3 +2247,242 @@ img {
         transition-duration: .001ms !important;
     }
 }
+
+
+/* ============================================================
+   20. BESTSELLERS PAGE — filter/sort group + pagination
+   (additive rules only — nothing above this line is modified)
+   ============================================================ */
+
+.shop-toolbar-filters {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    flex-wrap: wrap;
+}
+
+.shop-toolbar-sort:not(:last-child) {
+    padding-right: 28px;
+    border-right: 1px solid var(--line);
+}
+
+@media (max-width: 575px) {
+    .shop-toolbar-sort:not(:last-child) {
+        padding-right: 0;
+        border-right: none;
+    }
+
+    .shop-toolbar-filters {
+        gap: 16px;
+        width: 100%;
+    }
+
+    .shop-toolbar-sort {
+        flex: 1 1 auto;
+        justify-content: space-between;
+    }
+
+    .shop-toolbar-sort select {
+        flex: 1 1 auto;
+    }
+}
+
+/* Empty state, shown when a filter yields zero products */
+.shop-empty {
+    text-align: center;
+    padding: 70px 20px;
+    color: var(--ink-soft);
+    font-size: .95rem;
+    display: none;
+}
+
+.shop-empty.show {
+    display: block;
+}
+
+.shop-empty i {
+    display: block;
+    font-size: 2rem;
+    color: var(--gold);
+    margin-bottom: 16px;
+}
+
+/* Pagination */
+.pagination-curio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 64px;
+}
+
+.pg-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    height: 44px;
+    padding: 0 6px;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    background: var(--ivory);
+    color: var(--royal-dark);
+    font-family: 'Jost', sans-serif;
+    font-size: .85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all .3s var(--ease);
+}
+
+.pg-btn:hover:not(.disabled):not(.active) {
+    border-color: var(--gold-deep);
+    color: var(--gold-deep);
+}
+
+.pg-btn.active {
+    background: var(--royal);
+    border-color: var(--royal);
+    color: var(--gold-light);
+}
+
+.pg-btn.disabled {
+    opacity: .35;
+    pointer-events: none;
+}
+
+.pg-dots {
+    display: inline-flex;
+    align-items: flex-end;
+    justify-content: center;
+    min-width: 24px;
+    height: 44px;
+    color: var(--ink-soft);
+    letter-spacing: 2px;
+    padding-bottom: 12px;
+}
+
+@media (max-width: 575px) {
+    .pg-btn {
+        min-width: 38px;
+        height: 38px;
+        font-size: .8rem;
+    }
+
+    .pagination-curio {
+        gap: 6px;
+        margin-top: 48px;
+    }
+}
+
+
+/* ============================================================
+   21. BESTSELLERS — stylish heading + filter/sort chip controls
+   (additive rules only — nothing above this line is modified)
+   ============================================================ */
+
+.bestseller-head {
+    margin-bottom: 44px;
+}
+
+/* Pill-style dropdown control, replaces the plain label+select pairing */
+.filter-chip {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    background: var(--ivory);
+    border: 1px solid var(--line);
+    border-radius: 30px;
+    padding: 11px 20px;
+    transition: border-color .35s var(--ease), box-shadow .35s var(--ease), transform .25s var(--ease);
+}
+
+.filter-chip:hover {
+    transform: translateY(-1px);
+}
+
+.filter-chip:hover,
+.filter-chip:focus-within {
+    border-color: var(--gold-deep);
+    box-shadow: 0 10px 22px rgba(189, 154, 76, .16);
+}
+
+.filter-chip i {
+    color: var(--gold-deep);
+    font-size: .82rem;
+    flex-shrink: 0;
+}
+
+.filter-chip select {
+    appearance: none;
+    -webkit-appearance: none;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: 'Jost', sans-serif;
+    font-size: .78rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--ink);
+    cursor: pointer;
+    padding-right: 22px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%2395772F' stroke-width='1.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+
+/* Sort chip — filled, so the two controls read as visually distinct at a glance */
+.filter-chip-sort {
+    background: var(--royal-dark);
+    border-color: var(--royal-dark);
+}
+
+.filter-chip-sort:hover,
+.filter-chip-sort:focus-within {
+    border-color: var(--gold-light);
+    box-shadow: 0 10px 24px rgba(11, 34, 41, .22);
+}
+
+.filter-chip-sort i {
+    color: var(--gold-light);
+}
+
+.filter-chip-sort select {
+    color: #fff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23E4CE95' stroke-width='1.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+.filter-chip-sort select option {
+    color: var(--ink);
+}
+
+@media (max-width: 767px) {
+    .shop-toolbar-filters {
+        width: 100%;
+        gap: 12px;
+    }
+
+    .filter-chip {
+        flex: 1 1 auto;
+        justify-content: space-between;
+        padding: 10px 16px;
+    }
+
+    .filter-chip select {
+        width: 100%;
+    }
+}
+
+@media (max-width: 575px) {
+    .bestseller-head {
+        margin-bottom: 32px;
+    }
+
+    .shop-toolbar-filters {
+        flex-direction: column;
+    }
+
+    .filter-chip {
+        width: 100%;
+    }
+}
